@@ -32,18 +32,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7d5b10d-316c-4d74-bcfd-341d5cd735b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\SpinnerActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$TextValidator.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$array.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$array.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$attr.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerKlassenZusatzActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerKlassenZusatzActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerStundenplanAnsichtActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerStundenplanAnsichtActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/profiledata.xml" afterPath="$PROJECT_DIR$/res/layout/profiledata.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
@@ -111,12 +115,10 @@
       <file leaf-file-name="ProfileDataActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21460506">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5692996">
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2534#2535#0" expanded="true" />
-                <element signature="e#2582#2583#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,9 +130,12 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.888889">
-              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="-38.407406">
+              <caret line="67" column="97" selection-start-line="67" selection-start-column="97" selection-end-line="67" selection-end-column="97" />
+              <folding>
+                <element signature="e#3195#3219#0" expanded="true" />
+                <element signature="e#3878#3902#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,8 +153,8 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.351852">
-              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state vertical-scroll-proportion="-7.5555553">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -195,8 +200,8 @@
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/profilDatenActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/SpinnerActivity.java" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/profiledata.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" />
       </list>
     </option>
@@ -366,6 +371,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.HAStundenplanApp">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -673,7 +679,7 @@
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
+      <option name="PREFERRED_AVD" value="HAStundenplanAVD" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
       <option name="WIPE_USER_DATA" value="false" />
@@ -706,16 +712,16 @@
       <option name="number" value="Default" />
       <updated>1465827011318</updated>
       <workItem from="1465827014929" duration="8171000" />
-      <workItem from="1465986265990" duration="4851000" />
+      <workItem from="1465986265990" duration="10174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13022000" />
+    <option name="totallyTimeSpent" value="18345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -723,7 +729,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24432433" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24432433" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -732,7 +738,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24432433" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -806,8 +812,6 @@
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2534#2535#0" expanded="true" />
-            <element signature="e#2582#2583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -819,7 +823,10 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3195#3219#0" expanded="true" />
+            <element signature="e#3878#3902#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -876,14 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.351852">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -900,20 +899,29 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.888889">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state vertical-scroll-proportion="-38.407406">
+          <caret line="67" column="97" selection-start-line="67" selection-start-column="97" selection-end-line="67" selection-end-column="97" />
+          <folding>
+            <element signature="e#3195#3219#0" expanded="true" />
+            <element signature="e#3878#3902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5555553">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21460506">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5692996">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2534#2535#0" expanded="true" />
-            <element signature="e#2582#2583#0" expanded="true" />
           </folding>
         </state>
       </provider>

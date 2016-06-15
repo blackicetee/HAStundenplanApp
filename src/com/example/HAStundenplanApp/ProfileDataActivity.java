@@ -11,35 +11,25 @@ import android.widget.AdapterView.OnItemSelectedListener;
 /**
  * Created by MrT on 13.06.2016.
  */
-public class ProfileDataActivity extends Activity {
+public class ProfileDataActivity extends Activity implements View.OnClickListener {
+    EditText etVorname;
+    EditText etNachname;
+    Button btnBestaetigen;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profiledata);
+        etVorname = (EditText) findViewById(R.id.etVorname);
+        etNachname = (EditText) findViewById(R.id.etNachname);
+        btnBestaetigen = (Button) findViewById(R.id.btnBestaetigen);
 
-        EditText etVorname = (EditText) findViewById(R.id.etVorname);
-        EditText etNachname = (EditText) findViewById(R.id.etNachname);
+        btnBestaetigen.setOnClickListener(this);
 
-        etVorname.addTextChangedListener(new TextValidator(etVorname) {
-            @Override public void validate(TextView textView, String text) {
-                if (!text.matches( "[A-Z][a-zA-Z]*" )) {
-                    textView.setText("");
-                    Toast.makeText(getApplicationContext(), "Nur Buchstaben erlaubt!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        etNachname.addTextChangedListener(new TextValidator(etNachname) {
-            @Override public void validate(TextView textView, String text) {
-                if (!text.matches( "[a-zA-z]+([ '-][a-zA-Z]+)*" )) {
-                    textView.setText("");
-                    Toast.makeText(getApplicationContext(), "Nur Buchstaben und Bindestriche erlaubt!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        createSpinner(R.id.spinnerKlassenZusatz,R.array.klassenZusatz, new SpinnerKlassenZusatzActivity());
+        createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
+        createSpinner(R.id.spinnerKlassenZusatz, R.array.klassenZusatz, new SpinnerKlassenZusatzActivity());
         createSpinner(R.id.spinnerStundenplanAnsicht, R.array.stundenplanAnsicht, new SpinnerStundenplanAnsichtActivity());
+        createSpinner(R.id.spinnerTeilOptionen, R.array.teilOptionen, new SpinnerTeilOptionenActivity());
     }
 
     private Spinner createSpinner(Integer spinnerViewID, Integer arrayIDinStringXML, OnItemSelectedListener spinnerActivity) {
@@ -56,26 +46,40 @@ public class ProfileDataActivity extends Activity {
         return spinner;
     }
 
-    public abstract class TextValidator implements TextWatcher {
-        private final TextView textView;
-
-        public TextValidator(TextView textView) {
-            this.textView = textView;
+    @Override
+    public void onClick(View v) {
+        Boolean allesOK = true;
+        if (!etNachname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*")) {
+            etNachname.setText("");
+            allesOK = false;
+            Toast.makeText(getApplicationContext(), "Der Nachname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
         }
-
-        public abstract void validate(TextView textView, String text);
-
-        @Override
-        final public void afterTextChanged(Editable s) {
-            String text = textView.getText().toString();
-            validate(textView, text);
+        //Regulärer Ausdruck für einen großen Buchstaben und dann beliebig viele große und kleine Buchstaben [A-Z][a-zA-Z]*
+        if (!etVorname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*")) {
+            etVorname.setText("");
+            allesOK = false;
+            Toast.makeText(getApplicationContext(), "Der Vorname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
         }
+        
+    }
+}
 
-        @Override
-        final public void beforeTextChanged(CharSequence s, int start, int count, int after) { /* Don't care */ }
+class SpinnerJahrgangsstufeActivity extends Activity implements OnItemSelectedListener {
 
-        @Override
-        final public void onTextChanged(CharSequence s, int start, int before, int count) { /* Don't care */ }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
+        //On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        //Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        //Another interface callback
+        Toast.makeText(parent.getContext(), "Nothing was selected!", Toast.LENGTH_LONG).show();
     }
 }
 
@@ -99,6 +103,25 @@ class SpinnerKlassenZusatzActivity extends Activity implements OnItemSelectedLis
 }
 
 class SpinnerStundenplanAnsichtActivity extends Activity implements OnItemSelectedListener {
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
+        //On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        //Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        //Another interface callback
+        Toast.makeText(parent.getContext(), "Nothing was selected!", Toast.LENGTH_LONG).show();
+    }
+}
+
+class SpinnerTeilOptionenActivity extends Activity implements OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
