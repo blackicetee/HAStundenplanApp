@@ -32,25 +32,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7d5b10d-316c-4d74-bcfd-341d5cd735b3" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MrT\Documents\GitHub\HAStundenplanApp\out\production\HAStundenplanApp\com\example\HAStundenplanApp\ProfileDataActivity$TextValidator.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/main_activity.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/MainActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$array.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$attr.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerJahrgangsstufeActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerJahrgangsstufeActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerKlassenZusatzActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerKlassenZusatzActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerStundenplanAnsichtActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerStundenplanAnsichtActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerTeilOptionenActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SpinnerTeilOptionenActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/profiledata.xml" afterPath="$PROJECT_DIR$/res/layout/profiledata.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HAStundenplanApp.iws" />
@@ -91,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,11 +111,21 @@
       <file leaf-file-name="ProfileDataActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5692996">
-              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.65871835">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_activity.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/menu/main_activity.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,7 +159,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5555553">
+            <state vertical-scroll-proportion="-8.5">
               <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
@@ -179,6 +185,7 @@
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
         <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -193,15 +200,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/res/layout/profildaten.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/profilDaten.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/profilDatenActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/SpinnerActivity.java" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/res/layout/profiledata.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/res/menu/main_activity.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java" />
       </list>
     </option>
@@ -278,10 +288,6 @@
               <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProfileDataActivity.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -293,11 +299,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,7 +321,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
+              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -367,13 +373,33 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="285" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dictionaries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndroidProgramming/Uebung2" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.HAStundenplanApp">
+    <configuration default="false" name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
+      <module name="HAStundenplanApp" />
+      <option name="ACTIVITY_CLASS" value="com.example.HAStundenplanApp.MainActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -673,7 +699,7 @@
     </configuration>
     <configuration default="false" name="HAStundenplanApp" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="HAStundenplanApp" />
-      <option name="ACTIVITY_CLASS" value="com.example.HAStundenplanApp.ProfileDataActivity" />
+      <option name="ACTIVITY_CLASS" value="com.example.HAStundenplanApp.MainActivity" />
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -691,9 +717,15 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android Application.HAStundenplanApp" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.MainActivity" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Android Application.MainActivity" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -712,12 +744,12 @@
       <option name="number" value="Default" />
       <updated>1465827011318</updated>
       <workItem from="1465827014929" duration="8171000" />
-      <workItem from="1465986265990" duration="10174000" />
+      <workItem from="1465986265990" duration="14642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18345000" />
+    <option name="totallyTimeSpent" value="22813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -857,24 +889,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2592592">
@@ -883,11 +897,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/res/menu/main_activity.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -908,18 +919,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5555553">
+        <state vertical-scroll-proportion="-8.5">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ProfileDataActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5692996">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.65871835">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

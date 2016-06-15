@@ -1,9 +1,8 @@
 package com.example.HAStundenplanApp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -26,7 +25,7 @@ public class ProfileDataActivity extends Activity implements View.OnClickListene
 
         btnBestaetigen.setOnClickListener(this);
 
-        createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
+        Spinner s1 = createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
         createSpinner(R.id.spinnerKlassenZusatz, R.array.klassenZusatz, new SpinnerKlassenZusatzActivity());
         createSpinner(R.id.spinnerStundenplanAnsicht, R.array.stundenplanAnsicht, new SpinnerStundenplanAnsichtActivity());
         createSpinner(R.id.spinnerTeilOptionen, R.array.teilOptionen, new SpinnerTeilOptionenActivity());
@@ -48,19 +47,33 @@ public class ProfileDataActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        Boolean allesOK = true;
-        if (!etNachname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*")) {
+        Boolean nachnameOK = false;
+        Boolean vornameOK = false;
+        if (!etNachname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etNachname.getText().toString() != "Nachname" && etNachname.getText().toString() != "") {
             etNachname.setText("");
-            allesOK = false;
+            nachnameOK = false;
             Toast.makeText(getApplicationContext(), "Der Nachname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
+        } else {
+            nachnameOK = true;
         }
+
+
         //Regulärer Ausdruck für einen großen Buchstaben und dann beliebig viele große und kleine Buchstaben [A-Z][a-zA-Z]*
-        if (!etVorname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*")) {
+        if (!etVorname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etVorname.getText().toString() != "Vorname" && etVorname.getText().toString() != "") {
             etVorname.setText("");
-            allesOK = false;
+            vornameOK = false;
             Toast.makeText(getApplicationContext(), "Der Vorname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
+        } else {
+            vornameOK = true;
         }
-        
+        Intent intent = new Intent();
+
+        if (nachnameOK && vornameOK) {
+            intent.putExtra("Nachname", etNachname.getText().toString());
+            intent.putExtra("Vorname", etVorname.getText().toString());
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 }
 
