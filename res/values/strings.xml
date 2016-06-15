@@ -9,4 +9,10 @@
         <item>E</item>
         <item>F</item>
     </string-array>
+
+    <string-array name="stundenplanAnsicht">
+        <item>Tagesansicht</item>
+        <item>Wochenansicht</item>
+        <item>Monatsansicht</item>
+    </string-array>
 </resources>

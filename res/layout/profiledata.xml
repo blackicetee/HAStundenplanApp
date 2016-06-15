@@ -10,27 +10,44 @@
             android:inputType="textPersonName"
             android:text="Nachname"
             android:ems="10"
-            android:id="@+id/etNachname" android:layout_gravity="center_horizontal"/>
+            android:id="@+id/etNachname" android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/profiledatatext"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text="Vorname"
             android:ems="10"
-            android:id="@+id/etVorname" android:layout_gravity="center_horizontal"/>
+            android:id="@+id/etVorname" android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/profiledatatext"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             >
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/etKlassenstufe" android:layout_gravity="center_vertical" android:text="Klassenstufe"
-                />
+                android:textSize="@dimen/profiledatatext"/>
         <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerKlassenZusatz"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"
+                  >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stundenplan Ansicht:"
+                android:id="@+id/tvStundenplananicht" android:layout_gravity="center_vertical"
+                android:textSize="@dimen/profiledatatext"/>
+        <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
+                 android:id="@+id/spinnerStundenplanAnsicht"/>
     </LinearLayout>
 </LinearLayout>
