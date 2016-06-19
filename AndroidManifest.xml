@@ -13,5 +13,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfileDataActivity" android:label="Profil Daten"/>
+        <activity android:name=".SettingsActivity" android:label="Settings"/>
     </application>
 </manifest>

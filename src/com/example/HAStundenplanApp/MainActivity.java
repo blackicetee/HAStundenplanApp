@@ -8,7 +8,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
-    private static final int MENU_CREATE_PROFILE = 0;
+    private static final int MENU_CREATE_PROFILE_ID = 0;
+    private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
     @Override
@@ -20,7 +21,8 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_activity, menu);
-        menu.add(0, MENU_CREATE_PROFILE, 0, "Create Profile");
+        menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Create Profile");
+        menu.add(0, MENU_SETTINGS_ID, 0, "Settings");
         menu.add(0, MENU_QUIT_ID, 0, "Quit");
         return super.onCreateOptionsMenu(menu);
     }
@@ -28,10 +30,13 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case MENU_CREATE_PROFILE:
+            case MENU_CREATE_PROFILE_ID:
                 Intent createProfileIntent = new Intent(this, ProfileDataActivity.class);
                 startActivityForResult(createProfileIntent, 0);
                 break;
+            case MENU_SETTINGS_ID:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivityForResult(settingsIntent, 0);
             case MENU_QUIT_ID:
                 //exit
                 finish();

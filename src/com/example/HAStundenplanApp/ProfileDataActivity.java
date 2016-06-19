@@ -25,10 +25,8 @@ public class ProfileDataActivity extends Activity implements View.OnClickListene
 
         btnBestaetigen.setOnClickListener(this);
 
-        Spinner s1 = createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
+        createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
         createSpinner(R.id.spinnerKlassenZusatz, R.array.klassenZusatz, new SpinnerKlassenZusatzActivity());
-        createSpinner(R.id.spinnerStundenplanAnsicht, R.array.stundenplanAnsicht, new SpinnerStundenplanAnsichtActivity());
-        createSpinner(R.id.spinnerTeilOptionen, R.array.teilOptionen, new SpinnerTeilOptionenActivity());
     }
 
     private Spinner createSpinner(Integer spinnerViewID, Integer arrayIDinStringXML, OnItemSelectedListener spinnerActivity) {
@@ -47,8 +45,8 @@ public class ProfileDataActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        Boolean nachnameOK = false;
-        Boolean vornameOK = false;
+        Boolean nachnameOK;
+        Boolean vornameOK;
         if (!etNachname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etNachname.getText().toString() != "Nachname" && etNachname.getText().toString() != "") {
             etNachname.setText("");
             nachnameOK = false;
@@ -58,7 +56,7 @@ public class ProfileDataActivity extends Activity implements View.OnClickListene
         }
 
 
-        //Regulärer Ausdruck für einen großen Buchstaben und dann beliebig viele große und kleine Buchstaben [A-Z][a-zA-Z]*
+        //Regulaerer Ausdruck fuer einen groszen Buchstaben und dann beliebig viele grosze und kleine Buchstaben [A-Z][a-zA-Z]*
         if (!etVorname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etVorname.getText().toString() != "Vorname" && etVorname.getText().toString() != "") {
             etVorname.setText("");
             vornameOK = false;
@@ -97,44 +95,6 @@ class SpinnerJahrgangsstufeActivity extends Activity implements OnItemSelectedLi
 }
 
 class SpinnerKlassenZusatzActivity extends Activity implements OnItemSelectedListener {
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
-        //On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-
-        //Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        //Another interface callback
-        Toast.makeText(parent.getContext(), "Nothing was selected!", Toast.LENGTH_LONG).show();
-    }
-}
-
-class SpinnerStundenplanAnsichtActivity extends Activity implements OnItemSelectedListener {
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
-        //On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-
-        //Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        //Another interface callback
-        Toast.makeText(parent.getContext(), "Nothing was selected!", Toast.LENGTH_LONG).show();
-    }
-}
-
-class SpinnerTeilOptionenActivity extends Activity implements OnItemSelectedListener {
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
