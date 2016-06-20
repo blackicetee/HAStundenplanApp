@@ -1,6 +1,8 @@
 package com.example.HAStundenplanApp;
 
 
+import java.util.List;
+
 /**
  * Create a schedule API(Application Programming Interface)!
  * Note all functionalities which are needed for the schedule.
@@ -17,10 +19,25 @@ public interface ScheduleAPI {
     void saveProfileDataObj(ProfileData profileData);
     ProfileData getProfileDataObj();
 
-    //Konfiguration
+    //Konfigurations
 
 
     //Grouping
+    //GroupID String or Integer?
+    LessonGroup createLessonGroup(String lessonGroupID, String lessonName, String lessonTime);
+    void addContentToLessonGroup(Byte imagesAndDocuments);
+    Byte getContentFromLessonGroup(/*some specifications?? like ints or IDs?*/);
+    //How does a Peer look at application surface ?
+    void addMemberToLessonGroup(String somePeer);
+    void deleteMemberFromLessonGroup(String somePeer);
+    List<String> showAllMembersOfTheLessonGroup();
+    void createChatForLessonGroup();
+    void addHomework(Homework homework);
+
+    //Homework
+    Homework createHomework(String owner, String topicDescription);
+
+
 
 
 }
