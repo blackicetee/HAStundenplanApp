@@ -7,17 +7,19 @@
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                   android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="Stundenplan Ansicht:" android:id="@+id/tvStundenplanAnsicht"
+                  android:text="Stundenplan Ansicht:" android:id="@+id/tvscheduleView"
                   android:layout_gravity="center_vertical" android:textSize="@dimen/profiledatatext"/>
         <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
-                 android:id="@+id/spinnerStundenplanAnsicht"/>
+                 android:id="@+id/spinnerScheduleView"/>
     </LinearLayout>
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                   android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="Was soll geteilt werden?" android:id="@+id/tvTeilOptionen"
+                  android:text="Was soll geteilt werden?" android:id="@+id/tvshareOptions"
                   android:layout_gravity="center_vertical" android:textSize="@dimen/profiledatatext"/>
         <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
-                 android:id="@+id/spinnerTeilOptionen"/>
+                 android:id="@+id/spinnerShareOptions"/>
     </LinearLayout>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bestätigen"
+            android:id="@+id/btnCheckSettings" android:layout_gravity="center_horizontal"/>
 </LinearLayout>

@@ -22,5 +22,5 @@ public interface ScheduleAPI {
 
     //Grouping
 
-    
+
 }

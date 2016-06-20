@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">HAStundenplanApp</string>
 
-    <string-array name="jahrgangsstufe">
+    <string-array name="grade">
         <item>5</item>
         <item>6</item>
         <item>7</item>
@@ -14,7 +14,7 @@
         <item>13</item>
     </string-array>
 
-    <string-array name="klassenZusatz">
+    <string-array name="classSpecification">
         <item> </item>
         <item>A</item>
         <item>B</item>
@@ -24,13 +24,13 @@
         <item>F</item>
     </string-array>
 
-    <string-array name="stundenplanAnsicht">
+    <string-array name="scheduleView">
         <item>Tagesansicht</item>
         <item>Wochenansicht</item>
         <item>Monatsansicht</item>
     </string-array>
 
-    <string-array name="teilOptionen">
+    <string-array name="shareOptions">
         <item>Teile Alles</item>
         <item>Teile nur mit Freunden</item>
         <item>Teile nur auf Nachfrage</item>

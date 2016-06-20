@@ -8,17 +8,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Nachname"
+            android:text="Vorname"
             android:ems="10"
-            android:id="@+id/etNachname" android:layout_gravity="center_horizontal"
+            android:id="@+id/etFirstName"
             android:textSize="@dimen/profiledatatext"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Vorname"
+            android:text="Nachname"
             android:ems="10"
-            android:id="@+id/etVorname" android:layout_gravity="center_horizontal"
+            android:id="@+id/etLastName" android:layout_gravity="center_horizontal"
             android:textSize="@dimen/profiledatatext"/>
     <LinearLayout
             android:orientation="horizontal"
@@ -33,36 +33,11 @@
                 android:id="@+id/tvKlasse" android:layout_gravity="center_vertical"
                 android:textSize="@dimen/profiledatatext"/>
         <Spinner android:layout_width="35dp" android:layout_height="wrap_content"
-                 android:id="@+id/spinnerJahrgangsstufe" android:layout_weight="0.08"/>
+                 android:id="@+id/spinnerGrade" android:layout_weight="0.08"/>
         <Spinner
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinnerKlassenZusatz" android:layout_weight="0.08"/>
-    </LinearLayout>
-    <LinearLayout android:orientation="horizontal"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_gravity="center_horizontal"
-                  >
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Stundenplan Ansicht:"
-                android:id="@+id/tvStundenplananicht" android:layout_gravity="center_vertical"
-                android:textSize="@dimen/profiledatatext"/>
-        <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
-                 android:id="@+id/spinnerStundenplanAnsicht"/>
-    </LinearLayout>
-    <LinearLayout android:orientation="horizontal"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_gravity="center_horizontal"
-                  >
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="Was soll geteilt werden?" android:id="@+id/tvTeilOptionen"
-                  android:layout_gravity="center_vertical" android:textSize="@dimen/profiledatatext"/>
-        <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content"
-                 android:id="@+id/spinnerTeilOptionen"/>
+                android:id="@+id/spinnerClassSpecification" android:layout_weight="0.08"/>
     </LinearLayout>
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                   android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
@@ -75,5 +50,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bestätigen"
-            android:id="@+id/btnBestaetigen" android:layout_gravity="center_horizontal"/>
+            android:id="@+id/btnCheckProfileData" android:layout_gravity="center_horizontal"/>
 </LinearLayout>

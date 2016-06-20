@@ -3,6 +3,7 @@ package com.example.HAStundenplanApp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -11,80 +12,90 @@ import android.widget.AdapterView.OnItemSelectedListener;
  * Created by MrT on 13.06.2016.
  */
 public class ProfileDataActivity extends Activity implements View.OnClickListener {
-    EditText etVorname;
-    EditText etNachname;
-    Button btnBestaetigen;
+    final static String LOG_TAG = "myProfileDataLogs";
+    private SpinnerGradeActivity spinnerGradeActivity = new SpinnerGradeActivity();
+    private SpinnerClassSpecificationActivity spinnerClassSpecificationActivity = new SpinnerClassSpecificationActivity();
+    private EditText etFirstName;
+    private EditText etLastName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profiledata);
-        etVorname = (EditText) findViewById(R.id.etVorname);
-        etNachname = (EditText) findViewById(R.id.etNachname);
-        btnBestaetigen = (Button) findViewById(R.id.btnBestaetigen);
+        etFirstName = (EditText) findViewById(R.id.etFirstName);
+        etLastName = (EditText) findViewById(R.id.etLastName);
+        Button btnCheckProfileData = (Button) findViewById(R.id.btnCheckProfileData);
 
-        btnBestaetigen.setOnClickListener(this);
+        btnCheckProfileData.setOnClickListener(this);
 
-        createSpinner(R.id.spinnerJahrgangsstufe, R.array.jahrgangsstufe, new SpinnerJahrgangsstufeActivity());
-        createSpinner(R.id.spinnerKlassenZusatz, R.array.klassenZusatz, new SpinnerKlassenZusatzActivity());
-    }
+        Log.d(LOG_TAG, "__Selected spinner options__");
 
-    private Spinner createSpinner(Integer spinnerViewID, Integer arrayIDinStringXML, OnItemSelectedListener spinnerActivity) {
-        //Spinner Element
-        Spinner spinner = (Spinner) findViewById(spinnerViewID);
+        //Create spinner grade
+        Spinner spinnerGrade = (Spinner) findViewById(R.id.spinnerGrade);
+        ArrayAdapter<CharSequence> adapterGrade = ArrayAdapter.createFromResource(this,
+                R.array.grade, android.R.layout.simple_spinner_dropdown_item);
+        spinnerGrade.setAdapter(adapterGrade);
+        spinnerGrade.setOnItemSelectedListener(spinnerGradeActivity);
 
-        //Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                arrayIDinStringXML, android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        //Spinner click Listener
-        spinner.setOnItemSelectedListener(spinnerActivity);
-        return spinner;
+        //Create spinner classSpecification
+        Spinner spinnerClassSpecification = (Spinner) findViewById(R.id.spinnerClassSpecification);
+        ArrayAdapter<CharSequence> adapterClassSpecification = ArrayAdapter.createFromResource(this,
+                R.array.classSpecification, android.R.layout.simple_spinner_dropdown_item);
+        spinnerClassSpecification.setAdapter(adapterClassSpecification);
+        spinnerClassSpecification.setOnItemSelectedListener(spinnerClassSpecificationActivity);
     }
 
     @Override
     public void onClick(View v) {
-        Boolean nachnameOK;
         Boolean vornameOK;
-        if (!etNachname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etNachname.getText().toString() != "Nachname" && etNachname.getText().toString() != "") {
-            etNachname.setText("");
+        Boolean nachnameOK;
+
+
+        //Regulaerer Ausdruck fuer einen grossen Buchstaben und dann beliebig viele grosse und kleine Buchstaben [A-Z][a-zA-Z]*
+        if (!etFirstName.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") || etFirstName.getText().toString().equals("Vorname") || etFirstName.getText().toString().equals("")) {
+            etFirstName.setText("");
+            vornameOK = false;
+            Toast.makeText(getApplicationContext(), "Der Vorname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
+        } else {
+            vornameOK = true;
+        }
+        if (!etLastName.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") || etLastName.getText().toString().equals("Nachname") || etLastName.getText().toString().equals("")) {
+            etLastName.setText("");
             nachnameOK = false;
             Toast.makeText(getApplicationContext(), "Der Nachname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
         } else {
             nachnameOK = true;
         }
 
-
-        //Regulaerer Ausdruck fuer einen groszen Buchstaben und dann beliebig viele grosze und kleine Buchstaben [A-Z][a-zA-Z]*
-        if (!etVorname.getText().toString().matches("[a-zA-z]+([ '-][a-zA-Z]+)*") && etVorname.getText().toString() != "Vorname" && etVorname.getText().toString() != "") {
-            etVorname.setText("");
-            vornameOK = false;
-            Toast.makeText(getApplicationContext(), "Der Vorname darf nur aus Buchstaben und Bindestrichen bestehen!", Toast.LENGTH_LONG).show();
-        } else {
-            vornameOK = true;
-        }
         Intent intent = new Intent();
 
         if (nachnameOK && vornameOK) {
-            intent.putExtra("Nachname", etNachname.getText().toString());
-            intent.putExtra("Vorname", etVorname.getText().toString());
+            intent.putExtra("FirstName", etFirstName.getText().toString());
+            intent.putExtra("LastName", etLastName.getText().toString());
+            intent.putExtra("Grade", spinnerGradeActivity.getSelectedItem());
+            Log.d(LOG_TAG, "SelectedGrade from spinnerGradeActivity: " + spinnerGradeActivity.getSelectedItem());
+            intent.putExtra("ClassSpecification", spinnerClassSpecificationActivity.getSelectedItem());
             setResult(RESULT_OK, intent);
             finish();
         }
     }
 }
 
-class SpinnerJahrgangsstufeActivity extends Activity implements OnItemSelectedListener {
+class SpinnerGradeActivity extends Activity implements OnItemSelectedListener {
+    private String selectedItem;
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
         //On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
+        selectedItem = parent.getItemAtPosition(position).toString();
 
         //Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        Log.d(ProfileDataActivity.LOG_TAG, "Selected: " + selectedItem);
+    }
+
+    String getSelectedItem() {
+        return selectedItem;
     }
 
     @Override
@@ -94,16 +105,21 @@ class SpinnerJahrgangsstufeActivity extends Activity implements OnItemSelectedLi
     }
 }
 
-class SpinnerKlassenZusatzActivity extends Activity implements OnItemSelectedListener {
+class SpinnerClassSpecificationActivity extends Activity implements OnItemSelectedListener {
+    private String selectedItem;
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //An item was selected. You can retrieve the selected item using parent.getItemAtPosition(pos)
         //On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
+        selectedItem = parent.getItemAtPosition(position).toString();
 
         //Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        Log.d(ProfileDataActivity.LOG_TAG, "Selected: " + selectedItem);
+    }
+
+    String getSelectedItem() {
+        return selectedItem;
     }
 
     @Override
