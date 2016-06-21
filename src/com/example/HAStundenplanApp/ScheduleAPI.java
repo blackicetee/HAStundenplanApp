@@ -1,7 +1,6 @@
 package com.example.HAStundenplanApp;
 
-
-import java.util.List;
+import java.util.Map;
 
 /**
  * Create a schedule API(Application Programming Interface)!
@@ -25,18 +24,30 @@ public interface ScheduleAPI {
     //Grouping
     //GroupID String or Integer?
     LessonGroup createLessonGroup(String lessonGroupID, String lessonName, String lessonTime);
-    void addContentToLessonGroup(Byte imagesAndDocuments);
-    Byte getContentFromLessonGroup(/*some specifications?? like ints or IDs?*/);
+    String getLessonGroupID();
+    String getLessonName();
+    String getLessonTime();
+    void addContentToLessonGroup(String title, String type, Byte imagesAndDocuments);
+    Byte getContentFromLessonGroup(String title, String type);
     //How does a Peer look at application surface ?
-    void addMemberToLessonGroup(String somePeer);
+    void addMemberToLessonGroup(String somePeer, String addressOfSomePeer);
     void deleteMemberFromLessonGroup(String somePeer);
-    List<String> showAllMembersOfTheLessonGroup();
+    Map<String, String> showAllMembersOfTheLessonGroup();
     void createChatForLessonGroup();
-    void addHomework(Homework homework);
+    void addHomeworkToLessonGroup(String ID, Homework homework);
+    Homework getHomeworkFromLessonGroup(String ID);
+    void deleteHomeworkFromLessonGroup(String ID);
 
     //Homework
     Homework createHomework(String owner, String topicDescription);
-
+    /*Multiple addContent() functions ? Does this make sense or only one addContent() function ?
+    where should this addContent function be ?*/
+    void addContent();
+    void addFeedBack(String writer, String feedBackDescription);
+    Map<String, String> showAllFeedBacks();
+    //0 == not helpful, 1 == partly helpful, 2 good/helpful
+    void evaluateHomework(Integer evaluationNumber);
+    Integer getEvaluation();
 
 
 
