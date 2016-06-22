@@ -43,7 +43,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
         spinnerShareOptions.setAdapter(adapterShareOptions);
         spinnerShareOptions.setOnItemSelectedListener(spinnerShareOptionsActivityObj);
 
-        List<String> items = Arrays.asList("Hausaufgaben anzeigen", "Unterrichtsstunden anzeigen", "Tests anzeigen", "Klassenarbeiten anzeigen", "Andere anzeigen");
+        List<String> items = Arrays.asList("Hausaufgaben anzeigen", "Tests anzeigen", "Klassenarbeiten anzeigen", "Andere anzeigen");
         MultiSpinner multiSpinner = (MultiSpinner) findViewById(R.id.multi_spinner);
         multiSpinner.setItems(items, "Alles anzeigen", this);
     }
@@ -67,24 +67,18 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
             Log.d(LOG_TAG, "Don`t show homework!");
         }
         if (selected[1]) {
-            Log.d(LOG_TAG, "Show lessons!");
-        }
-        else {
-            Log.d(LOG_TAG, "Don`t show lessons!");
-        }
-        if (selected[2]) {
             Log.d(LOG_TAG, "Show tests!");
         }
         else {
             Log.d(LOG_TAG, "Don`t show tests!");
         }
-        if (selected[3]) {
+        if (selected[2]) {
             Log.d(LOG_TAG, "Show exams!");
         }
         else {
             Log.d(LOG_TAG, "Don`t show exams!");
         }
-        if (selected[4]) {
+        if (selected[3]) {
             Log.d(LOG_TAG, "Show other!");
         }
         else {
