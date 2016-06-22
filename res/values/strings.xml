@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HAStundenplanApp</string>
+    <string name="app_name">Digitales Hausaufgabenheft</string>
+    <!--<string name="app_name">HAStundenplanApp</string>-->
 
     <string-array name="grade">
         <item>5</item>

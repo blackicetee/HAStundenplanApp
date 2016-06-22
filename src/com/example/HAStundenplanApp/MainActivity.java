@@ -21,9 +21,9 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_activity, menu);
-        menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Create Profile");
-        menu.add(0, MENU_SETTINGS_ID, 0, "Settings");
-        menu.add(0, MENU_QUIT_ID, 0, "Quit");
+        menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
+        menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
+        menu.add(0, MENU_QUIT_ID, 0, "Beenden");
         return super.onCreateOptionsMenu(menu);
     }
 

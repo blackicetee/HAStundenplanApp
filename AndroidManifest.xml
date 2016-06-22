@@ -12,7 +12,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileDataActivity" android:label="Profil Daten"/>
-        <activity android:name=".SettingsActivity" android:label="Settings"/>
+        <activity android:name=".ProfileDataActivity" android:label="Meine Daten"/>
+        <activity android:name=".SettingsActivity" android:label="Einstellungen"/>
     </application>
 </manifest>
