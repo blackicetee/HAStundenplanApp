@@ -29,6 +29,7 @@ public interface ScheduleAPI {
     void setShareOptions(String shareOptions);
     String getShareOptions();
     //Show homework || show lessons || show tests || show exams || show other
+    //enumaration nehmen
     void setFilterOption(String filterOption);
     String getFilterOtion();
     //Hierarchical group || linear group ??
@@ -63,7 +64,7 @@ public interface ScheduleAPI {
     void setLessonTime(String lessonTime);
     String getLessonPlace();
     void setLessonPlace(String lessonPlace);
-    void destroyLessonGroup();
+    void deleteLessonGroup();
     //void addContentToLessonGroup(String title, String type, Byte imagesAndDocuments);
     //Byte getContentFromLessonGroup(String title, String type);
     //How does a Peer look at application surface ?
@@ -88,12 +89,13 @@ public interface ScheduleAPI {
     void addFeedBack(String feedBackDescription);
     List<String> showAllFeedBacks();
     //0 == not helpful, 1 == partly helpful, 2 good/helpful
+    //Enumeratioin
     void addEvaluation(Integer evaluationNumber);
     List<Integer> getEvaluations();
     Double calculateEvaluation();
 
     //__________________________________________________________________________________________________________________
-
+    //Klassenmodell wie hängt das alles zusammen beschreiben sie Interfaces!?
     //HOMEWORK implements LessonEvent
     //with owner or without ??
     Homework createHomework(String owner, String name, String lessonName, String deadline);
