@@ -52,9 +52,9 @@ public interface ScheduleAPI {
      */
     //Factory ?? ClassGroup is a Factory of LessonGroups ?
     //Static Factory !? Tests with one client could be problematic
-    ClassGroup createClassGroup(String className);
-    LessonGroup createLessonGroup(String lessonName, String lessonTime, String lessonPlace);
-    List<LessonGroup> getAllLessonGroups();
+    //ClassGroup createClassGroup(String className);
+    //LessonGroup createLessonGroup(String lessonName, String lessonTime, String lessonPlace);
+    //List<LessonGroup> getAllLessonGroups();
 
 
     //LessonGroup
@@ -72,9 +72,9 @@ public interface ScheduleAPI {
     void deleteMemberFromLessonGroup(String somePeer);
     List<String> showAllMembersOfTheLessonGroup();
     void createChatForLessonGroup();
-    void addLessonEventToLessonGroup(String lessonEventName, LessonEvent lessonEvent);
-    LessonEvent getLessonEventFromLessonGroup(String lessonEventName);
-    List<LessonEvent> getAllLessonEventsFromLessonGroup();
+    //void addLessonEventToLessonGroup(String lessonEventName, LessonEvent lessonEvent);
+    //LessonEvent getLessonEventFromLessonGroup(String lessonEventName);
+    //List<LessonEvent> getAllLessonEventsFromLessonGroup();
     void deleteLessonEventFromLessonGroup(String lessonEventName);
     void shareLessonEventToMembers(String lessonEventName);
     //__________________________________________________________________________________________________________________
@@ -98,12 +98,12 @@ public interface ScheduleAPI {
     //Klassenmodell wie hängt das alles zusammen beschreiben sie Interfaces!?
     //HOMEWORK implements LessonEvent
     //with owner or without ??
-    Homework createHomework(String owner, String name, String lessonName, String deadline);
-    Homework createHomework(String owner, String name, String lessonName, String deadline, String description);
+    //Homework createHomework(String owner, String name, String lessonName, String deadline);
+    //Homework createHomework(String owner, String name, String lessonName, String deadline, String description);
     //__________________________________________________________________________________________________________________
 
     //TEST implements LessonEvent
-    Test createTest(String owner, String testName, String deadline);
+    //Test createTest(String owner, String testName, String deadline);
 
     //__________________________________________________________________________________________________________________
 
