@@ -11,14 +11,15 @@ import java.util.List;
  */
 
 public class ImplLesson implements Lesson {
+    private String lessonName = null;
     private String teacher = null;
     private String location = null;
     private List<Appointment> appointments = new ArrayList<>();
     private Date lessonTerminationDate = null;
     private Chat chat = null;
 
-    ImplLesson(Chat chat) {
-        this.chat = chat;
+    ImplLesson() {
+
     }
 
     //This constructor is for unique events/lessons like sports meeting or cake sale.
@@ -30,12 +31,23 @@ public class ImplLesson implements Lesson {
         this.chat = chat;
     }
 
-    ImplLesson(String teacher, String location, List<Appointment> appointments, Date lessonTerminationDate, Chat chat) {
+    ImplLesson(String lessonName, String teacher, String location, List<Appointment> appointments, Date lessonTerminationDate, Chat chat) {
+        this.lessonName = lessonName;
         this.teacher = teacher;
         this.location = location;
         this.appointments = appointments;
         this.lessonTerminationDate = lessonTerminationDate;
         this.chat = chat;
+    }
+
+    @Override
+    public String getLessonName() {
+        return lessonName;
+    }
+
+    @Override
+    public void setLessonName(String lessonName) {
+        this.lessonName = lessonName;
     }
 
     @Override

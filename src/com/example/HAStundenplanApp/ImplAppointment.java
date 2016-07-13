@@ -1,5 +1,7 @@
 package com.example.HAStundenplanApp;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -34,32 +36,49 @@ import java.util.Date;
  diffDays+" days.");
  */
 public class ImplAppointment implements Appointment {
-    //the lesson occurs at these weekdays:
-    //Math lecture at Monday, Tuesday and Friday
-    //ImplWeekdays are represented as BitSet Bit 0 is Monday and Bit 6 of the BitSet is Sunday
-    private ImplWeekdays weekdays = null;
+/**
+    public static void main(String[] args) {
+        Calendar start = Calendar.getInstance();
+        Calendar end = Calendar.getInstance();
+        start.set(Calendar.HOUR_OF_DAY,8);
+        start.set(Calendar.MINUTE,0);
+        start.set(Calendar.SECOND,0);
+        start.set(2016, 7, 23);
+        end.set(2016, 8, 26);
+        Date startDate = start.getTime();
+        long timeAsString = startDate.getTime();
+        Date newDate = new Date(timeAsString);
+        Date endDate = end.getTime();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(startDate);
+        System.out.println("date:" + newDate.toString());
+        System.out.println("uhrzeit: " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
+    }*/
+
+    //Weekday where the Appointment takes place
+    private Weekday weekday = null;
     //start time of a lesson: Math starts at 08:00
     private Date startTime = null;
     //Duration of a lesson: Math lasts 90 minutes
     private int duration = 0;
-    //period of a lesson 0 = occurs every week and 1 = occurs every 2 weeks
-    private int period = 0;
+    //period of a lesson: 0 = unique Appointment like sports meeting, 1 = occurs every week, 2 = occurs every 2 weeks, 4 occurs one time in a month
+    private int period = 1;
 
-    public ImplAppointment(ImplWeekdays weekdays, Date startTime, int duration, int period) {
-        this.weekdays = weekdays;
+    public ImplAppointment(Weekday weekday, Date startTime, int duration, int period) {
+        this.weekday = weekday;
         this.startTime = startTime;
         this.duration = duration;
         this.period = period;
     }
 
     @Override
-    public ImplWeekdays getWeekdays() {
-        return weekdays;
+    public Weekday getWeekday() {
+        return weekday;
     }
 
     @Override
-    public void setWeekdays(ImplWeekdays weekdays) {
-        this.weekdays = weekdays;
+    public void setWeekday(Weekday weekday) {
+        this.weekday = weekday;
     }
 
     @Override

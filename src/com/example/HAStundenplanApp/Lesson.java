@@ -29,26 +29,37 @@ import java.util.List;
  */
 public interface Lesson {
     /**
-     * Returns the class teacher of the students.
-     * @return The class teacher.
+     * Returns name of lesson(e.g. German).
+     * @return Name of lesson.
+     */
+    String getLessonName();
+
+    /**
+     * Sets name of lesson.
+     * @param lessonName Name of the lesson.
+     */
+    void setLessonName(String lessonName);
+    /**
+     * Returns class teacher of students.
+     * @return Class teacher.
      */
     String getTeacher();
 
     /**
-     * Sets the class teacher of the students.
-     * @param teacher The class teacher.
+     * Sets class teacher of students.
+     * @param teacher Class teacher.
      */
     void setTeacher(String teacher);
 
     /**
-     * Returns the location where the lesson will be located.
-     * @return Location of the lesson.
+     * Returns location where lesson will be located.
+     * @return Location of lesson.
      */
     String getLocation();
 
     /**
-     * Sets the location(often a room) of the lesson.
-     * @param  location of the lesson.
+     * Sets location(often a room) of lesson.
+     * @param  location Location of the lesson.
      */
     void setLocation(String location);
 
@@ -65,25 +76,25 @@ public interface Lesson {
     void setAppointments(List<Appointment> appointments);
 
     /**
-     * Returns the date where the lesson will terminate.
-     * @return Termination date of the lesson.
+     * Returns date where lesson will terminate.
+     * @return Termination date of lesson.
      */
     Date getLessonTerminationDate();
 
     /**
-     * Sets the termination date of a lesson.
-     * @param lessonTerminationDate The termination date of a lesson.
+     * Sets termination date of a lesson.
+     * @param lessonTerminationDate Termination date of a lesson.
      */
     void setLessonTerminationDate(Date lessonTerminationDate);
 
     /**
-     * Returns the Chat of this lesson.
+     * Returns Chat of this lesson.
      * @return Chat of this lesson.
      */
     Chat getChat();
 
     /**
-     * Sets the Chat of this lesson.
+     * Sets Chat of this lesson.
      * @param chat Chat of this lesson.
      */
     void setChat(Chat chat);

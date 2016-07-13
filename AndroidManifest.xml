@@ -14,5 +14,15 @@
         </activity>
         <activity android:name=".ProfileDataActivity" android:label="Meine Daten"/>
         <activity android:name=".SettingsActivity" android:label="Einstellungen"/>
+        <activity android:name=".AddLessonActivity" android:label="Unterrichtsstunde hinzufügen"/>
+        <activity android:name=".ScheduleActivity" android:label="Stundenplan"/>
+        <activity android:name=".AddLessonActivities.LessonNameActivity" android:label="Name der Unterrichtsstunde"/>
+        <activity android:name=".AddLessonActivities.TeacherNameActivity" android:label="Name des Lehrers"/>
+        <activity android:name=".AddLessonActivities.LocationActivity"
+                  android:label="Raum oder Ort der Unterrichtsstunde"/>
+        <activity android:name=".AddLessonActivities.LessonTerminationDateActivity"
+                  android:label="Letzte Unterrichtsstunde vor den Ferien"/>
+        <activity android:name=".AddLessonActivities.AppointmentAmountActivity"
+                  android:label="Wie oft hast du diese Unterrichtsstunde pro Woche?"/>
     </application>
 </manifest>
