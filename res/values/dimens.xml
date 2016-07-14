@@ -2,4 +2,5 @@
 <resources>
     <dimen name="profiledatatext">20dp</dimen>
     <dimen name="textSizeHA">20dp</dimen>
+    <dimen name="topMarginDefault">30dp</dimen>
 </resources>

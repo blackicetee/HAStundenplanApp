@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.example.HAStundenplanApp.AddLessonActivities.*;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
@@ -19,7 +20,9 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
     private String lessonName = null;
     private String teacherName = null;
     private String location = null;
-    private long lessonTerminationDate = 0;
+    private int lessonTerminationDateDay = 0;
+    private int lessonTerminationDateMonth = 0;
+    private int lessonTerminationDateYear = 0;
     private int appointmentAmount = 0;
 
     private Button btnLessonName;
@@ -52,19 +55,45 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.btnLessonName:
                 Intent lessonNameIntent = new Intent(this, LessonNameActivity.class);
-                startActivityForResult(lessonNameIntent, 0);
+                if (lessonName == null) {
+                    startActivityForResult(lessonNameIntent, 0);
+                }
+                else {
+                    lessonNameIntent.putExtra("lessonName", lessonName);
+                    startActivityForResult(lessonNameIntent, 0);
+                }
                 break;
             case R.id.btnTeacherName:
                 Intent teacherNameIntent = new Intent(this, TeacherNameActivity.class);
-                startActivityForResult(teacherNameIntent, 1);
+                if (teacherName == null) {
+                    startActivityForResult(teacherNameIntent, 1);
+                }
+                else {
+                    teacherNameIntent.putExtra("teacherName", teacherName);
+                    startActivityForResult(teacherNameIntent, 1);
+                }
                 break;
             case R.id.btnLocation:
                 Intent locationIntent = new Intent(this, LocationActivity.class);
-                startActivityForResult(locationIntent, 2);
+                if (location == null) {
+                    startActivityForResult(locationIntent, 2);
+                }
+                else {
+                    locationIntent.putExtra("location", location);
+                    startActivityForResult(locationIntent, 2);
+                }
                 break;
             case R.id.btnLessonTerminationDate:
                 Intent lessonTerminationDateIntent = new Intent(this, LessonTerminationDateActivity.class);
-                startActivityForResult(lessonTerminationDateIntent, 3);
+                if (lessonTerminationDateYear == 0) {
+                    startActivityForResult(lessonTerminationDateIntent, 3);
+                }
+                else {
+                    lessonTerminationDateIntent.putExtra("lessonTerminationDateDay", lessonTerminationDateDay);
+                    lessonTerminationDateIntent.putExtra("lessonTerminationDateMonth", lessonTerminationDateMonth);
+                    lessonTerminationDateIntent.putExtra("lessonTerminationDateYear", lessonTerminationDateYear);
+                    startActivityForResult(lessonTerminationDateIntent, 3);
+                }
                 break;
             case R.id.btnAppointmentAmount:
                 Intent appointmentAmountIntent = new Intent(this, AppointmentAmountActivity.class);
@@ -78,7 +107,7 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         if (requestCode == 0) {
             if(resultCode == Activity.RESULT_OK){
                 lessonName = data.getStringExtra("lessonName");
-                String newBtnText = btnLessonName.getText().toString() + ": " + lessonName;
+                String newBtnText = "Unterrichtsstunde: " + lessonName;
                 btnLessonName.setText(newBtnText);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -88,6 +117,8 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 teacherName = data.getStringExtra("teacherName");
+                String newBtnText = "Lehrer: " + teacherName;
+                btnTeacherName.setText(newBtnText);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(this, "Der Vorgang: \"Benenne den Lehrer der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
@@ -96,14 +127,20 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         if (requestCode == 2) {
             if(resultCode == Activity.RESULT_OK){
                 location = data.getStringExtra("location");
+                String newBtnText = "Raum/Ort: " + location;
+                btnLocation.setText(newBtnText);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(this, "Der Vorgang: \"Benenne den Ort/Raum der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Der Vorgang: \"Benenne den Raum/Ort der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
             }
         }
         if (requestCode == 3) {
             if(resultCode == Activity.RESULT_OK){
-                lessonTerminationDate = data.getLongExtra("lessonTerminationDate", 0);
+                lessonTerminationDateDay = data.getIntExtra("lessonTerminationDateDay", 0);
+                lessonTerminationDateMonth = data.getIntExtra("lessonTerminationDateMonth", 0);
+                lessonTerminationDateYear = data.getIntExtra("lessonTerminationDateYear", 0);
+                String newBtnText = "Letzte Stunde am: " + lessonTerminationDateDay + "." + (lessonTerminationDateMonth+1) + "." + lessonTerminationDateYear;
+                btnLessonTerminationDate.setText(newBtnText);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(this, "Der Vorgang: \"Benenne das Datum der letzten Unterrichtsstunde vor den Ferien\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
@@ -112,6 +149,8 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         if (requestCode == 4) {
             if(resultCode == Activity.RESULT_OK){
                 appointmentAmount = data.getIntExtra("appointmentAmount", 0);
+                String newBtnText = "Anzahl Wochenstunden: " + appointmentAmount;
+                btnAppointmentAmount.setText(newBtnText);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(this, "Der Vorgang: \"Benenne die Anzahl der Unterrichtsstunden pro Woche\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
@@ -125,7 +164,9 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
             returnIntent.putExtra("lessonName", lessonName);
             returnIntent.putExtra("teacherName", teacherName);
             returnIntent.putExtra("location", location);
-            returnIntent.putExtra("lessonTerminationDate", lessonTerminationDate);
+            returnIntent.putExtra("lessonTerminationDateDay", lessonTerminationDateDay);
+            returnIntent.putExtra("lessonTerminationDateMonth", lessonTerminationDateMonth);
+            returnIntent.putExtra("lessonTerminationDateYear", lessonTerminationDateYear);
             returnIntent.putExtra("appointmentAmount", appointmentAmount);
             setResult(Activity.RESULT_OK, returnIntent);
             finish();
