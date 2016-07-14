@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.example.HAStundenplanApp.AddLessonActivities.*;
+import android.widget.LinearLayout.LayoutParams;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Formatter;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * Created by Thilo S. on 13.07.2016.
@@ -30,6 +30,8 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
     private Button btnLocation;
     private Button btnLessonTerminationDate;
     private Button btnAppointmentAmount;
+    private List<Button> appointmentButtons = new ArrayList<>();
+    private boolean buttonON = false;
 
 
     @Override
@@ -148,9 +150,34 @@ public class AddLessonActivity extends Activity implements View.OnClickListener 
         }
         if (requestCode == 4) {
             if(resultCode == Activity.RESULT_OK){
+                LinearLayout layout = (LinearLayout) findViewById(R.id.appointmentButtonContainer);
+                layout.setOrientation(LinearLayout.VERTICAL);
+
+                if (buttonON) {
+                    for (int i = 0; i < appointmentAmount; i++) {
+                        Button btn = appointmentButtons.get(i);
+                        layout.removeView(btn);
+                    }
+                    appointmentButtons.clear();
+                    buttonON = false;
+                }
+
                 appointmentAmount = data.getIntExtra("appointmentAmount", 0);
                 String newBtnText = "Anzahl Wochenstunden: " + appointmentAmount;
                 btnAppointmentAmount.setText(newBtnText);
+
+                if (!buttonON) {
+                    for (int i = 0; i < appointmentAmount; i++) {
+                        Button btnTag = new Button(this);
+                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                        String btnText = "Termin " + (1 + (i));
+                        btnTag.setText(btnText);
+                        btnTag.setId(1 + i);
+                        appointmentButtons.add(btnTag);
+                        layout.addView(btnTag);
+                    }
+                    buttonON = true;
+                }
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(this, "Der Vorgang: \"Benenne die Anzahl der Unterrichtsstunden pro Woche\" wurde abgebrochen!", Toast.LENGTH_LONG).show();

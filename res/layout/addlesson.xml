@@ -3,10 +3,6 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:weightSum="1">
-
-    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
-                  android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
-    </LinearLayout>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,5 +22,17 @@
             android:layout_height="wrap_content"
             android:text="Wie oft hast du diese Unterrichtsstunde pro Woche?"
             android:id="@+id/btnAppointmentAmount" android:layout_gravity="center_horizontal"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+                  android:id="@+id/appointmentButtonContainer">
+    </LinearLayout>
+
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speichern"
+            android:id="@+id/btnSaveLesson" android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/topMarginDefault"/>
 
 </LinearLayout>

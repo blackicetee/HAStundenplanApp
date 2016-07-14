@@ -24,5 +24,6 @@
                   android:label="Letzte Unterrichtsstunde vor den Ferien"/>
         <activity android:name=".AddLessonActivities.AppointmentAmountActivity"
                   android:label="Wie oft hast du diese Unterrichtsstunde pro Woche?"/>
+        <activity android:name=".ConfigureScheduleViewActivity" android:label="Stundenplan anpassen"/>
     </application>
 </manifest>
