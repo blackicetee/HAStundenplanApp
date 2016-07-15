@@ -37,4 +37,22 @@
         <item>Teile nur auf Nachfrage</item>
         <item>Teile garnicht</item>
     </string-array>
+
+    <string name="Montag">Montag</string>
+    <string name="Dienstag">Dienstag</string>
+    <string name="Mittwoch">Mittwoch</string>
+    <string name="Donnerstag">Donnerstag</string>
+    <string name="Freitag">Freitag</string>
+    <string name="Samstag">Samstag</string>
+    <string name="Sonntag">Sonntag</string>
+
+    <string name="Fach">Fach</string>
+    <string name="Lehrer">Lehrer</string>
+    <string name="Raum">Raum</string>
+    <string name="Woche">wöchentlich</string>
+
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="buttonTextColor">#ff000000</color>
+    <color name="buttonBackgroundColor">#ffffffff</color>
 </resources>

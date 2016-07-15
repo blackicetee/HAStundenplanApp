@@ -2,60 +2,279 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:weightSum="1">
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:weightSum="1">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Montag"
-            android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
+            android:text="@string/Montag"
+            android:textColor="@color/black"
+            android:id="@+id/tvMonday" android:layout_gravity="center_horizontal" android:textSize="@dimen/textSizeHA"/>
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/scrollView" android:layout_gravity="center_horizontal" android:fillViewport="false">
         <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
-                      android:layout_height="match_parent" android:weightSum="1">
+                      android:layout_height="wrap_content" android:weightSum="1">
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                           android:layout_height="@dimen/defaultLayoutHeightDailyView" android:layout_gravity="center_horizontal"
                           android:weightSum="1">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="07:00"
-                          android:id="@+id/textView4"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="@dimen/layoutTimeWidth"
+                        android:background="@drawable/my_button_bg"
+                        android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="06:00"
+                              android:textColor="@color/black"
+                              android:id="@+id/tvStartLessonOne" android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonOne"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button13"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonOneLesson"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button14"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonOneTeacher"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button15"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonOneRoom"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button16"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonOnePeriod"/>
             </LinearLayout>
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                           android:layout_height="@dimen/defaultLayoutHeightDailyView" android:layout_gravity="center_horizontal"
                           android:weightSum="1">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7:00"
-                          android:id="@+id/textView5"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:30" android:id="@+id/tvStartLessonTwo"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonTwo"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button17"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonTwoLesson"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button18"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonTwoTeacher"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button19"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonTwoRoom"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button20"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonTwoPeriod"/>
             </LinearLayout>
             <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                           android:layout_height="@dimen/defaultLayoutHeightDailyView" android:layout_gravity="center_horizontal"
                           android:weightSum="1" android:layout_weight="0.17">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7:00"
-                          android:id="@+id/textView6"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonThree"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonThree"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button21"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonThreeLesson"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button22"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonThreeTeacher"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button23"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonThreeRoom"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
-                        android:text="New Button" android:id="@+id/button24"/>
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonThreePeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonFour"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonFour"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonFourLesson"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonFourTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonFourRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonFourPeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonFIve"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonFive"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonFiveLesson"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonFiveTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonFiveRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonFivePeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonSix"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonSix"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonSixLesson"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonSixTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonSixRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonSixPeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonSeven"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonSeven"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Fach" android:id="@+id/btnLessonSevenLesson"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonSevenTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonSevenRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonSevenPeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/my_button_bg"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvStartLessonEight"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="07:00" android:id="@+id/tvEndLessonEight"
+                              android:textColor="@color/black"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="Lesson" android:id="@+id/btnLessonEightLesson"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Lehrer" android:id="@+id/btnLessonEightTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Raum" android:id="@+id/btnLessonEightRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/my_button_bg"
+                        android:text="@string/Woche" android:id="@+id/btnLessonEightPeriod"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

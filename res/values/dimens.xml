@@ -3,6 +3,8 @@
     <dimen name="profiledatatext">20dp</dimen>
     <dimen name="textSizeHA">20dp</dimen>
     <dimen name="topMarginDefault">30dp</dimen>
-    <dimen name="defaultButtonWidthDailyView">90dp</dimen>
-    <dimen name="defaultLayoutHeightDailyView">75dp</dimen>
+    <dimen name="defaultButtonWidthDailyView">85dp</dimen>
+    <dimen name="defaultLayoutHeightDailyView">70dp</dimen>
+    <dimen name="layoutTimeWidth">40dp</dimen>
+    <dimen name="layoutTimeTopMargin">13dp</dimen>
 </resources>
