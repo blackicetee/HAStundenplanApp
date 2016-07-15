@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureMondayActivity;
 
 public class MainActivity extends Activity {
 
     private static final int MENU_CREATE_PROFILE_ID = 0;
     private static final int MENU_SCHEDULE_ID = 1;
+    private static final int MENU_CONFIGURE_SCHEDULE_ID = 2;
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
@@ -24,6 +26,7 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main_activity, menu);
         menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
         menu.add(0, MENU_SCHEDULE_ID, 0, "Stundenplan");
+        menu.add(0, MENU_CONFIGURE_SCHEDULE_ID, 0, "Wochen Stundenplan");
         menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
         menu.add(0, MENU_QUIT_ID, 0, "Beenden");
         return super.onCreateOptionsMenu(menu);
@@ -39,6 +42,10 @@ public class MainActivity extends Activity {
             case MENU_SCHEDULE_ID:
                 Intent scheduleIntent = new Intent(this, ScheduleActivity.class);
                 startActivityForResult(scheduleIntent, 0);
+            case MENU_CONFIGURE_SCHEDULE_ID:
+                Intent configureScheduleIntent = new Intent(this, ConfigureMondayActivity.class);
+                startActivityForResult(configureScheduleIntent, MENU_CONFIGURE_SCHEDULE_ID);
+                break;
             case MENU_SETTINGS_ID:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivityForResult(settingsIntent, 0);

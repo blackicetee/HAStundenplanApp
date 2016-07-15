@@ -25,5 +25,9 @@
         <activity android:name=".AddLessonActivities.AppointmentAmountActivity"
                   android:label="Wie oft hast du diese Unterrichtsstunde pro Woche?"/>
         <activity android:name=".ConfigureScheduleViewActivity" android:label="Stundenplan anpassen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureMondayActivity"
+                  android:label="Stundenplan für Montag anpassen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseLesson"
+                  android:label="Titel das Fachs auswählen"/>
     </application>
 </manifest>

@@ -38,7 +38,7 @@
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
                         android:textColor="@color/buttonTextColor"
                         android:background="@drawable/my_button_bg"
-                        android:text="@string/Fach" android:id="@+id/btnLessonOneLesson"/>
+                        android:text="@string/Fach" android:id="@+id/btnLessonOneMontag"/>
                 <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="match_parent"
                         android:textColor="@color/buttonTextColor"
                         android:background="@drawable/my_button_bg"
