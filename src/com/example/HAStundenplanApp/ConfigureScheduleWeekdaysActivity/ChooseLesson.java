@@ -1,15 +1,18 @@
 package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import com.example.HAStundenplanApp.Configuration;
 import com.example.HAStundenplanApp.DummyConfiguration;
 import com.example.HAStundenplanApp.R;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -36,7 +39,15 @@ public class ChooseLesson extends Activity {
             btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             String btnText = lessonNames.get(i);
             btnTag.setText(btnText);
-            btnTag.setId(1 + i);
+            btnTag.setId(i);
+            btnTag.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("lessonName", lessonNames.get(v.getId()));
+                    setResult(Activity.RESULT_OK, returnIntent);
+                    finish();
+                }
+            });
             lessonNameButtons.add(btnTag);
             layout.addView(btnTag);
         }

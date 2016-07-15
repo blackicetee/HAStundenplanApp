@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import com.example.HAStundenplanApp.R;
 
 /**
@@ -53,6 +54,20 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
                 Intent lessonOneLessonIntent = new Intent(this, ChooseLesson.class);
                 startActivityForResult(lessonOneLessonIntent, 11);
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 11) {
+            if(resultCode == Activity.RESULT_OK){
+                String lessonName = data.getStringExtra("lessonName");
+                String newBtnText = lessonName;
+                btnLessonOneLesson.setText(newBtnText);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(this, "Der Vorgang: \"Benenne die Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
