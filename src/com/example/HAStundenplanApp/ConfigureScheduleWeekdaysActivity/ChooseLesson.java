@@ -30,7 +30,7 @@ public class ChooseLesson extends Activity {
 
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.lessonNamesContainer);
-        
+
         for (int i = 0; i < lessonNames.size(); i++) {
             Button btnTag = new Button(this);
             btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
