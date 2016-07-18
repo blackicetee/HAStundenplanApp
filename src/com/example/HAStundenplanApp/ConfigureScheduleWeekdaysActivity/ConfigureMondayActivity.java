@@ -20,7 +20,19 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
     private String[] mondayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] mondayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] mondayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] mondayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
+    
+    public static final String CANCEL_MSG_CHOOSE_LESSON = "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!";
+    public static final String CANCEL_MSG_CHOOSE_TEACHER = "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!";
+    public static final String CANCEL_MSG_CHOOSE_ROOM = "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!";
+    public static final String CANCEL_MSG_CHOOSE_PERIOD = "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!";
+    private static final String CANCEL_MSG_CONFIGURE_TUESDAY = "Der Vorgang: \"Erstellen des Stundenplans am Dienstag\" wurde abgebrochen!";
 
+    public static final String MONDAY_LESSON_NAMES = "mondayLessonNames";
+    public static final String MONDAY_TEACHER_NAMES = "mondayTeachers";
+    public static final String MONDAY_ROOMS = "mondayRooms";
+    public static final String MONDAY_PERIODS = "mondayPeriods";
+    
     private Button btnMondayLessonZeroLessonName;
     private Button btnMondayLessonOneLessonName;
     private Button btnMondayLessonTwoLessonName;
@@ -53,6 +65,19 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
     private Button btnMondayLessonSevenRoom;
     private Button btnMondayLessonEightRoom;
     private Button btnMondayLessonNineRoom;
+
+    private Button btnMondayLessonZeroPeriod;
+    private Button btnMondayLessonOnePeriod;
+    private Button btnMondayLessonTwoPeriod;
+    private Button btnMondayLessonThreePeriod;
+    private Button btnMondayLessonFourPeriod;
+    private Button btnMondayLessonFivePeriod;
+    private Button btnMondayLessonSixPeriod;
+    private Button btnMondayLessonSevenPeriod;
+    private Button btnMondayLessonEightPeriod;
+    private Button btnMondayLessonNinePeriod;
+
+    private Button btnMondaySave;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,6 +149,35 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         btnMondayLessonSevenRoom.setOnClickListener(this);
         btnMondayLessonEightRoom.setOnClickListener(this);
         btnMondayLessonNineRoom.setOnClickListener(this);
+
+        btnMondayLessonZeroPeriod = (Button) findViewById(R.id.btnMondayLessonZeroPeriod);
+        btnMondayLessonOnePeriod = (Button) findViewById(R.id.btnMondayLessonOnePeriod);
+        btnMondayLessonTwoPeriod = (Button) findViewById(R.id.btnMondayLessonTwoPeriod);
+        btnMondayLessonThreePeriod = (Button) findViewById(R.id.btnMondayLessonThreePeriod);
+        btnMondayLessonFourPeriod = (Button) findViewById(R.id.btnMondayLessonFourPeriod);
+        btnMondayLessonFivePeriod = (Button) findViewById(R.id.btnMondayLessonFivePeriod);
+        btnMondayLessonSixPeriod = (Button) findViewById(R.id.btnMondayLessonSixPeriod);
+        btnMondayLessonSevenPeriod = (Button) findViewById(R.id.btnMondayLessonSevenPeriod);
+        btnMondayLessonEightPeriod = (Button) findViewById(R.id.btnMondayLessonEightPeriod);
+        btnMondayLessonNinePeriod = (Button) findViewById(R.id.btnMondayLessonNinePeriod);
+
+        btnMondayLessonZeroPeriod.setOnClickListener(this);
+        btnMondayLessonOnePeriod.setOnClickListener(this);
+        btnMondayLessonTwoPeriod.setOnClickListener(this);
+        btnMondayLessonThreePeriod.setOnClickListener(this);
+        btnMondayLessonFourPeriod.setOnClickListener(this);
+        btnMondayLessonFivePeriod.setOnClickListener(this);
+        btnMondayLessonSixPeriod.setOnClickListener(this);
+        btnMondayLessonSevenPeriod.setOnClickListener(this);
+        btnMondayLessonEightPeriod.setOnClickListener(this);
+        btnMondayLessonNinePeriod.setOnClickListener(this);
+
+        btnMondaySave = (Button) findViewById(R.id.btnMondaySave);
+        btnMondaySave.setOnClickListener(this);
+    }
+
+    private boolean checkScheduleRow(int row) {
+        return !mondayLessonNames[row].equals("") && !mondayTeachers[row].equals("") && !mondayRooms[row].equals("");
     }
 
     @Override
@@ -131,7 +185,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         Intent mondayLessonNameIntent = new Intent(this, ChooseLesson.class);
         Intent mondayTeacherIntent = new Intent(this, ChooseTeacher.class);
         Intent mondayRoomIntent = new Intent(this, ChooseRoom.class);
-
+        Intent mondayPeriodIntent = new Intent(this, ChoosePeriod.class);
         switch (v.getId()) {
             case R.id.btnMondayLessonZeroLessonName:
                 startActivityForResult(mondayLessonNameIntent, 10);
@@ -223,6 +277,40 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
             case R.id.btnMondayLessonNineRoom:
                 startActivityForResult(mondayRoomIntent, 39);
                 break;
+            case R.id.btnMondayLessonZeroPeriod:
+                startActivityForResult(mondayPeriodIntent, 40);
+                break;
+            case R.id.btnMondayLessonOnePeriod:
+                startActivityForResult(mondayPeriodIntent, 41);
+                break;
+            case R.id.btnMondayLessonTwoPeriod:
+                startActivityForResult(mondayPeriodIntent, 42);
+                break;
+            case R.id.btnMondayLessonThreePeriod:
+                startActivityForResult(mondayPeriodIntent, 44);
+                break;
+            case R.id.btnMondayLessonFourPeriod:
+                startActivityForResult(mondayPeriodIntent, 44);
+                break;
+            case R.id.btnMondayLessonFivePeriod:
+                startActivityForResult(mondayPeriodIntent, 45);
+                break;
+            case R.id.btnMondayLessonSixPeriod:
+                startActivityForResult(mondayPeriodIntent, 46);
+                break;
+            case R.id.btnMondayLessonSevenPeriod:
+                startActivityForResult(mondayPeriodIntent, 47);
+                break;
+            case R.id.btnMondayLessonEightPeriod:
+                startActivityForResult(mondayPeriodIntent, 48);
+                break;
+            case R.id.btnMondayLessonNinePeriod:
+                startActivityForResult(mondayPeriodIntent, 49);
+                break;
+            case R.id.btnMondaySave:
+                Intent configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
+                startActivityForResult(configureScheduleIntent, 100);
+                break;
         }
     }
 
@@ -231,243 +319,335 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         switch (requestCode) {
             case 10:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonZeroLessonName.setText(mondayLessonName);
                     mondayLessonNames[0] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 11:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonOneLessonName.setText(mondayLessonName);
                     mondayLessonNames[1] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 12:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonTwoLessonName.setText(mondayLessonName);
                     mondayLessonNames[2] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 13:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonThreeLessonName.setText(mondayLessonName);
                     mondayLessonNames[3] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 14:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonFourLessonName.setText(mondayLessonName);
                     mondayLessonNames[4] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 15:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonFiveLessonName.setText(mondayLessonName);
                     mondayLessonNames[5] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 16:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonSixLessonName.setText(mondayLessonName);
                     mondayLessonNames[6] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 17:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonSevenLessonName.setText(mondayLessonName);
                     mondayLessonNames[7] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 18:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonEightLessonName.setText(mondayLessonName);
                     mondayLessonNames[8] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 19:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayLessonName = data.getStringExtra("lessonName");
+                    String mondayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                     btnMondayLessonNineLessonName.setText(mondayLessonName);
                     mondayLessonNames[9] = mondayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 20:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonZeroTeacher.setText(mondayTeacher);
                     mondayTeachers[0] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 21:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonOneTeacher.setText(mondayTeacher);
                     mondayTeachers[1] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 22:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonTwoTeacher.setText(mondayTeacher);
                     mondayTeachers[2] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 23:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonThreeTeacher.setText(mondayTeacher);
                     mondayTeachers[3] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 24:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonFourTeacher.setText(mondayTeacher);
                     mondayTeachers[4] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 25:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonFiveTeacher.setText(mondayTeacher);
                     mondayTeachers[5] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 26:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonSixTeacher.setText(mondayTeacher);
                     mondayTeachers[6] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 27:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonSevenTeacher.setText(mondayTeacher);
                     mondayTeachers[7] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 28:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonEightTeacher.setText(mondayTeacher);
                     mondayTeachers[8] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 29:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayTeacher = data.getStringExtra("teacher");
+                    String mondayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                     btnMondayLessonNineTeacher.setText(mondayTeacher);
                     mondayTeachers[9] = mondayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 30:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonZeroRoom.setText(mondayRoom);
                     mondayRooms[0] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 31:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonOneRoom.setText(mondayRoom);
                     mondayRooms[1] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 32:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonTwoRoom.setText(mondayRoom);
                     mondayRooms[2] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 33:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonThreeRoom.setText(mondayRoom);
                     mondayRooms[3] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 34:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonFourRoom.setText(mondayRoom);
                     mondayRooms[4] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 35:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonFiveRoom.setText(mondayRoom);
                     mondayRooms[5] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 36:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonSixRoom.setText(mondayRoom);
                     mondayRooms[6] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 37:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonSevenRoom.setText(mondayRoom);
                     mondayRooms[7] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 38:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonEightRoom.setText(mondayRoom);
                     mondayRooms[8] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 39:
                 if(resultCode == Activity.RESULT_OK){
-                    String mondayRoom = data.getStringExtra("room");
+                    String mondayRoom = data.getStringExtra(ChooseRoom.ROOM);
                     btnMondayLessonNineRoom.setText(mondayRoom);
                     mondayRooms[9] = mondayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
+                break;
+
+            case 40:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonZeroPeriod.setText(mondayPeriod);
+                    mondayPeriods[0] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 41:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonOnePeriod.setText(mondayPeriod);
+                    mondayPeriods[1] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 42:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonTwoPeriod.setText(mondayPeriod);
+                    mondayPeriods[2] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 43:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonThreePeriod.setText(mondayPeriod);
+                    mondayPeriods[3] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 44:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonFourPeriod.setText(mondayPeriod);
+                    mondayPeriods[4] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 45:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonFivePeriod.setText(mondayPeriod);
+                    mondayPeriods[5] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 46:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonSixPeriod.setText(mondayPeriod);
+                    mondayPeriods[6] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 47:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonSevenPeriod.setText(mondayPeriod);
+                    mondayPeriods[7] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 48:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonEightPeriod.setText(mondayPeriod);
+                    mondayPeriods[8] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 49:
+                if(resultCode == Activity.RESULT_OK){
+                    String mondayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                    btnMondayLessonNinePeriod.setText(mondayPeriod);
+                    mondayPeriods[9] = mondayPeriod;
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
+                break;
+            case 100:
+                if(resultCode == Activity.RESULT_OK){
+                    data.putExtra(MONDAY_LESSON_NAMES, mondayLessonNames);
+                    data.putExtra(MONDAY_TEACHER_NAMES, mondayTeachers);
+                    data.putExtra(MONDAY_ROOMS, mondayRooms);
+                    data.putExtra(MONDAY_PERIODS, mondayPeriods);
+                    setResult(Activity.RESULT_OK, data);
+                    finish();
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CONFIGURE_TUESDAY, Toast.LENGTH_LONG).show();}
                 break;
         }
     }

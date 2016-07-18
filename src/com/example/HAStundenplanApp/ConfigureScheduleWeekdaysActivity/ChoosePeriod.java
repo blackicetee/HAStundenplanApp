@@ -10,41 +10,38 @@ import com.example.HAStundenplanApp.Configuration;
 import com.example.HAStundenplanApp.DummyConfiguration;
 import com.example.HAStundenplanApp.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Thilo S. on 18.07.2016.
  */
-public class ChooseTeacher extends Activity {
-    public static final String TEACHER_NAME = "teacher";
-    private List<String> teachers;
-
+public class ChoosePeriod extends Activity {
+    public static final String PERIOD = "Period";
+    private List<String> period = new ArrayList<>(Arrays.asList("wöchentlich", "zwei wöchentlich", "monatlich"));
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_teacher);
+        setContentView(R.layout.choose_period);
 
-        DummyConfiguration dc = new DummyConfiguration();
-        Configuration configuration = dc.getConfiguration();
-        teachers = configuration.getTeacherNames();
+        LinearLayout layout = (LinearLayout) findViewById(R.id.periodContainer);
 
-
-        LinearLayout layout = (LinearLayout) findViewById(R.id.teachersContainer);
-
-        for (int i = 0; i < teachers.size(); i++) {
+        for (int i = 0; i < period.size(); i++) {
             Button btnTag = new Button(this);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.setMargins(0,2,0,0);
             btnTag.setLayoutParams(layoutParams);
             btnTag.setTextColor(0xff000000);
             btnTag.setBackgroundResource(R.drawable.button);
-            String btnText = teachers.get(i);
+            String btnText = period.get(i);
             btnTag.setText(btnText);
             btnTag.setId(i);
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent returnIntent = new Intent();
-                    returnIntent.putExtra(TEACHER_NAME, teachers.get(v.getId()));
+                    returnIntent.putExtra(PERIOD, period.get(v.getId()));
                     setResult(Activity.RESULT_OK, returnIntent);
                     finish();
                 }

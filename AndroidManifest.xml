@@ -34,5 +34,13 @@
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseTeacher"
                   android:label="Name des Lehrers auswählen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseRoom" android:label="Raum auswählen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ChoosePeriod"
+                  android:label="Wiederholung einer Unterrichtsstunde auswählen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureWednesdayActivity"
+                  android:label="Stundenplan für Mittwoch anpassen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureThursdayActivity"
+                  android:label="Stundenplan für Donnerstag anpassen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureFridayActivity"
+                  android:label="Stundenplan für Freitag anpassen"/>
     </application>
 </manifest>

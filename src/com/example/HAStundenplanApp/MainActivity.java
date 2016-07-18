@@ -15,6 +15,8 @@ public class MainActivity extends Activity {
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
+    private String[][][] configuredScheduleWeek = new String[4][3][9];
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,5 +57,29 @@ public class MainActivity extends Activity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case MENU_CONFIGURE_SCHEDULE_ID:
+                if(data.hasExtra("mondayLessonNames")) {
+                    try {configuredScheduleWeek[0][0] = data.getStringArrayExtra("mondayLessonNames");}
+                    catch (NullPointerException e) {e.printStackTrace();}
+                }
+                if(data.hasExtra("mondayTeachers")) {
+                    try {configuredScheduleWeek[0][1] = data.getStringArrayExtra("mondayTeachers");}
+                    catch (NullPointerException e) {e.printStackTrace();}
+                }
+                if(data.hasExtra("mondayRooms")) {
+                    try {configuredScheduleWeek[0][2] = data.getStringArrayExtra("mondayRooms");}
+                    catch (NullPointerException e) {e.printStackTrace();}
+                }
+                if(data.hasExtra("mondayPeriods")) {
+                    try {configuredScheduleWeek[0][3] = data.getStringArrayExtra("mondayPeriods");}
+                    catch (NullPointerException e) {e.printStackTrace();}
+                }
+                break;
+        }
     }
 }

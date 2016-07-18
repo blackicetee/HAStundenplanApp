@@ -19,6 +19,7 @@ import java.util.List;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ChooseLesson extends Activity {
+    public static final String LESSON_NAME = "lessonName";
     private List<String> lessonNames;
 
     @Override
@@ -35,14 +36,18 @@ public class ChooseLesson extends Activity {
 
         for (int i = 0; i < lessonNames.size(); i++) {
             Button btnTag = new Button(this);
-            btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0,2,0,0);
+            btnTag.setLayoutParams(layoutParams);
+            btnTag.setTextColor(0xff000000);
+            btnTag.setBackgroundResource(R.drawable.button);
             String btnText = lessonNames.get(i);
             btnTag.setText(btnText);
             btnTag.setId(i);
             btnTag.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     Intent returnIntent = new Intent();
-                    returnIntent.putExtra("lessonName", lessonNames.get(v.getId()));
+                    returnIntent.putExtra(LESSON_NAME, lessonNames.get(v.getId()));
                     setResult(Activity.RESULT_OK, returnIntent);
                     finish();
                 }
