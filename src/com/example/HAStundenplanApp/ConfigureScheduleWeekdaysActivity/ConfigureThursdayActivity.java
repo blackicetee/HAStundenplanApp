@@ -313,7 +313,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     thursdayLessonNames[0] = thursdayLessonName;
                 }
                 if (resultCode == Activity.RESULT_CANCELED) {
-                    Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                    Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 11:
                 if(resultCode == Activity.RESULT_OK){
@@ -321,7 +321,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonOneLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[1] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 12:
                 if(resultCode == Activity.RESULT_OK){
@@ -329,7 +329,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonTwoLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[2] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 13:
                 if(resultCode == Activity.RESULT_OK){
@@ -337,7 +337,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonThreeLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[3] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 14:
                 if(resultCode == Activity.RESULT_OK){
@@ -345,7 +345,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFourLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[4] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 15:
                 if(resultCode == Activity.RESULT_OK){
@@ -353,7 +353,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFiveLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[5] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 16:
                 if(resultCode == Activity.RESULT_OK){
@@ -361,7 +361,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSixLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[6] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 17:
                 if(resultCode == Activity.RESULT_OK){
@@ -369,7 +369,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSevenLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[7] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 18:
                 if(resultCode == Activity.RESULT_OK){
@@ -377,7 +377,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonEightLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[8] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 19:
                 if(resultCode == Activity.RESULT_OK){
@@ -385,7 +385,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonNineLessonName.setText(thursdayLessonName);
                     thursdayLessonNames[9] = thursdayLessonName;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_LESSON, Toast.LENGTH_LONG).show();}
                 break;
             case 20:
                 if(resultCode == Activity.RESULT_OK){
@@ -393,7 +393,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonZeroTeacher.setText(thursdayTeacher);
                     thursdayTeachers[0] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 21:
                 if(resultCode == Activity.RESULT_OK){
@@ -401,7 +401,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonOneTeacher.setText(thursdayTeacher);
                     thursdayTeachers[1] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 22:
                 if(resultCode == Activity.RESULT_OK){
@@ -409,7 +409,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonTwoTeacher.setText(thursdayTeacher);
                     thursdayTeachers[2] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 23:
                 if(resultCode == Activity.RESULT_OK){
@@ -417,7 +417,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonThreeTeacher.setText(thursdayTeacher);
                     thursdayTeachers[3] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 24:
                 if(resultCode == Activity.RESULT_OK){
@@ -425,7 +425,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFourTeacher.setText(thursdayTeacher);
                     thursdayTeachers[4] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 25:
                 if(resultCode == Activity.RESULT_OK){
@@ -433,7 +433,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFiveTeacher.setText(thursdayTeacher);
                     thursdayTeachers[5] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 26:
                 if(resultCode == Activity.RESULT_OK){
@@ -441,7 +441,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSixTeacher.setText(thursdayTeacher);
                     thursdayTeachers[6] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 27:
                 if(resultCode == Activity.RESULT_OK){
@@ -449,7 +449,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSevenTeacher.setText(thursdayTeacher);
                     thursdayTeachers[7] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 28:
                 if(resultCode == Activity.RESULT_OK){
@@ -457,7 +457,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonEightTeacher.setText(thursdayTeacher);
                     thursdayTeachers[8] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 29:
                 if(resultCode == Activity.RESULT_OK){
@@ -465,7 +465,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonNineTeacher.setText(thursdayTeacher);
                     thursdayTeachers[9] = thursdayTeacher;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_TEACHER, Toast.LENGTH_LONG).show();}
                 break;
             case 30:
                 if(resultCode == Activity.RESULT_OK){
@@ -473,7 +473,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonZeroRoom.setText(thursdayRoom);
                     thursdayRooms[0] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 31:
                 if(resultCode == Activity.RESULT_OK){
@@ -481,7 +481,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonOneRoom.setText(thursdayRoom);
                     thursdayRooms[1] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 32:
                 if(resultCode == Activity.RESULT_OK){
@@ -489,7 +489,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonTwoRoom.setText(thursdayRoom);
                     thursdayRooms[2] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 33:
                 if(resultCode == Activity.RESULT_OK){
@@ -497,7 +497,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonThreeRoom.setText(thursdayRoom);
                     thursdayRooms[3] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 34:
                 if(resultCode == Activity.RESULT_OK){
@@ -505,7 +505,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFourRoom.setText(thursdayRoom);
                     thursdayRooms[4] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 35:
                 if(resultCode == Activity.RESULT_OK){
@@ -513,7 +513,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFiveRoom.setText(thursdayRoom);
                     thursdayRooms[5] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 36:
                 if(resultCode == Activity.RESULT_OK){
@@ -521,7 +521,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSixRoom.setText(thursdayRoom);
                     thursdayRooms[6] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 37:
                 if(resultCode == Activity.RESULT_OK){
@@ -529,7 +529,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSevenRoom.setText(thursdayRoom);
                     thursdayRooms[7] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 38:
                 if(resultCode == Activity.RESULT_OK){
@@ -537,7 +537,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonEightRoom.setText(thursdayRoom);
                     thursdayRooms[8] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
             case 39:
                 if(resultCode == Activity.RESULT_OK){
@@ -545,7 +545,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonNineRoom.setText(thursdayRoom);
                     thursdayRooms[9] = thursdayRoom;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_ROOM, Toast.LENGTH_LONG).show();}
                 break;
 
             case 40:
@@ -554,7 +554,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonZeroPeriod.setText(thursdayPeriod);
                     thursdayPeriods[0] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 41:
                 if(resultCode == Activity.RESULT_OK){
@@ -562,7 +562,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonOnePeriod.setText(thursdayPeriod);
                     thursdayPeriods[1] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 42:
                 if(resultCode == Activity.RESULT_OK){
@@ -570,7 +570,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonTwoPeriod.setText(thursdayPeriod);
                     thursdayPeriods[2] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 43:
                 if(resultCode == Activity.RESULT_OK){
@@ -578,7 +578,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonThreePeriod.setText(thursdayPeriod);
                     thursdayPeriods[3] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 44:
                 if(resultCode == Activity.RESULT_OK){
@@ -586,7 +586,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFourPeriod.setText(thursdayPeriod);
                     thursdayPeriods[4] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 45:
                 if(resultCode == Activity.RESULT_OK){
@@ -594,7 +594,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonFivePeriod.setText(thursdayPeriod);
                     thursdayPeriods[5] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 46:
                 if(resultCode == Activity.RESULT_OK){
@@ -602,7 +602,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSixPeriod.setText(thursdayPeriod);
                     thursdayPeriods[6] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 47:
                 if(resultCode == Activity.RESULT_OK){
@@ -610,7 +610,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonSevenPeriod.setText(thursdayPeriod);
                     thursdayPeriods[7] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 48:
                 if(resultCode == Activity.RESULT_OK){
@@ -618,7 +618,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonEightPeriod.setText(thursdayPeriod);
                     thursdayPeriods[8] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 49:
                 if(resultCode == Activity.RESULT_OK){
@@ -626,7 +626,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                     btnThursdayLessonNinePeriod.setText(thursdayPeriod);
                     thursdayPeriods[9] = thursdayPeriod;
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, ConfigureMondayActivity.CANCEL_MSG_CHOOSE_PERIOD, Toast.LENGTH_LONG).show();}
                 break;
             case 100:
                 if(resultCode == Activity.RESULT_OK){

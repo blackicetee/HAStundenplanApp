@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
-    private String[][][] configuredScheduleWeek = new String[4][3][9];
+    private String[][][] configuredScheduleWeek = new String[5][4][10];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
