@@ -81,8 +81,8 @@
       <file leaf-file-name="ConfigureFridayActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="232" column="56" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+            <state relative-caret-position="-180">
+              <caret line="228" column="39" selection-start-line="228" selection-start-column="39" selection-end-line="228" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1162,12 +1162,12 @@
       <workItem from="1468566423383" duration="16783000" />
       <workItem from="1468588355093" duration="41000" />
       <workItem from="1468588431713" duration="1806000" />
-      <workItem from="1468839107430" duration="46194000" />
+      <workItem from="1468839107430" duration="46555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207939000" />
+    <option name="totallyTimeSpent" value="208300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="860" extended-state="0" />
@@ -2070,8 +2070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="232" column="56" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+        <state relative-caret-position="-180">
+          <caret line="228" column="39" selection-start-line="228" selection-start-column="39" selection-end-line="228" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
