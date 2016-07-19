@@ -70,12 +70,12 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     @Override
-    public String[] getMondayPeriod() {
+    public String[] getMondayPeriods() {
         return mondayPeriods;
     }
 
     @Override
-    public void setMondayPeriod(String[] mondayPeriods) {
+    public void setMondayPeriods(String[] mondayPeriods) {
         this.mondayPeriods = mondayPeriods;
     }
 
@@ -110,12 +110,12 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     @Override
-    public String[] getTuesdayPeriod() {
+    public String[] getTuesdayPeriods() {
         return tuesdayPeriods;
     }
 
     @Override
-    public void setTuesdayPeriod(String[] tuesdayPeriods) {
+    public void setTuesdayPeriods(String[] tuesdayPeriods) {
         this.tuesdayPeriods = tuesdayPeriods;
     }
 
@@ -150,12 +150,12 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     @Override
-    public String[] getWednesdayPeriod() {
+    public String[] getWednesdayPeriods() {
         return wednesdayPeriods;
     }
 
     @Override
-    public void setWednesdayPeriod(String[] wednesdayPeriods) {
+    public void setWednesdayPeriods(String[] wednesdayPeriods) {
         this.wednesdayPeriods = wednesdayPeriods;
     }
 
@@ -190,12 +190,12 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     @Override
-    public String[] getThursdayPeriod() {
+    public String[] getThursdayPeriods() {
         return thursdayPeriods;
     }
 
     @Override
-    public void setThursdayPeriod(String[] thursdayPeriods) {
+    public void setThursdayPeriods(String[] thursdayPeriods) {
         this.thursdayPeriods = thursdayPeriods;
     }
 
@@ -230,12 +230,12 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     @Override
-    public String[] getFridayPeriod() {
+    public String[] getFridayPeriods() {
         return fridayPeriods;
     }
 
     @Override
-    public void setFridayPeriod(String[] fridayPeriods) {
+    public void setFridayPeriods(String[] fridayPeriods) {
         this.fridayPeriods = fridayPeriods;
     }
 
