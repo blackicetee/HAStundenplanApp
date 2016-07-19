@@ -19,9 +19,9 @@ import java.util.List;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ConfigureWednesdayActivity extends Activity implements View.OnClickListener {
-    private String[] wednesdayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] wednesdayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] wednesdayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] wednesdayLessonNames = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] wednesdayTeachers = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] wednesdayRooms = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] wednesdayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
     private static final String CANCEL_MSG_CONFIGURE_THURSDAY = "Der Vorgang: \"Erstellen des Stundenplans am Donnerstag\" wurde abgebrochen!";
@@ -554,6 +554,9 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
                 startActivityForResult(wednesdayPeriodIntent, 49);
                 break;
             case R.id.btnWednesdaySave:
+                for (int i = 0; i < wednesdayLessonNames.length; i++) {
+                    checkScheduleRow(i);
+                }
                 Intent configureScheduleIntent = new Intent(this, ConfigureThursdayActivity.class);
                 configuredScheduleWeek.setWednesdayLessonNames(wednesdayLessonNames);
                 configuredScheduleWeek.setWednesdayTeachers(wednesdayTeachers);
@@ -562,6 +565,27 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
                 configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, 100);
                 break;
+        }
+    }
+
+    private void checkScheduleRow(int row) {
+        if (wednesdayLessonNames[row].equals("Frei") && wednesdayTeachers[row].equals("Frei") && wednesdayRooms[row].equals("Frei")) {
+            wednesdayPeriods[row] = "Frei";
+        } else if (!wednesdayLessonNames[row].equals("Frei") && wednesdayTeachers[row].equals("Frei") && wednesdayRooms[row].equals("Frei")) {
+            wednesdayTeachers[row] = "";
+            wednesdayRooms[row] = "";
+        } else if (wednesdayLessonNames[row].equals("Frei") && !wednesdayTeachers[row].equals("Frei") && wednesdayRooms[row].equals("Frei")) {
+            wednesdayLessonNames[row] = "";
+            wednesdayRooms[row] = "";
+        } else if (wednesdayLessonNames[row].equals("Frei") && wednesdayTeachers[row].equals("Frei") && !wednesdayRooms[row].equals("Frei")) {
+            wednesdayLessonNames[row] = "";
+            wednesdayTeachers[row] = "";
+        } else if (!wednesdayLessonNames[row].equals("Frei") && !wednesdayTeachers[row].equals("Frei") && wednesdayRooms[row].equals("Frei")) {
+            wednesdayRooms[row] = "";
+        }else if (!wednesdayLessonNames[row].equals("Frei") && wednesdayTeachers[row].equals("Frei") && !wednesdayRooms[row].equals("Frei")) {
+            wednesdayTeachers[row] = "";
+        }else if (wednesdayLessonNames[row].equals("Frei") && !wednesdayTeachers[row].equals("Frei") && !wednesdayRooms[row].equals("Frei")) {
+            wednesdayLessonNames[row] = "";
         }
     }
 

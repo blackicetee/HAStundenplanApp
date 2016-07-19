@@ -19,9 +19,9 @@ import java.util.List;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ConfigureThursdayActivity extends Activity implements View.OnClickListener {
-    private String[] thursdayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] thursdayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] thursdayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] thursdayLessonNames = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] thursdayTeachers = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] thursdayRooms = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] thursdayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
     private static final String CANCEL_MSG_CONFIGURE_FRIDAY = "Der Vorgang: \"Erstellen des Stundenplans am Freitag\" wurde abgebrochen!";
@@ -554,6 +554,9 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                 startActivityForResult(thursdayPeriodIntent, 49);
                 break;
             case R.id.btnThursdaySave:
+                for (int i = 0; i < thursdayLessonNames.length; i++) {
+                    checkScheduleRow(i);
+                }
                 Intent configureScheduleIntent = new Intent(this, ConfigureFridayActivity.class);
                 configuredScheduleWeek.setThursdayLessonNames(thursdayLessonNames);
                 configuredScheduleWeek.setThursdayTeachers(thursdayTeachers);
@@ -562,6 +565,27 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                 configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, 100);
                 break;
+        }
+    }
+
+    private void checkScheduleRow(int row) {
+        if (thursdayLessonNames[row].equals("Frei") && thursdayTeachers[row].equals("Frei") && thursdayRooms[row].equals("Frei")) {
+            thursdayPeriods[row] = "Frei";
+        } else if (!thursdayLessonNames[row].equals("Frei") && thursdayTeachers[row].equals("Frei") && thursdayRooms[row].equals("Frei")) {
+            thursdayTeachers[row] = "";
+            thursdayRooms[row] = "";
+        } else if (thursdayLessonNames[row].equals("Frei") && !thursdayTeachers[row].equals("Frei") && thursdayRooms[row].equals("Frei")) {
+            thursdayLessonNames[row] = "";
+            thursdayRooms[row] = "";
+        } else if (thursdayLessonNames[row].equals("Frei") && thursdayTeachers[row].equals("Frei") && !thursdayRooms[row].equals("Frei")) {
+            thursdayLessonNames[row] = "";
+            thursdayTeachers[row] = "";
+        } else if (!thursdayLessonNames[row].equals("Frei") && !thursdayTeachers[row].equals("Frei") && thursdayRooms[row].equals("Frei")) {
+            thursdayRooms[row] = "";
+        }else if (!thursdayLessonNames[row].equals("Frei") && thursdayTeachers[row].equals("Frei") && !thursdayRooms[row].equals("Frei")) {
+            thursdayTeachers[row] = "";
+        }else if (thursdayLessonNames[row].equals("Frei") && !thursdayTeachers[row].equals("Frei") && !thursdayRooms[row].equals("Frei")) {
+            thursdayLessonNames[row] = "";
         }
     }
 

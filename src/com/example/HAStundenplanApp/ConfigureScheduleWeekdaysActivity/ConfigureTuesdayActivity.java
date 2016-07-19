@@ -19,9 +19,9 @@ package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ConfigureTuesdayActivity extends Activity implements View.OnClickListener {
-    private String[] tuesdayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] tuesdayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] tuesdayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] tuesdayLessonNames = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] tuesdayTeachers = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] tuesdayRooms = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] tuesdayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
     private static final String CANCEL_MSG_CONFIGURE_WEDNESDAY = "Der Vorgang: \"Erstellen des Stundenplans am Mittwoch\" wurde abgebrochen!";
@@ -553,6 +553,9 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
                 startActivityForResult(tuesdayPeriodIntent, 49);
                 break;
             case R.id.btnTuesdaySave:
+                for (int i = 0; i < tuesdayLessonNames.length; i++) {
+                    checkScheduleRow(i);
+                }
                 Intent configureScheduleIntent = new Intent(this, ConfigureWednesdayActivity.class);
                 configuredScheduleWeek.setTuesdayLessonNames(tuesdayLessonNames);
                 configuredScheduleWeek.setTuesdayTeachers(tuesdayTeachers);
@@ -561,6 +564,27 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
                 configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, 100);
                 break;
+        }
+    }
+
+    private void checkScheduleRow(int row) {
+        if (tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
+            tuesdayPeriods[row] = "Frei";
+        } else if (!tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
+            tuesdayTeachers[row] = "";
+            tuesdayRooms[row] = "";
+        } else if (tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
+            tuesdayLessonNames[row] = "";
+            tuesdayRooms[row] = "";
+        } else if (tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
+            tuesdayLessonNames[row] = "";
+            tuesdayTeachers[row] = "";
+        } else if (!tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
+            tuesdayRooms[row] = "";
+        }else if (!tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
+            tuesdayTeachers[row] = "";
+        }else if (tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
+            tuesdayLessonNames[row] = "";
         }
     }
 

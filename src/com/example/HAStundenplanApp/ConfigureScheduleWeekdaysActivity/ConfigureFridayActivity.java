@@ -19,9 +19,9 @@ import java.util.List;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ConfigureFridayActivity extends Activity implements View.OnClickListener {
-    private String[] fridayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] fridayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] fridayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] fridayLessonNames = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] fridayTeachers = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] fridayRooms = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] fridayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
     private ScheduleWeek configuredScheduleWeek;
@@ -552,6 +552,9 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
                 startActivityForResult(fridayPeriodIntent, 49);
                 break;
             case R.id.btnFridaySave:
+                for (int i = 0; i < fridayLessonNames.length; i++) {
+                    checkScheduleRow(i);
+                }
                 Intent resultIntent = new Intent();
                 configuredScheduleWeek.setFridayLessonNames(fridayLessonNames);
                 configuredScheduleWeek.setFridayTeachers(fridayTeachers);
@@ -561,6 +564,27 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
                 break;
+        }
+    }
+
+    private void checkScheduleRow(int row) {
+        if (fridayLessonNames[row].equals("Frei") && fridayTeachers[row].equals("Frei") && fridayRooms[row].equals("Frei")) {
+            fridayPeriods[row] = "Frei";
+        } else if (!fridayLessonNames[row].equals("Frei") && fridayTeachers[row].equals("Frei") && fridayRooms[row].equals("Frei")) {
+            fridayTeachers[row] = "";
+            fridayRooms[row] = "";
+        } else if (fridayLessonNames[row].equals("Frei") && !fridayTeachers[row].equals("Frei") && fridayRooms[row].equals("Frei")) {
+            fridayLessonNames[row] = "";
+            fridayRooms[row] = "";
+        } else if (fridayLessonNames[row].equals("Frei") && fridayTeachers[row].equals("Frei") && !fridayRooms[row].equals("Frei")) {
+            fridayLessonNames[row] = "";
+            fridayTeachers[row] = "";
+        } else if (!fridayLessonNames[row].equals("Frei") && !fridayTeachers[row].equals("Frei") && fridayRooms[row].equals("Frei")) {
+            fridayRooms[row] = "";
+        }else if (!fridayLessonNames[row].equals("Frei") && fridayTeachers[row].equals("Frei") && !fridayRooms[row].equals("Frei")) {
+            fridayTeachers[row] = "";
+        }else if (fridayLessonNames[row].equals("Frei") && !fridayTeachers[row].equals("Frei") && !fridayRooms[row].equals("Frei")) {
+            fridayLessonNames[row] = "";
         }
     }
 

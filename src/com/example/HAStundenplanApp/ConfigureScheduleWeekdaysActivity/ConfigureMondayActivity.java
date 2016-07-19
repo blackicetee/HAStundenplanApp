@@ -21,9 +21,9 @@ import java.util.List;
  * Created by Thilo S. on 15.07.2016.
  */
 public class ConfigureMondayActivity extends Activity implements View.OnClickListener {
-    private String[] mondayLessonNames = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] mondayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
-    private String[] mondayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
+    private String[] mondayLessonNames = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] mondayTeachers = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
+    private String[] mondayRooms = new String[] {"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] mondayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
     private ScheduleWeek configuredScheduleWeek;
@@ -451,10 +451,6 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         }
     }
 
-    private boolean checkScheduleRow(int row) {
-        return !mondayLessonNames[row].equals("") && !mondayTeachers[row].equals("") && !mondayRooms[row].equals("");
-    }
-
     @Override
     public void onBackPressed() {
         setResult(RESULT_CANCELED, new Intent());
@@ -589,6 +585,9 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
                 startActivityForResult(mondayPeriodIntent, 49);
                 break;
             case R.id.btnMondaySave:
+                for (int i = 0; i < mondayLessonNames.length; i++) {
+                    checkScheduleRow(i);
+                }
                 Intent configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
                 configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
                 configuredScheduleWeek.setMondayTeachers(mondayTeachers);
@@ -600,6 +599,26 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         }
     }
 
+    private void checkScheduleRow(int row) {
+        if (mondayLessonNames[row].equals("Frei") && mondayTeachers[row].equals("Frei") && mondayRooms[row].equals("Frei")) {
+            mondayPeriods[row] = "Frei";
+        } else if (!mondayLessonNames[row].equals("Frei") && mondayTeachers[row].equals("Frei") && mondayRooms[row].equals("Frei")) {
+            mondayTeachers[row] = "";
+            mondayRooms[row] = "";
+        } else if (mondayLessonNames[row].equals("Frei") && !mondayTeachers[row].equals("Frei") && mondayRooms[row].equals("Frei")) {
+            mondayLessonNames[row] = "";
+            mondayRooms[row] = "";
+        } else if (mondayLessonNames[row].equals("Frei") && mondayTeachers[row].equals("Frei") && !mondayRooms[row].equals("Frei")) {
+            mondayLessonNames[row] = "";
+            mondayTeachers[row] = "";
+        } else if (!mondayLessonNames[row].equals("Frei") && !mondayTeachers[row].equals("Frei") && mondayRooms[row].equals("Frei")) {
+            mondayRooms[row] = "";
+        }else if (!mondayLessonNames[row].equals("Frei") && mondayTeachers[row].equals("Frei") && !mondayRooms[row].equals("Frei")) {
+            mondayTeachers[row] = "";
+        }else if (mondayLessonNames[row].equals("Frei") && !mondayTeachers[row].equals("Frei") && !mondayRooms[row].equals("Frei")) {
+            mondayLessonNames[row] = "";
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
