@@ -7,7 +7,9 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.HAStundenplanApp.MainActivity;
 import com.example.HAStundenplanApp.R;
+import com.example.HAStundenplanApp.ScheduleWeek;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -24,10 +26,7 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
 
     private static final String CANCEL_MSG_CONFIGURE_THURSDAY = "Der Vorgang: \"Erstellen des Stundenplans am Donnerstag\" wurde abgebrochen!";
 
-    public static final String WEDNESDAY_LESSON_NAMES = "wednesdayLessonNames";
-    public static final String WEDNESDAY_TEACHER_NAMES = "wednesdayTeachers";
-    public static final String WEDNESDAY_ROOMS = "wednesdayRooms";
-    public static final String WEDNESDAY_PERIODS = "wednesdayPeriods";
+    private ScheduleWeek configuredScheduleWeek;
 
     private Button btnWednesdayLessonZeroLessonName;
     private Button btnWednesdayLessonOneLessonName;
@@ -170,10 +169,174 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
 
         btnWednesdaySave = (Button) findViewById(R.id.btnWednesdaySave);
         btnWednesdaySave.setOnClickListener(this);
+
+        Intent configuredScheduleWeekIntent = getIntent();
+        configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
+
+        initializeScheduleWednesday();
     }
 
-    private boolean checkScheduleRow(int row) {
-        return !wednesdayLessonNames[row].equals("") && !wednesdayTeachers[row].equals("") && !wednesdayRooms[row].equals("");
+    private void initializeScheduleWednesday() {
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[0] = configuredScheduleWeek.getWednesdayLessonNames()[0];
+            btnWednesdayLessonZeroLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[0]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[0] = configuredScheduleWeek.getWednesdayTeachers()[0];
+            btnWednesdayLessonZeroTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[0]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[0] = configuredScheduleWeek.getWednesdayRooms()[0];
+            btnWednesdayLessonZeroRoom.setText(configuredScheduleWeek.getWednesdayRooms()[0]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[0] = configuredScheduleWeek.getWednesdayPeriods()[0];
+            btnWednesdayLessonZeroPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[0]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[1] = configuredScheduleWeek.getWednesdayLessonNames()[1];
+            btnWednesdayLessonOneLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[1]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[1] = configuredScheduleWeek.getWednesdayTeachers()[1];
+            btnWednesdayLessonOneTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[1]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[1] = configuredScheduleWeek.getWednesdayRooms()[1];
+            btnWednesdayLessonOneRoom.setText(configuredScheduleWeek.getWednesdayRooms()[1]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[1] = configuredScheduleWeek.getWednesdayPeriods()[1];
+            btnWednesdayLessonOnePeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[1]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[2] = configuredScheduleWeek.getWednesdayLessonNames()[2];
+            btnWednesdayLessonTwoLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[2]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[2] = configuredScheduleWeek.getWednesdayTeachers()[2];
+            btnWednesdayLessonTwoTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[2]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[2] = configuredScheduleWeek.getWednesdayRooms()[2];
+            btnWednesdayLessonTwoRoom.setText(configuredScheduleWeek.getWednesdayRooms()[2]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[2] = configuredScheduleWeek.getWednesdayPeriods()[2];
+            btnWednesdayLessonTwoPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[2]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[3] = configuredScheduleWeek.getWednesdayLessonNames()[3];
+            btnWednesdayLessonThreeLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[3]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[3] = configuredScheduleWeek.getWednesdayTeachers()[3];
+            btnWednesdayLessonThreeTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[3]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[3] = configuredScheduleWeek.getWednesdayRooms()[3];
+            btnWednesdayLessonThreeRoom.setText(configuredScheduleWeek.getWednesdayRooms()[3]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[3] = configuredScheduleWeek.getWednesdayPeriods()[3];
+            btnWednesdayLessonThreePeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[3]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[4] = configuredScheduleWeek.getWednesdayLessonNames()[4];
+            btnWednesdayLessonFourLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[4]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[4] = configuredScheduleWeek.getWednesdayTeachers()[4];
+            btnWednesdayLessonFourTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[4]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[4] = configuredScheduleWeek.getWednesdayRooms()[4];
+            btnWednesdayLessonFourRoom.setText(configuredScheduleWeek.getWednesdayRooms()[4]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[4] = configuredScheduleWeek.getWednesdayPeriods()[4];
+            btnWednesdayLessonFourPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[4]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[5] = configuredScheduleWeek.getWednesdayLessonNames()[5];
+            btnWednesdayLessonFiveLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[5]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[5] = configuredScheduleWeek.getWednesdayTeachers()[5];
+            btnWednesdayLessonFiveTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[5]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[5] = configuredScheduleWeek.getWednesdayRooms()[5];
+            btnWednesdayLessonFiveRoom.setText(configuredScheduleWeek.getWednesdayRooms()[5]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[5] = configuredScheduleWeek.getWednesdayPeriods()[5];
+            btnWednesdayLessonFivePeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[5]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[6] = configuredScheduleWeek.getWednesdayLessonNames()[6];
+            btnWednesdayLessonSixLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[6]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[6] = configuredScheduleWeek.getWednesdayTeachers()[6];
+            btnWednesdayLessonSixTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[6]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[6] = configuredScheduleWeek.getWednesdayRooms()[6];
+            btnWednesdayLessonSixRoom.setText(configuredScheduleWeek.getWednesdayRooms()[6]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[6] = configuredScheduleWeek.getWednesdayPeriods()[6];
+            btnWednesdayLessonSixPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[6]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[7] = configuredScheduleWeek.getWednesdayLessonNames()[7];
+            btnWednesdayLessonSevenLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[7]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[7] = configuredScheduleWeek.getWednesdayTeachers()[7];
+            btnWednesdayLessonSevenTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[7]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[7] = configuredScheduleWeek.getWednesdayRooms()[7];
+            btnWednesdayLessonSevenRoom.setText(configuredScheduleWeek.getWednesdayRooms()[7]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[7] = configuredScheduleWeek.getWednesdayPeriods()[7];
+            btnWednesdayLessonSevenPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[7]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[8] = configuredScheduleWeek.getWednesdayLessonNames()[8];
+            btnWednesdayLessonEightLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[8]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[8] = configuredScheduleWeek.getWednesdayTeachers()[8];
+            btnWednesdayLessonEightTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[8]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[8] = configuredScheduleWeek.getWednesdayRooms()[8];
+            btnWednesdayLessonEightRoom.setText(configuredScheduleWeek.getWednesdayRooms()[8]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[8] = configuredScheduleWeek.getWednesdayPeriods()[8];
+            btnWednesdayLessonEightPeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[8]);
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames[9] = configuredScheduleWeek.getWednesdayLessonNames()[9];
+            btnWednesdayLessonNineLessonName.setText(configuredScheduleWeek.getWednesdayLessonNames()[9]);
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers[9] = configuredScheduleWeek.getWednesdayTeachers()[9];
+            btnWednesdayLessonNineTeacher.setText(configuredScheduleWeek.getWednesdayTeachers()[9]);
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms[9] = configuredScheduleWeek.getWednesdayRooms()[9];
+            btnWednesdayLessonNineRoom.setText(configuredScheduleWeek.getWednesdayRooms()[9]);
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods[9] = configuredScheduleWeek.getWednesdayPeriods()[9];
+            btnWednesdayLessonNinePeriod.setText(configuredScheduleWeek.getWednesdayPeriods()[9]);
+        }
     }
 
     @Override
@@ -305,6 +468,11 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
                 break;
             case R.id.btnWednesdaySave:
                 Intent configureScheduleIntent = new Intent(this, ConfigureThursdayActivity.class);
+                configuredScheduleWeek.setWednesdayLessonNames(wednesdayLessonNames);
+                configuredScheduleWeek.setWednesdayTeachers(wednesdayTeachers);
+                configuredScheduleWeek.setWednesdayRooms(wednesdayRooms);
+                configuredScheduleWeek.setWednesdayPeriods(wednesdayPeriods);
+                configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, 100);
                 break;
         }
@@ -637,10 +805,6 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
                 break;
             case 100:
                 if(resultCode == Activity.RESULT_OK){
-                    data.putExtra(WEDNESDAY_LESSON_NAMES, wednesdayLessonNames);
-                    data.putExtra(WEDNESDAY_TEACHER_NAMES, wednesdayTeachers);
-                    data.putExtra(WEDNESDAY_ROOMS, wednesdayRooms);
-                    data.putExtra(WEDNESDAY_PERIODS, wednesdayPeriods);
                     setResult(Activity.RESULT_OK, data);
                     finish();
                 }

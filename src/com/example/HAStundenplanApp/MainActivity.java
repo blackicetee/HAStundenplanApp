@@ -49,10 +49,10 @@ public class MainActivity extends Activity {
                 break;
             case MENU_SCHEDULE_ID:
                 Intent scheduleIntent = new Intent(this, ScheduleActivity.class);
-                scheduleIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(scheduleIntent, 0);
             case MENU_CONFIGURE_SCHEDULE_ID:
                 Intent configureScheduleIntent = new Intent(this, ConfigureMondayActivity.class);
+                configureScheduleIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, MENU_CONFIGURE_SCHEDULE_ID);
                 break;
             case MENU_SETTINGS_ID:
@@ -70,7 +70,9 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case MENU_CONFIGURE_SCHEDULE_ID:
-                configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                if (resultCode == RESULT_OK) {
+                    configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                }
                 break;
         }
     }

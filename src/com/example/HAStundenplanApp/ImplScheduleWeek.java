@@ -8,32 +8,30 @@ import android.os.Parcelable;
  */
 public class ImplScheduleWeek implements ScheduleWeek {
 
-    private int maxHoursADay = 10;
+    private String[] mondayLessonNames = null;
+    private String[] mondayTeachers = null;
+    private String[] mondayRooms = null;
+    private String[] mondayPeriods = null;
 
-    private String[] mondayLessonNames = new String[maxHoursADay];
-    private String[] mondayTeachers = new String[maxHoursADay];
-    private String[] mondayRooms = new String[maxHoursADay];
-    private String[] mondayPeriods = new String[maxHoursADay];
+    private String[] tuesdayLessonNames = null;
+    private String[] tuesdayTeachers = null;
+    private String[] tuesdayRooms = null;
+    private String[] tuesdayPeriods = null;
 
-    private String[] tuesdayLessonNames = new String[maxHoursADay];
-    private String[] tuesdayTeachers = new String[maxHoursADay];
-    private String[] tuesdayRooms = new String[maxHoursADay];
-    private String[] tuesdayPeriods = new String[maxHoursADay];
+    private String[] wednesdayLessonNames = null;
+    private String[] wednesdayTeachers = null;
+    private String[] wednesdayRooms = null;
+    private String[] wednesdayPeriods = null;
 
-    private String[] wednesdayLessonNames = new String[maxHoursADay];
-    private String[] wednesdayTeachers = new String[maxHoursADay];
-    private String[] wednesdayRooms = new String[maxHoursADay];
-    private String[] wednesdayPeriods = new String[maxHoursADay];
+    private String[] thursdayLessonNames = null;
+    private String[] thursdayTeachers = null;
+    private String[] thursdayRooms = null;
+    private String[] thursdayPeriods = null;
 
-    private String[] thursdayLessonNames = new String[maxHoursADay];
-    private String[] thursdayTeachers = new String[maxHoursADay];
-    private String[] thursdayRooms = new String[maxHoursADay];
-    private String[] thursdayPeriods = new String[maxHoursADay];
-
-    private String[] fridayLessonNames = new String[maxHoursADay];
-    private String[] fridayTeachers = new String[maxHoursADay];
-    private String[] fridayRooms = new String[maxHoursADay];
-    private String[] fridayPeriods = new String[maxHoursADay];
+    private String[] fridayLessonNames = null;
+    private String[] fridayTeachers = null;
+    private String[] fridayRooms = null;
+    private String[] fridayPeriods = null;
 
     ImplScheduleWeek() {
 
@@ -274,7 +272,7 @@ public class ImplScheduleWeek implements ScheduleWeek {
     }
 
     // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
-    public static final Parcelable.Creator<ScheduleWeek> CREATOR = new Parcelable.Creator<ScheduleWeek>() {
+    public static final Parcelable.Creator<ImplScheduleWeek> CREATOR = new Parcelable.Creator<ImplScheduleWeek>() {
         public ImplScheduleWeek createFromParcel(Parcel in) {
             return new ImplScheduleWeek(in);
         }
@@ -285,30 +283,31 @@ public class ImplScheduleWeek implements ScheduleWeek {
     };
 
     // example constructor that takes a Parcel and gives you an object populated with it's values
-    private ImplScheduleWeek(Parcel in) {
-        in.readStringArray(mondayLessonNames);
-        in.readStringArray(mondayTeachers);
-        in.readStringArray(mondayRooms);
-        in.readStringArray(mondayPeriods);
+    public ImplScheduleWeek(Parcel in) {
+        mondayLessonNames = in.createStringArray();
+        mondayTeachers = in.createStringArray();
+        mondayRooms = in.createStringArray();
+        mondayPeriods = in.createStringArray();
 
-        in.readStringArray(tuesdayLessonNames);
-        in.readStringArray(tuesdayTeachers);
-        in.readStringArray(tuesdayRooms);
-        in.readStringArray(tuesdayPeriods);
 
-        in.readStringArray(wednesdayLessonNames);
-        in.readStringArray(wednesdayTeachers);
-        in.readStringArray(wednesdayRooms);
-        in.readStringArray(wednesdayPeriods);
+        tuesdayLessonNames = in.createStringArray();
+        tuesdayTeachers = in.createStringArray();
+        tuesdayRooms = in.createStringArray();
+        tuesdayPeriods = in.createStringArray();
 
-        in.readStringArray(thursdayLessonNames);
-        in.readStringArray(thursdayTeachers);
-        in.readStringArray(thursdayRooms);
-        in.readStringArray(thursdayPeriods);
+        wednesdayLessonNames = in.createStringArray();
+        wednesdayTeachers = in.createStringArray();
+        wednesdayRooms = in.createStringArray();
+        wednesdayPeriods = in.createStringArray();
 
-        in.readStringArray(fridayLessonNames);
-        in.readStringArray(fridayTeachers);
-        in.readStringArray(fridayRooms);
-        in.readStringArray(fridayPeriods);
+        thursdayLessonNames = in.createStringArray();
+        thursdayTeachers = in.createStringArray();
+        thursdayRooms = in.createStringArray();
+        thursdayPeriods = in.createStringArray();
+
+        fridayLessonNames = in.createStringArray();
+        fridayTeachers = in.createStringArray();
+        fridayRooms = in.createStringArray();
+        fridayPeriods = in.createStringArray();
     }
 }
