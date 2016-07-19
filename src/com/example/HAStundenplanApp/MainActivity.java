@@ -3,9 +3,13 @@ package com.example.HAStundenplanApp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureMondayActivity;
+import android.widget.Toast;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.*;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -15,12 +19,14 @@ public class MainActivity extends Activity {
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
-    private String[][][] configuredScheduleWeek = new String[5][4][10];
+    private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
+    public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
     }
 
     @Override
@@ -43,6 +49,7 @@ public class MainActivity extends Activity {
                 break;
             case MENU_SCHEDULE_ID:
                 Intent scheduleIntent = new Intent(this, ScheduleActivity.class);
+                scheduleIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(scheduleIntent, 0);
             case MENU_CONFIGURE_SCHEDULE_ID:
                 Intent configureScheduleIntent = new Intent(this, ConfigureMondayActivity.class);
@@ -63,22 +70,7 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case MENU_CONFIGURE_SCHEDULE_ID:
-                if(data.hasExtra("mondayLessonNames")) {
-                    try {configuredScheduleWeek[0][0] = data.getStringArrayExtra("mondayLessonNames");}
-                    catch (NullPointerException e) {e.printStackTrace();}
-                }
-                if(data.hasExtra("mondayTeachers")) {
-                    try {configuredScheduleWeek[0][1] = data.getStringArrayExtra("mondayTeachers");}
-                    catch (NullPointerException e) {e.printStackTrace();}
-                }
-                if(data.hasExtra("mondayRooms")) {
-                    try {configuredScheduleWeek[0][2] = data.getStringArrayExtra("mondayRooms");}
-                    catch (NullPointerException e) {e.printStackTrace();}
-                }
-                if(data.hasExtra("mondayPeriods")) {
-                    try {configuredScheduleWeek[0][3] = data.getStringArrayExtra("mondayPeriods");}
-                    catch (NullPointerException e) {e.printStackTrace();}
-                }
+                configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
                 break;
         }
     }

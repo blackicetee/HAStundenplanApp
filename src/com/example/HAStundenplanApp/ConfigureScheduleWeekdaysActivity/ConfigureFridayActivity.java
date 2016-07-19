@@ -22,6 +22,11 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
     private String[] fridayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] fridayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
+    public static final String FRIDAY_LESSON_NAMES = "fridayLessonNames";
+    public static final String FRIDAY_TEACHER_NAMES = "fridayTeachers";
+    public static final String FRIDAY_ROOMS = "fridayRooms";
+    public static final String FRIDAY_PERIODS = "fridayPeriods";
+
     private Button btnFridayLessonZeroLessonName;
     private Button btnFridayLessonOneLessonName;
     private Button btnFridayLessonTwoLessonName;
@@ -298,10 +303,10 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
                 break;
             case R.id.btnFridaySave:
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("fridayLessonNames", fridayLessonNames);
-                resultIntent.putExtra("fridayTeachers", fridayTeachers);
-                resultIntent.putExtra("fridayRooms", fridayRooms);
-                resultIntent.putExtra("fridayPeriods", fridayPeriods);
+                resultIntent.putExtra(FRIDAY_LESSON_NAMES, fridayLessonNames);
+                resultIntent.putExtra(FRIDAY_TEACHER_NAMES, fridayTeachers);
+                resultIntent.putExtra(FRIDAY_ROOMS, fridayRooms);
+                resultIntent.putExtra(FRIDAY_PERIODS, fridayPeriods);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
                 break;

@@ -22,6 +22,13 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
     private String[] thursdayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] thursdayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
+    private static final String CANCEL_MSG_CONFIGURE_FRIDAY = "Der Vorgang: \"Erstellen des Stundenplans am Freitag\" wurde abgebrochen!";
+
+    public static final String THURSDAY_LESSON_NAMES = "thursdayLessonNames";
+    public static final String THURSDAY_TEACHER_NAMES = "thursdayTeachers";
+    public static final String THURSDAY_ROOMS = "thursdayRooms";
+    public static final String THURSDAY_PERIODS = "thursdayPeriods";
+
     private Button btnThursdayLessonZeroLessonName;
     private Button btnThursdayLessonOneLessonName;
     private Button btnThursdayLessonTwoLessonName;
@@ -630,14 +637,14 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
                 break;
             case 100:
                 if(resultCode == Activity.RESULT_OK){
-                    data.putExtra("thursdayLessonNames", thursdayLessonNames);
-                    data.putExtra("thursdayTeachers", thursdayTeachers);
-                    data.putExtra("thursdayRooms", thursdayRooms);
-                    data.putExtra("thursdayPeriods", thursdayPeriods);
+                    data.putExtra(THURSDAY_LESSON_NAMES, thursdayLessonNames);
+                    data.putExtra(THURSDAY_TEACHER_NAMES, thursdayTeachers);
+                    data.putExtra(THURSDAY_ROOMS, thursdayRooms);
+                    data.putExtra(THURSDAY_PERIODS, thursdayPeriods);
                     setResult(Activity.RESULT_OK, data);
                     finish();
                 }
-                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, "Der Vorgang: \"Erstellen des Stundenplans am Freitag\" wurde abgebrochen!", Toast.LENGTH_LONG).show();}
+                if (resultCode == Activity.RESULT_CANCELED) {Toast.makeText(this, CANCEL_MSG_CONFIGURE_FRIDAY, Toast.LENGTH_LONG).show();}
                 break;
         }
     }

@@ -7,7 +7,9 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.HAStundenplanApp.MainActivity;
 import com.example.HAStundenplanApp.R;
+import com.example.HAStundenplanApp.ScheduleWeek;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,11 +23,13 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
     private String[] mondayTeachers = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] mondayRooms = new String[] {"", "", "", "", "", "", "", "", "", ""};
     private String[] mondayPeriods = new String[] {"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
-    
-    public static final String CANCEL_MSG_CHOOSE_LESSON = "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!";
-    public static final String CANCEL_MSG_CHOOSE_TEACHER = "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!";
-    public static final String CANCEL_MSG_CHOOSE_ROOM = "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!";
-    public static final String CANCEL_MSG_CHOOSE_PERIOD = "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!";
+
+    ScheduleWeek configuredScheduleWeek;
+
+    static final String CANCEL_MSG_CHOOSE_LESSON = "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!";
+    static final String CANCEL_MSG_CHOOSE_TEACHER = "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!";
+    static final String CANCEL_MSG_CHOOSE_ROOM = "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!";
+    static final String CANCEL_MSG_CHOOSE_PERIOD = "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!";
     private static final String CANCEL_MSG_CONFIGURE_TUESDAY = "Der Vorgang: \"Erstellen des Stundenplans am Dienstag\" wurde abgebrochen!";
 
     public static final String MONDAY_LESSON_NAMES = "mondayLessonNames";
@@ -174,6 +178,30 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
 
         btnMondaySave = (Button) findViewById(R.id.btnMondaySave);
         btnMondaySave.setOnClickListener(this);
+
+        Intent configuredScheduleWeekIntent = getIntent();
+        configuredScheduleWeek = configuredScheduleWeekIntent.getParcelableExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK);
+
+        initializeScheduleMonday();
+    }
+
+    private void initializeScheduleMonday() {
+        if (configuredScheduleWeek.getMondayLessonNames()[0] != null) {
+            mondayLessonNames[0] = configuredScheduleWeek.getMondayLessonNames()[0];
+            btnMondayLessonOneLessonName.setText(configuredScheduleWeek.getMondayLessonNames()[0]);
+        }
+        if (configuredScheduleWeek.getMondayTeachers()[0] != null) {
+            mondayTeachers[0] = configuredScheduleWeek.getMondayTeachers()[0];
+            btnMondayLessonOneTeacher.setText(configuredScheduleWeek.getMondayTeachers()[0]);
+        }
+        if (configuredScheduleWeek.getMondayRooms()[0] != null) {
+            mondayRooms[0] = configuredScheduleWeek.getMondayRooms()[0];
+            btnMondayLessonOneRoom.setText(configuredScheduleWeek.getMondayRooms()[0]);
+        }
+        if (configuredScheduleWeek.getMondayPeriods()[0] != null) {
+            mondayPeriods[0] = configuredScheduleWeek.getMondayPeriods()[0];
+            btnMondayLessonOnePeriod.setText(configuredScheduleWeek.getMondayPeriods()[0]);
+        }
     }
 
     private boolean checkScheduleRow(int row) {
@@ -309,7 +337,14 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
                 break;
             case R.id.btnMondaySave:
                 Intent configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
-                startActivityForResult(configureScheduleIntent, 100);
+                configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
+                configuredScheduleWeek.setMondayLessonNames(mondayTeachers);
+                configuredScheduleWeek.setMondayLessonNames(mondayRooms);
+                configuredScheduleWeek.setMondayLessonNames(mondayPeriods);
+                configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+                setResult(Activity.RESULT_OK, configureScheduleIntent);
+                finish();
+                //startActivityForResult(configureScheduleIntent, 100);
                 break;
         }
     }
@@ -640,10 +675,6 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
                 break;
             case 100:
                 if(resultCode == Activity.RESULT_OK){
-                    data.putExtra(MONDAY_LESSON_NAMES, mondayLessonNames);
-                    data.putExtra(MONDAY_TEACHER_NAMES, mondayTeachers);
-                    data.putExtra(MONDAY_ROOMS, mondayRooms);
-                    data.putExtra(MONDAY_PERIODS, mondayPeriods);
                     setResult(Activity.RESULT_OK, data);
                     finish();
                 }

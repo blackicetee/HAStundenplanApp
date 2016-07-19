@@ -637,10 +637,10 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
                 break;
             case 100:
                 if(resultCode == Activity.RESULT_OK){
-                    data.putExtra(WEDNES, wednesdayLessonNames);
-                    data.putExtra("wednesdayTeachers", wednesdayTeachers);
-                    data.putExtra("wednesdayRooms", wednesdayRooms);
-                    data.putExtra("wednesdayPeriods", wednesdayPeriods);
+                    data.putExtra(WEDNESDAY_LESSON_NAMES, wednesdayLessonNames);
+                    data.putExtra(WEDNESDAY_TEACHER_NAMES, wednesdayTeachers);
+                    data.putExtra(WEDNESDAY_ROOMS, wednesdayRooms);
+                    data.putExtra(WEDNESDAY_PERIODS, wednesdayPeriods);
                     setResult(Activity.RESULT_OK, data);
                     finish();
                 }
