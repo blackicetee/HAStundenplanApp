@@ -22,8 +22,8 @@ public interface Configuration {
     int getLessonDurationInMinutes();
     void setLessonDurationInMinutes(int lessonDurationInMinutes);
 
-    List<Pair<String, Integer>> getBreaks();
-    void setBreaks(List<Pair<String, Integer>> breaks);
+    List<Pair<Integer, Integer>> getBreaks();
+    void setBreaks(List<Pair<Integer, Integer>> breaks);
 
     List<Date> getDayOff();
     void setDayOff(List<Date> dayOff);

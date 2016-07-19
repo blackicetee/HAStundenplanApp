@@ -7,10 +7,9 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
-import com.example.HAStundenplanApp.MainActivity;
-import com.example.HAStundenplanApp.R;
-import com.example.HAStundenplanApp.ScheduleWeek;
+import com.example.HAStundenplanApp.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -175,10 +174,46 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         btnMondaySave = (Button) findViewById(R.id.btnMondaySave);
         btnMondaySave.setOnClickListener(this);
 
+        TextView tvMondayLessonZeroStart = (TextView) findViewById(R.id.tvMondayLessonZeroStart);
+        TextView tvMondayLessonZeroEnd = (TextView) findViewById(R.id.tvMondayLessonZeroEnd);
+
+        DummyConfiguration dc = new DummyConfiguration();
+        Configuration configuration = dc.getConfiguration();
+        int lessonDuration = configuration.getLessonDurationInMinutes();
+        int tempTime = configuration.getStartEarliestLesson();
+        List<Pair<Integer, Integer>> breaks = configuration.getBreaks();
+        if (breaks.get(0).first == 0) {
+            tvMondayLessonZeroStart.setText(convertIntegerTimeToTimeString(tempTime));
+            tvMondayLessonZeroEnd.setText(convertIntegerTimeToTimeString(tempTime + ));
+            tvMondayLessonZeroStart.setText(convertIntegerTimeToTimeString(breaks.get(0).second));
+            tvMondayLessonZeroEnd.setText(convertIntegerTimeToTimeString(breaks.get(0).second + lessonDuration));
+        }
+
+
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
 
         initializeScheduleMonday();
+    }
+
+    private String convertIntegerTimeToTimeString(int i) {
+        String timeString = Integer.toString(i);
+        if (timeString.length() == 1) {
+            timeString = "00:0".concat(timeString);
+        }
+        else if (timeString.length() == 2) {
+            timeString = "00:".concat(timeString);
+        }
+        else if (timeString.length() == 3) {
+            timeString = "0".concat(Character.toString(timeString.charAt(0))).concat(":".concat(timeString.substring(1)));
+        }
+        else if (timeString.length() == 4) {
+            timeString = timeString.substring(0,1).concat(":").concat(timeString.substring(2));
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
+        return timeString;
     }
 
     private void initializeScheduleMonday() {

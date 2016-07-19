@@ -1,8 +1,6 @@
 package com.example.HAStundenplanApp;
 
 import android.util.Pair;
-import com.example.HAStundenplanApp.Configuration;
-import com.example.HAStundenplanApp.ImplConfiguration;
 
 
 import java.util.*;
@@ -21,7 +19,16 @@ public class DummyConfiguration {
                 "Raum 004 Gebäude A", "Raum 005 Gebäude A", "Raum 006 Gebäude A", "Raum 007 Gebäude A", "Raum 008 Gebäude A","Raum 009 Gebäude A",
                 "Raum 010 Gebäude A", "Raum 011 Gebäude A", "Raum 012 Gebäude B", "Raum 013 Gebäude B", "Raum 014 Gebäude B", "Raum 015 Gebäude B"));
         int lessonDurationInMinutes = 45;
-        List<Pair<String, Integer>> breaks = new ArrayList<>(Arrays.asList(new Pair<>("Kurze Pause", 15), new Pair<>("Mittags Pause", 60)));
+        List<Pair<Integer, Integer>> breaks = new ArrayList<>(Arrays.asList(
+                new Pair<>(0, 15),
+                new Pair<>(1, 15),
+                new Pair<>(2, 30),
+                new Pair<>(3, 15),
+                new Pair<>(4, 15),
+                new Pair<>(5, 60),
+                new Pair<>(6, 15),
+                new Pair<>(7, 15),
+                new Pair<>(8, 30)));
 
         List<Date> dayOff = new ArrayList<>();
         dayOff.add(getDate(7,2,2017));
@@ -34,7 +41,7 @@ public class DummyConfiguration {
         Date startWinterSemester = getDate(1,10,2017);
         Date endWinterSemester = getDate(28,2,2017);
 
-        int startEarliestLesson = 700;
+        int startEarliestLesson = 600;
 
 
         return new ImplConfiguration(lessonNames, teacherNames, rooms, lessonDurationInMinutes, breaks, dayOff, startSummerSemester,

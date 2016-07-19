@@ -14,7 +14,7 @@ public class ImplConfiguration implements Configuration {
     private List<String> teacherNames = new ArrayList<>();
     private List<String> rooms = new ArrayList<>();
     private int lessonDurationInMinutes = 0;
-    private List<Pair<String,Integer>> breaks = new ArrayList<>();
+    private List<Pair<Integer, Integer>> breaks = null;
     private List<Date> dayOff = new ArrayList<>();
     private Date startSummerSemester = null;
     private Date endSummerSemester = null;
@@ -23,7 +23,7 @@ public class ImplConfiguration implements Configuration {
     private int startEarliestLesson = 0;
 
     ImplConfiguration(List<String> lessonNames, List<String> teacherNames, List<String> rooms,
-                      int lessonDurationInMinutes, List<Pair<String,Integer>> breaks, List<Date> dayOff, Date startSummerSemester,
+                      int lessonDurationInMinutes, List<Pair<Integer, Integer>> breaks, List<Date> dayOff, Date startSummerSemester,
                       Date endSummerSemester, Date startWinterSemester, Date endWinterSemester, int startEarliestLesson) {
         this.lessonNames = lessonNames;
         this.teacherNames = teacherNames;
@@ -79,12 +79,12 @@ public class ImplConfiguration implements Configuration {
     }
 
     @Override
-    public List<Pair<String, Integer>> getBreaks() {
+    public List<Pair<Integer, Integer>> getBreaks() {
         return breaks;
     }
 
     @Override
-    public void setBreaks(List<Pair<String, Integer>> breaks) {
+    public void setBreaks(List<Pair<Integer, Integer>> breaks) {
         this.breaks = breaks;
     }
 
