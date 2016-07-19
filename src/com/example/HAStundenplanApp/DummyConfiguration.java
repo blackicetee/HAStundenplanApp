@@ -41,7 +41,10 @@ public class DummyConfiguration {
         Date startWinterSemester = getDate(1,10,2017);
         Date endWinterSemester = getDate(28,2,2017);
 
-        int startEarliestLesson = 600;
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY, 6);
+        cal.set(Calendar.MINUTE, 0);
+        Date startEarliestLesson = cal.getTime();
 
 
         return new ImplConfiguration(lessonNames, teacherNames, rooms, lessonDurationInMinutes, breaks, dayOff, startSummerSemester,

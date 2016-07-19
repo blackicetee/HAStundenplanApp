@@ -20,11 +20,11 @@ public class ImplConfiguration implements Configuration {
     private Date endSummerSemester = null;
     private Date startWinterSemester = null;
     private Date endWinterSemester = null;
-    private int startEarliestLesson = 0;
+    private Date startEarliestLesson = null;
 
     ImplConfiguration(List<String> lessonNames, List<String> teacherNames, List<String> rooms,
                       int lessonDurationInMinutes, List<Pair<Integer, Integer>> breaks, List<Date> dayOff, Date startSummerSemester,
-                      Date endSummerSemester, Date startWinterSemester, Date endWinterSemester, int startEarliestLesson) {
+                      Date endSummerSemester, Date startWinterSemester, Date endWinterSemester, Date startEarliestLesson) {
         this.lessonNames = lessonNames;
         this.teacherNames = teacherNames;
         this.rooms = rooms;
@@ -139,12 +139,12 @@ public class ImplConfiguration implements Configuration {
     }
 
     @Override
-    public int getStartEarliestLesson() {
+    public Date getStartEarliestLesson() {
         return startEarliestLesson;
     }
 
     @Override
-    public void setStartEarliestLesson(int startEarliestLesson) {
+    public void setStartEarliestLesson(Date startEarliestLesson) {
         this.startEarliestLesson = startEarliestLesson;
     }
 }

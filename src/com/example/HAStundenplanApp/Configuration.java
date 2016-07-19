@@ -40,6 +40,6 @@ public interface Configuration {
     Date getEndWinterSemester();
     void setEndWinterSemester(Date endWinterSemester);
 
-    int getStartEarliestLesson();
-    void setStartEarliestLesson(int startEarliestLesson);
+    Date getStartEarliestLesson();
+    void setStartEarliestLesson(Date startEarliestLesson);
 }
