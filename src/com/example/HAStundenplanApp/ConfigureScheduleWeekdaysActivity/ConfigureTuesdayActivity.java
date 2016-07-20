@@ -27,6 +27,7 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
     private static final String CANCEL_MSG_CONFIGURE_WEDNESDAY = "Der Vorgang: \"Erstellen des Stundenplans am Mittwoch\" wurde abgebrochen!";
 
     private ScheduleWeek configuredScheduleWeek;
+    private TextView[] tvTuesdayLessonTimes = new TextView[20];
 
     private Button btnTuesdayLessonZeroLessonName;
     private Button btnTuesdayLessonOneLessonName;
@@ -170,91 +171,34 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
         btnTuesdaySave = (Button) findViewById(R.id.btnTuesdaySave);
         btnTuesdaySave.setOnClickListener(this);
 
-        TextView tvTuesdayLessonZeroStart = (TextView) findViewById(R.id.tvTuesdayLessonZeroStart);
-        TextView tvTuesdayLessonZeroEnd = (TextView) findViewById(R.id.tvTuesdayLessonZeroEnd);
-        TextView tvTuesdayLessonOneStart = (TextView) findViewById(R.id.tvTuesdayLessonOneStart);
-        TextView tvTuesdayLessonOneEnd = (TextView) findViewById(R.id.tvTuesdayLessonOneEnd);
-        TextView tvTuesdayLessonTwoStart = (TextView) findViewById(R.id.tvTuesdayLessonTwoStart);
-        TextView tvTuesdayLessonTwoEnd = (TextView) findViewById(R.id.tvTuesdayLessonTwoEnd);
-        TextView tvTuesdayLessonThreeStart = (TextView) findViewById(R.id.tvTuesdayLessonThreeStart);
-        TextView tvTuesdayLessonThreeEnd = (TextView) findViewById(R.id.tvTuesdayLessonThreeEnd);
-        TextView tvTuesdayLessonFourStart = (TextView) findViewById(R.id.tvTuesdayLessonFourStart);
-        TextView tvTuesdayLessonFourEnd = (TextView) findViewById(R.id.tvTuesdayLessonFourEnd);
-        TextView tvTuesdayLessonFiveStart = (TextView) findViewById(R.id.tvTuesdayLessonFiveStart);
-        TextView tvTuesdayLessonFiveEnd = (TextView) findViewById(R.id.tvTuesdayLessonFiveEnd);
-        TextView tvTuesdayLessonSixStart = (TextView) findViewById(R.id.tvTuesdayLessonSixStart);
-        TextView tvTuesdayLessonSixEnd = (TextView) findViewById(R.id.tvTuesdayLessonSixEnd);
-        TextView tvTuesdayLessonSevenStart = (TextView) findViewById(R.id.tvTuesdayLessonSevenStart);
-        TextView tvTuesdayLessonSevenEnd = (TextView) findViewById(R.id.tvTuesdayLessonSevenEnd);
-        TextView tvTuesdayLessonEightStart = (TextView) findViewById(R.id.tvTuesdayLessonEightStart);
-        TextView tvTuesdayLessonEightEnd = (TextView) findViewById(R.id.tvTuesdayLessonEightEnd);
-        TextView tvTuesdayLessonNineStart = (TextView) findViewById(R.id.tvTuesdayLessonNineStart);
-        TextView tvTuesdayLessonNineEnd = (TextView) findViewById(R.id.tvTuesdayLessonNineEnd);
+        tvTuesdayLessonTimes[0] = (TextView) findViewById(R.id.tvTuesdayLessonZeroStart);
+        tvTuesdayLessonTimes[1] = (TextView) findViewById(R.id.tvTuesdayLessonZeroEnd);
+        tvTuesdayLessonTimes[2] = (TextView) findViewById(R.id.tvTuesdayLessonOneStart);
+        tvTuesdayLessonTimes[3] = (TextView) findViewById(R.id.tvTuesdayLessonOneEnd);
+        tvTuesdayLessonTimes[4] = (TextView) findViewById(R.id.tvTuesdayLessonTwoStart);
+        tvTuesdayLessonTimes[5] = (TextView) findViewById(R.id.tvTuesdayLessonTwoEnd);
+        tvTuesdayLessonTimes[6] = (TextView) findViewById(R.id.tvTuesdayLessonThreeStart);
+        tvTuesdayLessonTimes[7] = (TextView) findViewById(R.id.tvTuesdayLessonThreeEnd);
+        tvTuesdayLessonTimes[8] = (TextView) findViewById(R.id.tvTuesdayLessonFourStart);
+        tvTuesdayLessonTimes[9] = (TextView) findViewById(R.id.tvTuesdayLessonFourEnd);
+        tvTuesdayLessonTimes[10] = (TextView) findViewById(R.id.tvTuesdayLessonFiveStart);
+        tvTuesdayLessonTimes[11] = (TextView) findViewById(R.id.tvTuesdayLessonFiveEnd);
+        tvTuesdayLessonTimes[12] = (TextView) findViewById(R.id.tvTuesdayLessonSixStart);
+        tvTuesdayLessonTimes[13] = (TextView) findViewById(R.id.tvTuesdayLessonSixEnd);
+        tvTuesdayLessonTimes[14] = (TextView) findViewById(R.id.tvTuesdayLessonSevenStart);
+        tvTuesdayLessonTimes[15] = (TextView) findViewById(R.id.tvTuesdayLessonSevenEnd);
+        tvTuesdayLessonTimes[16] = (TextView) findViewById(R.id.tvTuesdayLessonEightStart);
+        tvTuesdayLessonTimes[17] = (TextView) findViewById(R.id.tvTuesdayLessonEightEnd);
+        tvTuesdayLessonTimes[18] = (TextView) findViewById(R.id.tvTuesdayLessonNineStart);
+        tvTuesdayLessonTimes[19] = (TextView) findViewById(R.id.tvTuesdayLessonNineEnd);
 
         //Calculates the Start and End Times of a Lesson
         DummyConfiguration dc = new DummyConfiguration();
         Configuration configuration = dc.getConfiguration();
-        int lessonDuration = configuration.getLessonDurationInMinutes();
         Calendar lessonTime = Calendar.getInstance();
         lessonTime.setTime(configuration.getStartEarliestLesson());
-        List<Pair<Integer, Integer>> breaks = configuration.getBreaks();
-        if (breaks.get(0).first == 0) {
-            tvTuesdayLessonZeroStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonZeroEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(0).second);
-        }
-        if (breaks.get(1).first == 1) {
-            tvTuesdayLessonOneStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonOneEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(1).second);
-        }
-        if (breaks.get(2).first == 2) {
-            tvTuesdayLessonTwoStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonTwoEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(2).second);
-        }
-        if (breaks.get(3).first == 3) {
-            tvTuesdayLessonThreeStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonThreeEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(3).second);
-        }
-        if (breaks.get(4).first == 4) {
-            tvTuesdayLessonFourStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonFourEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(4).second);
-        }
-        if (breaks.get(5).first == 5) {
-            tvTuesdayLessonFiveStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonFiveEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(5).second);
-        }
-        if (breaks.get(6).first == 6) {
-            tvTuesdayLessonSixStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonSixEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(6).second);
-        }
-        if (breaks.get(7).first == 7) {
-            tvTuesdayLessonSevenStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonSevenEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(7).second);
-        }
-        if (breaks.get(8).first == 8) {
-            tvTuesdayLessonEightStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvTuesdayLessonEightEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(8).second);
-        }
-        tvTuesdayLessonNineStart.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
-        lessonTime.add(Calendar.MINUTE, lessonDuration);
-        tvTuesdayLessonNineEnd.setText(ConfigureMondayActivity.convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY)*100 + lessonTime.get(Calendar.MINUTE)));
+
+        ConfigureWeekdays.calculateWeekdayLessonTimes(tvTuesdayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
 
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
@@ -554,7 +498,7 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
                 break;
             case R.id.btnTuesdaySave:
                 for (int i = 0; i < tuesdayLessonNames.length; i++) {
-                    checkScheduleRow(i);
+                    ConfigureWeekdays.checkScheduleRow(i, tuesdayLessonNames, tuesdayTeachers, tuesdayRooms, tuesdayPeriods);
                 }
                 Intent configureScheduleIntent = new Intent(this, ConfigureWednesdayActivity.class);
                 configuredScheduleWeek.setTuesdayLessonNames(tuesdayLessonNames);
@@ -564,27 +508,6 @@ public class ConfigureTuesdayActivity extends Activity implements View.OnClickLi
                 configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
                 startActivityForResult(configureScheduleIntent, 100);
                 break;
-        }
-    }
-
-    private void checkScheduleRow(int row) {
-        if (tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
-            tuesdayPeriods[row] = "Frei";
-        } else if (!tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
-            tuesdayTeachers[row] = "";
-            tuesdayRooms[row] = "";
-        } else if (tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
-            tuesdayLessonNames[row] = "";
-            tuesdayRooms[row] = "";
-        } else if (tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
-            tuesdayLessonNames[row] = "";
-            tuesdayTeachers[row] = "";
-        } else if (!tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && tuesdayRooms[row].equals("Frei")) {
-            tuesdayRooms[row] = "";
-        }else if (!tuesdayLessonNames[row].equals("Frei") && tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
-            tuesdayTeachers[row] = "";
-        }else if (tuesdayLessonNames[row].equals("Frei") && !tuesdayTeachers[row].equals("Frei") && !tuesdayRooms[row].equals("Frei")) {
-            tuesdayLessonNames[row] = "";
         }
     }
 
