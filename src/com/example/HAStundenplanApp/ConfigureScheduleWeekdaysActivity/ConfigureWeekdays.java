@@ -114,168 +114,100 @@ class ConfigureWeekdays {
         }
     }
 
-    static void initializeScheduleWeekday(Boolean[] configuredScheduleWeekNotNullConditions, ScheduleWeek configuredScheduleWeek, String[] weekdayLessonNames, String[] weekdayTeachers, String[] weekdayRooms, String[] weekdayPeriods,
+    static void initializeScheduleWeekday(String[] weekdayLessonNames, String[] weekdayTeachers, String[] weekdayRooms, String[] weekdayPeriods,
+                                          String[] configuredScheduleLessonNames, String[] configuredScheduleTeachers,
+                                          String[] configuredScheduleRooms, String[] configuredSchedulePeriods,
                                           Button[] lessonNameButtons, Button[] teacherButtons, Button[] roomButtons, Button[] periodsButtons) {
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[0] = configuredScheduleWeek.getMondayLessonNames()[0];
-            lessonNameButtons[0].setText(configuredScheduleWeek.getMondayLessonNames()[0]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[0] = configuredScheduleWeek.getMondayTeachers()[0];
-            teacherButtons[0].setText(configuredScheduleWeek.getMondayTeachers()[0]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[0] = configuredScheduleWeek.getMondayRooms()[0];
-            roomButtons[0].setText(configuredScheduleWeek.getMondayRooms()[0]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[0] = configuredScheduleWeek.getMondayPeriods()[0];
-            periodsButtons[0].setText(configuredScheduleWeek.getMondayPeriods()[0]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[1] = configuredScheduleWeek.getMondayLessonNames()[1];
-            lessonNameButtons[1].setText(configuredScheduleWeek.getMondayLessonNames()[1]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[1] = configuredScheduleWeek.getMondayTeachers()[1];
-            teacherButtons[1].setText(configuredScheduleWeek.getMondayTeachers()[1]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[1] = configuredScheduleWeek.getMondayRooms()[1];
-            roomButtons[1].setText(configuredScheduleWeek.getMondayRooms()[1]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[1] = configuredScheduleWeek.getMondayPeriods()[1];
-            periodsButtons[1].setText(configuredScheduleWeek.getMondayPeriods()[1]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[2] = configuredScheduleWeek.getMondayLessonNames()[2];
-            lessonNameButtons[2].setText(configuredScheduleWeek.getMondayLessonNames()[2]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[2] = configuredScheduleWeek.getMondayTeachers()[2];
-            teacherButtons[2].setText(configuredScheduleWeek.getMondayTeachers()[2]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[2] = configuredScheduleWeek.getMondayRooms()[2];
-            roomButtons[2].setText(configuredScheduleWeek.getMondayRooms()[2]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[2] = configuredScheduleWeek.getMondayPeriods()[2];
-            periodsButtons[2].setText(configuredScheduleWeek.getMondayPeriods()[2]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[3] = configuredScheduleWeek.getMondayLessonNames()[3];
-            lessonNameButtons[3].setText(configuredScheduleWeek.getMondayLessonNames()[3]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[3] = configuredScheduleWeek.getMondayTeachers()[3];
-            teacherButtons[3].setText(configuredScheduleWeek.getMondayTeachers()[3]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[3] = configuredScheduleWeek.getMondayRooms()[3];
-            roomButtons[3].setText(configuredScheduleWeek.getMondayRooms()[3]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[3] = configuredScheduleWeek.getMondayPeriods()[3];
-            periodsButtons[3].setText(configuredScheduleWeek.getMondayPeriods()[3]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[4] = configuredScheduleWeek.getMondayLessonNames()[4];
-            lessonNameButtons[4].setText(configuredScheduleWeek.getMondayLessonNames()[4]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[4] = configuredScheduleWeek.getMondayTeachers()[4];
-            teacherButtons[4].setText(configuredScheduleWeek.getMondayTeachers()[4]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[4] = configuredScheduleWeek.getMondayRooms()[4];
-            roomButtons[4].setText(configuredScheduleWeek.getMondayRooms()[4]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[4] = configuredScheduleWeek.getMondayPeriods()[4];
-            periodsButtons[4].setText(configuredScheduleWeek.getMondayPeriods()[4]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[5] = configuredScheduleWeek.getMondayLessonNames()[5];
-            lessonNameButtons[5].setText(configuredScheduleWeek.getMondayLessonNames()[5]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[5] = configuredScheduleWeek.getMondayTeachers()[5];
-            teacherButtons[5].setText(configuredScheduleWeek.getMondayTeachers()[5]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[5] = configuredScheduleWeek.getMondayRooms()[5];
-            roomButtons[5].setText(configuredScheduleWeek.getMondayRooms()[5]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[5] = configuredScheduleWeek.getMondayPeriods()[5];
-            periodsButtons[5].setText(configuredScheduleWeek.getMondayPeriods()[5]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[6] = configuredScheduleWeek.getMondayLessonNames()[6];
-            lessonNameButtons[6].setText(configuredScheduleWeek.getMondayLessonNames()[6]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[6] = configuredScheduleWeek.getMondayTeachers()[6];
-            teacherButtons[6].setText(configuredScheduleWeek.getMondayTeachers()[6]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[6] = configuredScheduleWeek.getMondayRooms()[6];
-            roomButtons[6].setText(configuredScheduleWeek.getMondayRooms()[6]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[6] = configuredScheduleWeek.getMondayPeriods()[6];
-            periodsButtons[6].setText(configuredScheduleWeek.getMondayPeriods()[6]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[7] = configuredScheduleWeek.getMondayLessonNames()[7];
-            lessonNameButtons[7].setText(configuredScheduleWeek.getMondayLessonNames()[7]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[7] = configuredScheduleWeek.getMondayTeachers()[7];
-            teacherButtons[7].setText(configuredScheduleWeek.getMondayTeachers()[7]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[7] = configuredScheduleWeek.getMondayRooms()[7];
-            roomButtons[7].setText(configuredScheduleWeek.getMondayRooms()[7]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[7] = configuredScheduleWeek.getMondayPeriods()[7];
-            periodsButtons[7].setText(configuredScheduleWeek.getMondayPeriods()[7]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[8] = configuredScheduleWeek.getMondayLessonNames()[8];
-            lessonNameButtons[8].setText(configuredScheduleWeek.getMondayLessonNames()[8]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[8] = configuredScheduleWeek.getMondayTeachers()[8];
-            teacherButtons[8].setText(configuredScheduleWeek.getMondayTeachers()[8]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[8] = configuredScheduleWeek.getMondayRooms()[8];
-            roomButtons[8].setText(configuredScheduleWeek.getMondayRooms()[8]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[8] = configuredScheduleWeek.getMondayPeriods()[8];
-            periodsButtons[8].setText(configuredScheduleWeek.getMondayPeriods()[8]);
-        }
-        if (configuredScheduleWeekNotNullConditions[0]) {
-            weekdayLessonNames[9] = configuredScheduleWeek.getMondayLessonNames()[9];
-            lessonNameButtons[9].setText(configuredScheduleWeek.getMondayLessonNames()[9]);
-        }
-        if (configuredScheduleWeekNotNullConditions[1]) {
-            weekdayTeachers[9] = configuredScheduleWeek.getMondayTeachers()[9];
-            teacherButtons[9].setText(configuredScheduleWeek.getMondayTeachers()[9]);
-        }
-        if (configuredScheduleWeekNotNullConditions[2]) {
-            weekdayRooms[9] = configuredScheduleWeek.getMondayRooms()[9];
-            roomButtons[9].setText(configuredScheduleWeek.getMondayRooms()[9]);
-        }
-        if (configuredScheduleWeekNotNullConditions[3]) {
-            weekdayPeriods[9] = configuredScheduleWeek.getMondayPeriods()[9];
-            periodsButtons[9].setText(configuredScheduleWeek.getMondayPeriods()[9]);
-        }
+
+            weekdayLessonNames[0] = configuredScheduleLessonNames[0];
+            lessonNameButtons[0].setText(configuredScheduleLessonNames[0]);
+            weekdayTeachers[0] = configuredScheduleTeachers[0];
+            teacherButtons[0].setText(configuredScheduleTeachers[0]);
+            weekdayRooms[0] = configuredScheduleRooms[0];
+            roomButtons[0].setText(configuredScheduleRooms[0]);
+            weekdayPeriods[0] = configuredSchedulePeriods[0];
+            periodsButtons[0].setText(configuredSchedulePeriods[0]);
+
+            weekdayLessonNames[1] = configuredScheduleLessonNames[1];
+            lessonNameButtons[1].setText(configuredScheduleLessonNames[1]);
+            weekdayTeachers[1] = configuredScheduleTeachers[1];
+            teacherButtons[1].setText(configuredScheduleTeachers[1]);
+            weekdayRooms[1] = configuredScheduleRooms[1];
+            roomButtons[1].setText(configuredScheduleRooms[1]);
+            weekdayPeriods[1] = configuredSchedulePeriods[1];
+            periodsButtons[1].setText(configuredSchedulePeriods[1]);
+
+            weekdayLessonNames[2] = configuredScheduleLessonNames[2];
+            lessonNameButtons[2].setText(configuredScheduleLessonNames[2]);
+            weekdayTeachers[2] = configuredScheduleTeachers[2];
+            teacherButtons[2].setText(configuredScheduleTeachers[2]);
+            weekdayRooms[2] = configuredScheduleRooms[2];
+            roomButtons[2].setText(configuredScheduleRooms[2]);
+            weekdayPeriods[2] = configuredSchedulePeriods[2];
+            periodsButtons[2].setText(configuredSchedulePeriods[2]);
+
+            weekdayLessonNames[3] = configuredScheduleLessonNames[3];
+            lessonNameButtons[3].setText(configuredScheduleLessonNames[3]);
+            weekdayTeachers[3] = configuredScheduleTeachers[3];
+            teacherButtons[3].setText(configuredScheduleTeachers[3]);
+            weekdayRooms[3] = configuredScheduleRooms[3];
+            roomButtons[3].setText(configuredScheduleRooms[3]);
+            weekdayPeriods[3] = configuredSchedulePeriods[3];
+            periodsButtons[3].setText(configuredSchedulePeriods[3]);
+
+            weekdayLessonNames[4] = configuredScheduleLessonNames[4];
+            lessonNameButtons[4].setText(configuredScheduleLessonNames[4]);
+            weekdayTeachers[4] = configuredScheduleTeachers[4];
+            teacherButtons[4].setText(configuredScheduleTeachers[4]);
+            weekdayRooms[4] = configuredScheduleRooms[4];
+            roomButtons[4].setText(configuredScheduleRooms[4]);
+            weekdayPeriods[4] = configuredSchedulePeriods[4];
+            periodsButtons[4].setText(configuredSchedulePeriods[4]);
+
+            weekdayLessonNames[5] = configuredScheduleLessonNames[5];
+            lessonNameButtons[5].setText(configuredScheduleLessonNames[5]);
+            weekdayTeachers[5] = configuredScheduleTeachers[5];
+            teacherButtons[5].setText(configuredScheduleTeachers[5]);
+            weekdayRooms[5] = configuredScheduleRooms[5];
+            roomButtons[5].setText(configuredScheduleRooms[5]);
+            weekdayPeriods[5] = configuredSchedulePeriods[5];
+            periodsButtons[5].setText(configuredSchedulePeriods[5]);
+
+            weekdayLessonNames[6] = configuredScheduleLessonNames[6];
+            lessonNameButtons[6].setText(configuredScheduleLessonNames[6]);
+            weekdayTeachers[6] = configuredScheduleTeachers[6];
+            teacherButtons[6].setText(configuredScheduleTeachers[6]);
+            weekdayRooms[6] = configuredScheduleRooms[6];
+            roomButtons[6].setText(configuredScheduleRooms[6]);
+            weekdayPeriods[6] = configuredSchedulePeriods[6];
+            periodsButtons[6].setText(configuredSchedulePeriods[6]);
+
+            weekdayLessonNames[7] = configuredScheduleLessonNames[7];
+            lessonNameButtons[7].setText(configuredScheduleLessonNames[7]);
+            weekdayTeachers[7] = configuredScheduleTeachers[7];
+            teacherButtons[7].setText(configuredScheduleTeachers[7]);
+            weekdayRooms[7] = configuredScheduleRooms[7];
+            roomButtons[7].setText(configuredScheduleRooms[7]);
+            weekdayPeriods[7] = configuredSchedulePeriods[7];
+            periodsButtons[7].setText(configuredSchedulePeriods[7]);
+
+            weekdayLessonNames[8] = configuredScheduleLessonNames[8];
+            lessonNameButtons[8].setText(configuredScheduleLessonNames[8]);
+            weekdayTeachers[8] = configuredScheduleTeachers[8];
+            teacherButtons[8].setText(configuredScheduleTeachers[8]);
+            weekdayRooms[8] = configuredScheduleRooms[8];
+            roomButtons[8].setText(configuredScheduleRooms[8]);
+            weekdayPeriods[8] = configuredSchedulePeriods[8];
+            periodsButtons[8].setText(configuredSchedulePeriods[8]);
+
+            weekdayLessonNames[9] = configuredScheduleLessonNames[9];
+            lessonNameButtons[9].setText(configuredScheduleLessonNames[9]);
+            weekdayTeachers[9] = configuredScheduleTeachers[9];
+            teacherButtons[9].setText(configuredScheduleTeachers[9]);
+            weekdayRooms[9] = configuredScheduleRooms[9];
+            roomButtons[9].setText(configuredScheduleRooms[9]);
+            weekdayPeriods[9] = configuredSchedulePeriods[9];
+            periodsButtons[9].setText(configuredSchedulePeriods[9]);
     }
 
     static Intent onWeekdayButtonsClick(View v, Context c, int[] buttonIDs) {

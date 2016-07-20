@@ -212,17 +212,17 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
 
+        if (configuredScheduleWeek != null && configuredScheduleWeek.getMondayRooms() != null &&
+                configuredScheduleWeek.getMondayTeachers() != null && configuredScheduleWeek.getMondayRooms() != null &&
+                configuredScheduleWeek.getMondayPeriods() != null) {
+            ConfigureWeekdays.initializeScheduleWeekday(mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods,
+                    configuredScheduleWeek.getMondayLessonNames(), configuredScheduleWeek.getMondayTeachers(),
+                    configuredScheduleWeek.getMondayRooms(), configuredScheduleWeek.getMondayPeriods(),
+                    lessonNameButtons, teacherButtons, roomButtons, periodButtons);
+        }
 
-        Boolean[] configuredScheduleWeekNotNullConditions = new Boolean[4];
-        configuredScheduleWeekNotNullConditions[0] = configuredScheduleWeek != null && configuredScheduleWeek.getMondayRooms() != null;
-        configuredScheduleWeekNotNullConditions[1] = configuredScheduleWeek != null && configuredScheduleWeek.getMondayTeachers() != null;
-        configuredScheduleWeekNotNullConditions[2] = configuredScheduleWeek != null && configuredScheduleWeek.getMondayRooms() != null;
-        configuredScheduleWeekNotNullConditions[3] = configuredScheduleWeek != null && configuredScheduleWeek.getMondayPeriods() != null;
 
-        ConfigureWeekdays.initializeScheduleWeekday(configuredScheduleWeekNotNullConditions, configuredScheduleWeek,
-                mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods,
-                lessonNameButtons, teacherButtons, roomButtons, periodButtons);
-    }
+}
 
 
     @Override

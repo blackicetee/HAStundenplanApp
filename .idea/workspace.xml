@@ -59,8 +59,8 @@
       <file leaf-file-name="ConfigureMondayActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-425">
-              <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
+            <state relative-caret-position="413">
+              <caret line="235" column="62" selection-start-line="235" selection-start-column="62" selection-end-line="235" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -79,11 +79,9 @@
       <file leaf-file-name="ConfigureThursdayActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="245" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,11 +89,9 @@
       <file leaf-file-name="ConfigureFridayActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="207" column="68" selection-start-line="207" selection-start-column="68" selection-end-line="207" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="241" column="21" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,8 +99,8 @@
       <file leaf-file-name="ConfigureWeekdays.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4335">
-              <caret line="275" column="3" selection-start-line="275" selection-start-column="3" selection-end-line="275" selection-end-column="3" />
+            <state relative-caret-position="-1314">
+              <caret line="166" column="30" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,7 +121,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
+            <state relative-caret-position="-187">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
@@ -135,11 +131,9 @@
       <file leaf-file-name="ConfigureTuesdayActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="522" column="105" selection-start-line="522" selection-start-column="105" selection-end-line="522" selection-end-column="105" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,11 +141,9 @@
       <file leaf-file-name="ConfigureWednesdayActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="249">
+              <caret line="238" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -236,13 +228,13 @@
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/deleteThisFile" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/deleteThisFile" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" />
       </list>
     </option>
   </component>
@@ -253,7 +245,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1600" />
+    <option name="width" value="1604" />
     <option name="height" value="846" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -1166,15 +1158,15 @@
       <workItem from="1468588431713" duration="1806000" />
       <workItem from="1468839107430" duration="46864000" />
       <workItem from="1468942094019" duration="1907000" />
-      <workItem from="1469000248508" duration="13617000" />
+      <workItem from="1469000248508" duration="17174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224133000" />
+    <option name="totallyTimeSpent" value="227690000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1600" height="846" extended-state="1" />
+    <frame x="0" y="0" width="1604" height="846" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1185,15 +1177,16 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33420366" sideWeight="0.505625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3478261" sideWeight="0.494375" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18070652" sideWeight="0.494375" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22222222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22166246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880434" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1210,7 +1203,6 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24432433" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1459,6 +1451,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1564,59 +1557,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="207" column="68" selection-start-line="207" selection-start-column="68" selection-end-line="207" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeek.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="522" column="105" selection-start-line="522" selection-start-column="105" selection-end-line="522" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1638,18 +1583,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
-          <caret line="275" column="3" selection-start-line="275" selection-start-column="3" selection-end-line="275" selection-end-column="3" />
+        <state relative-caret-position="-1314">
+          <caret line="166" column="30" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="238" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="245" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="241" column="21" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
+        <state relative-caret-position="413">
+          <caret line="235" column="62" selection-start-line="235" selection-start-column="62" selection-end-line="235" selection-end-column="62" />
           <folding />
         </state>
       </provider>
