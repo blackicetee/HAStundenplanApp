@@ -26,6 +26,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
     private String[] mondayRooms = new String[]{"Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei", "Frei"};
     private String[] mondayPeriods = new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"};
 
+    private Intent configureScheduleIntent = null;
     private ScheduleWeek configuredScheduleWeek;
     private TextView[] tvMondayLessonTimes = new TextView[20];
     private int[] btnMondayIDs = new int[41];
@@ -36,11 +37,6 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
     private Button[] teacherButtons = new Button[10];
     private Button[] roomButtons = new Button[10];
     private Button[] periodButtons = new Button[10];
-
-    static final String CANCEL_MSG_CHOOSE_LESSON = "Der Vorgang: \"Auswählen der Unterrichtsstunde\" wurde abgebrochen!";
-    static final String CANCEL_MSG_CHOOSE_TEACHER = "Der Vorgang: \"Auswählen des Lehrers\" wurde abgebrochen!";
-    static final String CANCEL_MSG_CHOOSE_ROOM = "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!";
-    static final String CANCEL_MSG_CHOOSE_PERIOD = "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -207,7 +203,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         Calendar lessonTime = Calendar.getInstance();
         lessonTime.setTime(configuration.getStartEarliestLesson());
 
-        ConfigureWeekdays.calculateWeekdayLessonTimes(tvMondayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
+        //ConfigureWeekdays.calculateWeekdayLessonTimes(tvMondayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
 
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
@@ -220,33 +216,33 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
                     configuredScheduleWeek.getMondayRooms(), configuredScheduleWeek.getMondayPeriods(),
                     lessonNameButtons, teacherButtons, roomButtons, periodButtons);
         }
-
-
-}
-
+    }
 
     @Override
     public void onBackPressed() {
-        setResult(RESULT_CANCELED, new Intent());
-        finish();
+        if (configureScheduleIntent != null) {
+            for (int i = 0; i < mondayLessonNames.length; i++) {
+                ConfigureWeekdays.checkScheduleRow(i, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods);
+            }
+            configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
+            configuredScheduleWeek.setMondayTeachers(mondayTeachers);
+            configuredScheduleWeek.setMondayRooms(mondayRooms);
+            configuredScheduleWeek.setMondayPeriods(mondayPeriods);
+            configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+            setResult(RESULT_OK, configureScheduleIntent);
+            finish();
+        } else {
+            setResult(RESULT_CANCELED);
+            finish();
+        }
+
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnMondayIDs);
         int rc = intent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, -1);
-        if (rc == 50) {
-            for (int i = 0; i < mondayLessonNames.length; i++) {
-                ConfigureWeekdays.checkScheduleRow(i, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods);
-            }
-            Intent configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
-            configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
-            configuredScheduleWeek.setMondayTeachers(mondayTeachers);
-            configuredScheduleWeek.setMondayRooms(mondayRooms);
-            configuredScheduleWeek.setMondayPeriods(mondayPeriods);
-            configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
-            startActivityForResult(configureScheduleIntent, rc);
-        } else if (rc == -1) {
+        if (rc == -1) {
             throw new IllegalStateException("The REQUEST_CODE is -1 = Error Code");
         } else {
             startActivityForResult(intent, rc);
@@ -256,15 +252,14 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK && requestCode == 50) {
-            setResult(Activity.RESULT_OK, data);
-            finish();
-        } else if (resultCode == Activity.RESULT_CANCELED && requestCode == 50) {
-            Toast.makeText(this, CANCEL_MSG_CONFIGURE_TUESDAY, Toast.LENGTH_LONG).show();
-        } else {
-            ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods,
-                    lessonNameButtons, teacherButtons, roomButtons, periodButtons);
-        }
+        ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods, lessonNameButtons, teacherButtons, roomButtons, periodButtons);
+        configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
+        configuredScheduleWeek.setMondayTeachers(mondayTeachers);
+        configuredScheduleWeek.setMondayRooms(mondayRooms);
+        configuredScheduleWeek.setMondayPeriods(mondayPeriods);
+        configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
+        configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+        setResult(RESULT_OK, configureScheduleIntent);
     }
 
 }

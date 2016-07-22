@@ -42,5 +42,6 @@
                   android:label="Stundenplan für Donnerstag anpassen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureFridayActivity"
                   android:label="Stundenplan für Freitag anpassen"/>
+        <activity android:name=".ConfigureScheduleWeekdaysActivity.FragmentPagerSupport" android:label="FragmentPagerSupport"/>
     </application>
 </manifest>

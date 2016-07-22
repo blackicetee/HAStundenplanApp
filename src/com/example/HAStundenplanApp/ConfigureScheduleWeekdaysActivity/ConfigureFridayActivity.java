@@ -202,7 +202,7 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
         Calendar lessonTime = Calendar.getInstance();
         lessonTime.setTime(configuration.getStartEarliestLesson());
 
-        ConfigureWeekdays.calculateWeekdayLessonTimes(tvFridayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
+        //ConfigureWeekdays.calculateWeekdayLessonTimes(tvFridayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
 
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);

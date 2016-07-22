@@ -51,6 +51,10 @@
     <string name="Raum">Raum</string>
     <string name="Woche">wöchentlich</string>
     <string name="Speichern">Speichern</string>
+    <string name="first">First</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="last">Last</string>
+    <string name="Weekday">Wochentag</string>
 
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>

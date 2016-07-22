@@ -33,7 +33,7 @@ public class ImplScheduleWeek implements ScheduleWeek {
     private String[] fridayRooms = null;
     private String[] fridayPeriods = null;
 
-    ImplScheduleWeek() {
+    public ImplScheduleWeek() {
 
     }
 

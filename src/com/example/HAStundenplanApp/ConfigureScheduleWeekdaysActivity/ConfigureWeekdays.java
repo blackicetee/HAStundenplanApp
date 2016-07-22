@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.HAStundenplanApp.R;
 import com.example.HAStundenplanApp.ScheduleWeek;
 
 import java.util.Calendar;
@@ -25,56 +26,80 @@ class ConfigureWeekdays {
     private static final String CANCEL_MSG_CHOOSE_ROOM = "Der Vorgang: \"Auswählen des Raums\" wurde abgebrochen!";
     private static final String CANCEL_MSG_CHOOSE_PERIOD = "Der Vorgang: \"Auswählen der Wiederholung\" wurde abgebrochen!";
 
-    static void calculateWeekdayLessonTimes(TextView[] tvWeekdayLessonTimes, List<Pair<Integer, Integer>> breaks, Calendar lessonTime, int lessonDuration) {
-        if (breaks.get(0).first == 0) {
-            tvWeekdayLessonTimes[0].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+    static void calculateWeekdayLessonTimes(View v, List<Pair<Integer, Integer>> breaks, Calendar lessonTime, int lessonDuration) {
+        if (breaks.size() == 9) {
+            TextView tvWeekdayLessonZeroStart = (TextView) v.findViewById(R.id.tvWeekdayLessonZeroStart);
+            TextView tvWeekdayLessonZeroEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonZeroEnd);
+            TextView tvWeekdayLessonOneStart = (TextView) v.findViewById(R.id.tvWeekdayLessonOneStart);
+            TextView tvWeekdayLessonOneEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonOneEnd);
+            TextView tvWeekdayLessonTwoStart = (TextView) v.findViewById(R.id.tvWeekdayLessonTwoStart);
+            TextView tvWeekdayLessonTwoEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonTwoEnd);
+            TextView tvWeekdayLessonThreeStart = (TextView) v.findViewById(R.id.tvWeekdayLessonThreeStart);
+            TextView tvWeekdayLessonThreeEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonThreeEnd);
+            TextView tvWeekdayLessonFourStart = (TextView) v.findViewById(R.id.tvWeekdayLessonFourStart);
+            TextView tvWeekdayLessonFourEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonFourEnd);
+            TextView tvWeekdayLessonFiveStart = (TextView) v.findViewById(R.id.tvWeekdayLessonFiveStart);
+            TextView tvWeekdayLessonFiveEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonFiveEnd);
+            TextView tvWeekdayLessonSixStart = (TextView) v.findViewById(R.id.tvWeekdayLessonSixStart);
+            TextView tvWeekdayLessonSixEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonSixEnd);
+            TextView tvWeekdayLessonSevenStart = (TextView) v.findViewById(R.id.tvWeekdayLessonSevenStart);
+            TextView tvWeekdayLessonSevenEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonSevenEnd);
+            TextView tvWeekdayLessonEightStart = (TextView) v.findViewById(R.id.tvWeekdayLessonEightStart);
+            TextView tvWeekdayLessonEightEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonEightEnd);
+            TextView tvWeekdayLessonNineStart = (TextView) v.findViewById(R.id.tvWeekdayLessonNineStart);
+            TextView tvWeekdayLessonNineEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonNineEnd);
+
+            tvWeekdayLessonZeroStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[1].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonZeroEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(0).second);
-        } else if (breaks.get(1).first == 1) {
-            tvWeekdayLessonTimes[2].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonOneStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[3].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonOneEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(1).second);
-        } else if (breaks.get(2).first == 2) {
-            tvWeekdayLessonTimes[4].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonTwoStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[5].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonTwoEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(2).second);
-        } else if (breaks.get(3).first == 3) {
-            tvWeekdayLessonTimes[6].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonThreeStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[7].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonThreeEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(3).second);
-        } else if (breaks.get(4).first == 4) {
-            tvWeekdayLessonTimes[8].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonFourStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[9].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonFourEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(4).second);
-        } else if (breaks.get(5).first == 5) {
-            tvWeekdayLessonTimes[10].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonFiveStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[11].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonFiveEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(5).second);
-        } else if (breaks.get(6).first == 6) {
-            tvWeekdayLessonTimes[12].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonSixStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[13].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonSixEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(6).second);
-        } else if (breaks.get(7).first == 7) {
-            tvWeekdayLessonTimes[14].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonSevenStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[15].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonSevenEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(7).second);
-        } else if (breaks.get(8).first == 8) {
-            tvWeekdayLessonTimes[16].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+
+            tvWeekdayLessonEightStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
-            tvWeekdayLessonTimes[17].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            tvWeekdayLessonEightEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, breaks.get(8).second);
+
+            tvWeekdayLessonNineStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+            lessonTime.add(Calendar.MINUTE, lessonDuration);
+            tvWeekdayLessonNineEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
+        } else {
+            throw new IllegalArgumentException("You need to specify 9 breaks in the Configuration to run this implementation!");
         }
-        tvWeekdayLessonTimes[18].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-        lessonTime.add(Calendar.MINUTE, lessonDuration);
-        tvWeekdayLessonTimes[19].setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
     }
 
     private static String convertIntegerTimeToTimeString(int i) {
