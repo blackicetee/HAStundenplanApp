@@ -93,10 +93,13 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         }
     }
 
-    public static class ArrayListFragment extends Fragment {
+    public static class ArrayListFragment extends Fragment implements View.OnClickListener {
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
         Configuration dConfiguration = new DummyConfiguration().getConfiguration();
+
+        Button btnWeekdayLessonZeroLessonName;
+        Button btnWeekdayLessonOneLessonName;
 
 
         /**
@@ -186,10 +189,94 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
                             scheduleWeekPasser.getScheduleWeek().getFridayPeriods());
                 }
             }
-            Intent weekdayButtonsClickIntent = ConfigureWeekdays.onWeekdayButtonsClick(v, getContext());
-            if (weekdayButtonsClickIntent != null) {
-                startActivityForResult(weekdayButtonsClickIntent, weekdayButtonsClickIntent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, 0));
-            }
+
+            btnWeekdayLessonZeroLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonZeroLessonName);
+            btnWeekdayLessonOneLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonOneLessonName);
+            Button btnWeekdayLessonTwoLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonTwoLessonName);
+            Button btnWeekdayLessonThreeLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonThreeLessonName);
+            Button btnWeekdayLessonFourLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFourLessonName);
+            Button btnWeekdayLessonFiveLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFiveLessonName);
+            Button btnWeekdayLessonSixLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSixLessonName);
+            Button btnWeekdayLessonSevenLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSevenLessonName);
+            Button btnWeekdayLessonEightLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonEightLessonName);
+            Button btnWeekdayLessonNineLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonNineLessonName);
+
+            Button btnWeekdayLessonZeroTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonZeroTeacher);
+            Button btnWeekdayLessonOneTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonOneTeacher);
+            Button btnWeekdayLessonTwoTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonTwoTeacher);
+            Button btnWeekdayLessonThreeTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonThreeTeacher);
+            Button btnWeekdayLessonFourTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFourTeacher);
+            Button btnWeekdayLessonFiveTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFiveTeacher);
+            Button btnWeekdayLessonSixTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSixTeacher);
+            Button btnWeekdayLessonSevenTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSevenTeacher);
+            Button btnWeekdayLessonEightTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonEightTeacher);
+            Button btnWeekdayLessonNineTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonNineTeacher);
+
+            Button btnWeekdayLessonZeroRoom = (Button) v.findViewById(R.id.btnWeekdayLessonZeroRoom);
+            Button btnWeekdayLessonOneRoom = (Button) v.findViewById(R.id.btnWeekdayLessonOneRoom);
+            Button btnWeekdayLessonTwoRoom = (Button) v.findViewById(R.id.btnWeekdayLessonTwoRoom);
+            Button btnWeekdayLessonThreeRoom = (Button) v.findViewById(R.id.btnWeekdayLessonThreeRoom);
+            Button btnWeekdayLessonFourRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFourRoom);
+            Button btnWeekdayLessonFiveRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFiveRoom);
+            Button btnWeekdayLessonSixRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSixRoom);
+            Button btnWeekdayLessonSevenRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSevenRoom);
+            Button btnWeekdayLessonEightRoom = (Button) v.findViewById(R.id.btnWeekdayLessonEightRoom);
+            Button btnWeekdayLessonNineRoom = (Button) v.findViewById(R.id.btnWeekdayLessonNineRoom);
+
+            Button btnWeekdayLessonZeroPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonZeroPeriod);
+            Button btnWeekdayLessonOnePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonOnePeriod);
+            Button btnWeekdayLessonTwoPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonTwoPeriod);
+            Button btnWeekdayLessonThreePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonThreePeriod);
+            Button btnWeekdayLessonFourPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFourPeriod);
+            Button btnWeekdayLessonFivePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFivePeriod);
+            Button btnWeekdayLessonSixPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSixPeriod);
+            Button btnWeekdayLessonSevenPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSevenPeriod);
+            Button btnWeekdayLessonEightPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonEightPeriod);
+            Button btnWeekdayLessonNinePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonNinePeriod);
+
+            btnWeekdayLessonZeroLessonName.setOnClickListener(this);
+            btnWeekdayLessonOneLessonName.setOnClickListener(this);
+            btnWeekdayLessonTwoLessonName.setOnClickListener(this);
+            btnWeekdayLessonThreeLessonName.setOnClickListener(this);
+            btnWeekdayLessonFourLessonName.setOnClickListener(this);
+            btnWeekdayLessonFiveLessonName.setOnClickListener(this);
+            btnWeekdayLessonSixLessonName.setOnClickListener(this);
+            btnWeekdayLessonSevenLessonName.setOnClickListener(this);
+            btnWeekdayLessonEightLessonName.setOnClickListener(this);
+            btnWeekdayLessonNineLessonName.setOnClickListener(this);
+
+            btnWeekdayLessonZeroTeacher.setOnClickListener(this);
+            btnWeekdayLessonOneTeacher.setOnClickListener(this);
+            btnWeekdayLessonTwoTeacher.setOnClickListener(this);
+            btnWeekdayLessonThreeTeacher.setOnClickListener(this);
+            btnWeekdayLessonFourTeacher.setOnClickListener(this);
+            btnWeekdayLessonFiveTeacher.setOnClickListener(this);
+            btnWeekdayLessonSixTeacher.setOnClickListener(this);
+            btnWeekdayLessonSevenTeacher.setOnClickListener(this);
+            btnWeekdayLessonEightTeacher.setOnClickListener(this);
+            btnWeekdayLessonNineTeacher.setOnClickListener(this);
+
+            btnWeekdayLessonZeroRoom.setOnClickListener(this);
+            btnWeekdayLessonOneRoom.setOnClickListener(this);
+            btnWeekdayLessonTwoRoom.setOnClickListener(this);
+            btnWeekdayLessonThreeRoom.setOnClickListener(this);
+            btnWeekdayLessonFourRoom.setOnClickListener(this);
+            btnWeekdayLessonFiveRoom.setOnClickListener(this);
+            btnWeekdayLessonSixRoom.setOnClickListener(this);
+            btnWeekdayLessonSevenRoom.setOnClickListener(this);
+            btnWeekdayLessonEightRoom.setOnClickListener(this);
+            btnWeekdayLessonNineRoom.setOnClickListener(this);
+
+            btnWeekdayLessonZeroPeriod.setOnClickListener(this);
+            btnWeekdayLessonOnePeriod.setOnClickListener(this);
+            btnWeekdayLessonTwoPeriod.setOnClickListener(this);
+            btnWeekdayLessonThreePeriod.setOnClickListener(this);
+            btnWeekdayLessonFourPeriod.setOnClickListener(this);
+            btnWeekdayLessonFivePeriod.setOnClickListener(this);
+            btnWeekdayLessonSixPeriod.setOnClickListener(this);
+            btnWeekdayLessonSevenPeriod.setOnClickListener(this);
+            btnWeekdayLessonEightPeriod.setOnClickListener(this);
+            btnWeekdayLessonNinePeriod.setOnClickListener(this);
             return v;
             /**
              View v = null;
@@ -221,6 +308,164 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         public void onActivityCreated(@Nullable Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent weekdayLessonNameIntent = new Intent(getContext(), ChooseLesson.class);
+            Intent weekdayTeacherIntent = new Intent(getContext(), ChooseTeacher.class);
+            Intent weekdayRoomIntent = new Intent(getContext(), ChooseRoom.class);
+            Intent weekdayPeriodIntent = new Intent(getContext(), ChoosePeriod.class);
+            switch (v.getId()) {
+                case R.id.btnWeekdayLessonZeroLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 10);
+                    break;
+                case R.id.btnWeekdayLessonOneLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 11);
+                    break;
+                case R.id.btnWeekdayLessonTwoLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 12);
+                    break;
+                case R.id.btnWeekdayLessonThreeLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 13);
+                    break;
+                case R.id.btnWeekdayLessonFourLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 14);
+                    break;
+                case R.id.btnWeekdayLessonFiveLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 15);
+                    break;
+                case R.id.btnWeekdayLessonSixLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 16);
+                    break;
+                case R.id.btnWeekdayLessonSevenLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 17);
+                    break;
+                case R.id.btnWeekdayLessonEightLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 18);
+                    break;
+                case R.id.btnWeekdayLessonNineLessonName:
+                    startActivityForResult(weekdayLessonNameIntent, 19);
+                    break;
+                case R.id.btnWeekdayLessonZeroTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 20);
+                    break;
+                case R.id.btnWeekdayLessonOneTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 21);
+                    break;
+                case R.id.btnWeekdayLessonTwoTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 22);
+                    break;
+                case R.id.btnWeekdayLessonThreeTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 23);
+                    break;
+                case R.id.btnWeekdayLessonFourTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 24);
+                    break;
+                case R.id.btnWeekdayLessonFiveTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 25);
+                    break;
+                case R.id.btnWeekdayLessonSixTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 26);
+                    break;
+                case R.id.btnWeekdayLessonSevenTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 27);
+                    break;
+                case R.id.btnWeekdayLessonEightTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 28);
+                    break;
+                case R.id.btnWeekdayLessonNineTeacher:
+                    startActivityForResult(weekdayTeacherIntent, 29);
+                    break;
+                case R.id.btnWeekdayLessonZeroRoom:
+                    startActivityForResult(weekdayRoomIntent, 30);
+                    break;
+                case R.id.btnWeekdayLessonOneRoom:
+                    startActivityForResult(weekdayRoomIntent, 31);
+                    break;
+                case R.id.btnWeekdayLessonTwoRoom:
+                    startActivityForResult(weekdayRoomIntent, 32);
+                    break;
+                case R.id.btnWeekdayLessonThreeRoom:
+                    startActivityForResult(weekdayRoomIntent, 33);
+                    break;
+                case R.id.btnWeekdayLessonFourRoom:
+                    startActivityForResult(weekdayRoomIntent, 34);
+                    break;
+                case R.id.btnWeekdayLessonFiveRoom:
+                    startActivityForResult(weekdayRoomIntent, 35);
+                    break;
+                case R.id.btnWeekdayLessonSixRoom:
+                    startActivityForResult(weekdayRoomIntent, 36);
+                    break;
+                case R.id.btnWeekdayLessonSevenRoom:
+                    startActivityForResult(weekdayRoomIntent, 37);
+                    break;
+                case R.id.btnWeekdayLessonEightRoom:
+                    startActivityForResult(weekdayRoomIntent, 38);
+                    break;
+                case R.id.btnWeekdayLessonNineRoom:
+                    startActivityForResult(weekdayRoomIntent, 39);
+                    break;
+                case R.id.btnWeekdayLessonZeroPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 40);
+                    break;
+                case R.id.btnWeekdayLessonOnePeriod:
+                    startActivityForResult(weekdayPeriodIntent, 41);
+                    break;
+                case R.id.btnWeekdayLessonTwoPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 42);
+                    break;
+                case R.id.btnWeekdayLessonThreePeriod:
+                    startActivityForResult(weekdayPeriodIntent, 43);
+                    break;
+                case R.id.btnWeekdayLessonFourPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 44);
+                    break;
+                case R.id.btnWeekdayLessonFivePeriod:
+                    startActivityForResult(weekdayPeriodIntent, 45);
+                    break;
+                case R.id.btnWeekdayLessonSixPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 46);
+                    break;
+                case R.id.btnWeekdayLessonSevenPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 47);
+                    break;
+                case R.id.btnWeekdayLessonEightPeriod:
+                    startActivityForResult(weekdayPeriodIntent, 48);
+                    break;
+                case R.id.btnWeekdayLessonNinePeriod:
+                    startActivityForResult(weekdayPeriodIntent, 49);
+                    break;
+            }
+        }
+
+        private String[] changeValueAtPositionInStringArray(String[] strArray, int position, String value) {
+            if (strArray.length > position) {
+                strArray[position] = value;
+            } else throw new ArrayIndexOutOfBoundsException();
+            return strArray;
+        }
+
+        @Override
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == 10) {
+                if (configuredScheduleWeek.getMondayLessonNames() != null)  {
+                    String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                    btnWeekdayLessonZeroLessonName.setText(weekdayLessonName);
+                    configuredScheduleWeek.setMondayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayLessonNames(), 0, weekdayLessonName));
+                    scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+                }
+                else {
+                    String[] mondayLessonNames = new String[]{"", "", "", "", "", "", "", "", "", ""};
+                    String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                    btnWeekdayLessonZeroLessonName.setText(weekdayLessonName);
+                    configuredScheduleWeek.setMondayLessonNames(changeValueAtPositionInStringArray(mondayLessonNames, 0, weekdayLessonName));
+                    scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+                }
+            }
         }
     }
 }
