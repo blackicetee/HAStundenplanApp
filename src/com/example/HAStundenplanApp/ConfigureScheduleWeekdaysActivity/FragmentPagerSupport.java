@@ -3,6 +3,7 @@ package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.*;
@@ -122,6 +123,13 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             else throw new IllegalArgumentException();
         }
 
+        @Override
+        public void onAttach(Context context) {
+            super.onAttach(context);
+            Activity activity = getActivity();
+            scheduleWeekPasser = (OnScheduleWeekPass) activity;
+        }
+
         /**
          * When creating, retrieve this instance's number from its arguments.
          */
@@ -141,48 +149,78 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
 
             View v = inflater.inflate(R.layout.fragment_pager_list, container, false);
             View tv = v.findViewById(R.id.tvScheduleWeekday);
-            ((TextView)tv).setText(getScheduleWeekday(mNum));
+            ((TextView) tv).setText(getScheduleWeekday(mNum));
 
             Calendar lessonTime = Calendar.getInstance();
             lessonTime.setTime(dConfiguration.getStartEarliestLesson());
             ConfigureWeekdays.calculateWeekdayLessonTimes(v, dConfiguration.getBreaks(), lessonTime, dConfiguration.getLessonDurationInMinutes());
+            if (mNum == 0) {
+                if (scheduleWeekPasser.getScheduleWeek().getMondayLessonNames() != null) {
+                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getMondayLessonNames(),
+                            scheduleWeekPasser.getScheduleWeek().getMondayTeachers(), scheduleWeekPasser.getScheduleWeek().getMondayRooms(),
+                            scheduleWeekPasser.getScheduleWeek().getMondayPeriods());
+                }
+            } else if (mNum == 1) {
+                if (scheduleWeekPasser.getScheduleWeek().getTuesdayLessonNames() != null) {
+                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getTuesdayLessonNames(),
+                            scheduleWeekPasser.getScheduleWeek().getTuesdayTeachers(), scheduleWeekPasser.getScheduleWeek().getTuesdayRooms(),
+                            scheduleWeekPasser.getScheduleWeek().getTuesdayPeriods());
+                }
+
+            } else if (mNum == 2) {
+                if (scheduleWeekPasser.getScheduleWeek().getWednesdayLessonNames() != null) {
+                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getWednesdayLessonNames(),
+                            scheduleWeekPasser.getScheduleWeek().getWednesdayTeachers(), scheduleWeekPasser.getScheduleWeek().getWednesdayRooms(),
+                            scheduleWeekPasser.getScheduleWeek().getWednesdayPeriods());
+                }
+            } else if (mNum == 3) {
+                if (scheduleWeekPasser.getScheduleWeek().getThursdayLessonNames() != null) {
+                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getThursdayLessonNames(),
+                            scheduleWeekPasser.getScheduleWeek().getThursdayTeachers(), scheduleWeekPasser.getScheduleWeek().getThursdayRooms(),
+                            scheduleWeekPasser.getScheduleWeek().getThursdayPeriods());
+                }
+            } else if (mNum == 4) {
+                if (scheduleWeekPasser.getScheduleWeek().getFridayLessonNames() != null) {
+                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getFridayLessonNames(),
+                            scheduleWeekPasser.getScheduleWeek().getFridayTeachers(), scheduleWeekPasser.getScheduleWeek().getFridayRooms(),
+                            scheduleWeekPasser.getScheduleWeek().getFridayPeriods());
+                }
+            }
+            Intent weekdayButtonsClickIntent = ConfigureWeekdays.onWeekdayButtonsClick(v, getContext());
+            if (weekdayButtonsClickIntent != null) {
+                startActivityForResult(weekdayButtonsClickIntent, weekdayButtonsClickIntent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, 0));
+            }
             return v;
             /**
-            View v = null;
-            switch (mNum) {
-                case 0:
-                    v = inflater.inflate(R.layout.configure_monday, container, false);
-                    Intent configureScheduleIntent = new Intent(getActivity(), ConfigureMondayActivity.class);
-                    configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
-                    configureScheduleIntent.putExtra
-                    startActivity(configureScheduleIntent);
-                    //scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
-                    break;
-                case 1:
-                    v = inflater.inflate(R.layout.configure_tuesday, container, false);
-                    break;
-                case 2:
-                    v = inflater.inflate(R.layout.configure_wednesday, container, false);
-                    break;
-                case 3:
-                    v = inflater.inflate(R.layout.configure_thursday, container, false);
-                    break;
-                case 4:
-                    v = inflater.inflate(R.layout.configure_friday, container, false);
-                    break;
-            }*/
+             View v = null;
+             switch (mNum) {
+             case 0:
+             v = inflater.inflate(R.layout.configure_monday, container, false);
+             Intent configureScheduleIntent = new Intent(getActivity(), ConfigureMondayActivity.class);
+             configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+             configureScheduleIntent.putExtra
+             startActivity(configureScheduleIntent);
+             //scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+             break;
+             case 1:
+             v = inflater.inflate(R.layout.configure_tuesday, container, false);
+             break;
+             case 2:
+             v = inflater.inflate(R.layout.configure_wednesday, container, false);
+             break;
+             case 3:
+             v = inflater.inflate(R.layout.configure_thursday, container, false);
+             break;
+             case 4:
+             v = inflater.inflate(R.layout.configure_friday, container, false);
+             break;
+             }*/
         }
 
         @Override
         public void onActivityCreated(@Nullable Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-        }
 
-        @Override
-        public void onAttach(Context context) {
-            super.onAttach(context);
-            Activity activity = getActivity();
-            scheduleWeekPasser = (OnScheduleWeekPass) activity;
         }
     }
 }

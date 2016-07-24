@@ -207,14 +207,14 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
         Intent configuredScheduleWeekIntent = getIntent();
         configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
 
-        if (configuredScheduleWeek != null && configuredScheduleWeek.getFridayRooms() != null &&
+        /**if (configuredScheduleWeek != null && configuredScheduleWeek.getFridayRooms() != null &&
                 configuredScheduleWeek.getFridayTeachers() != null && configuredScheduleWeek.getFridayRooms() != null &&
                 configuredScheduleWeek.getFridayPeriods() != null) {
             ConfigureWeekdays.initializeScheduleWeekday(fridayLessonNames, fridayTeachers, fridayRooms, fridayPeriods,
                     configuredScheduleWeek.getFridayLessonNames(), configuredScheduleWeek.getFridayTeachers(),
                     configuredScheduleWeek.getFridayRooms(), configuredScheduleWeek.getFridayPeriods(),
                     lessonNameButtons, teacherButtons, roomButtons, periodButtons);
-        }
+        }*/
     }
 
 
