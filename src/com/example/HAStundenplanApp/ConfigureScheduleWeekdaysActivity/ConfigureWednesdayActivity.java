@@ -3,19 +3,13 @@ package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.HAStundenplanApp.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Thilo S. on 15.07.2016.
@@ -205,7 +199,7 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
         //ConfigureWeekdays.calculateWeekdayLessonTimes(tvWednesdayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
 
         Intent configuredScheduleWeekIntent = getIntent();
-        configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
+        configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK);
 
         /**if (configuredScheduleWeek != null && configuredScheduleWeek.getWednesdayRooms() != null &&
                 configuredScheduleWeek.getWednesdayTeachers() != null && configuredScheduleWeek.getWednesdayRooms() != null &&
@@ -238,7 +232,7 @@ public class ConfigureWednesdayActivity extends Activity implements View.OnClick
             configuredScheduleWeek.setWednesdayTeachers(wednesdayTeachers);
             configuredScheduleWeek.setWednesdayRooms(wednesdayRooms);
             configuredScheduleWeek.setWednesdayPeriods(wednesdayPeriods);
-            configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+            configureScheduleIntent.putExtra(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
             startActivityForResult(configureScheduleIntent, rc);
         } else if (rc == -1) {
             throw new IllegalStateException("The REQUEST_CODE is -1 = Error Code");

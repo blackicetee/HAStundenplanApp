@@ -37,7 +37,7 @@ import java.util.Date;
  */
 public class ImplAppointment implements Appointment {
 /**
-    public static void main(String[] args) {
+    public static void digital_schedule_main(String[] args) {
         Calendar start = Calendar.getInstance();
         Calendar end = Calendar.getInstance();
         start.set(Calendar.HOUR_OF_DAY,8);

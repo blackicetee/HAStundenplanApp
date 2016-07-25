@@ -19,7 +19,7 @@ import com.example.HAStundenplanApp.*;
 
 import java.util.Calendar;
 
-import static com.example.HAStundenplanApp.MainActivity.CONFIGURED_SCHEDULE_WEEK;
+import static com.example.HAStundenplanApp.DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK;
 
 /**
  * Created by Thilo S. on 22.07.2016.
@@ -43,7 +43,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
-        //TODO Initiate configureScheduleWeek with getIntent(...) from MainActivity
+        //TODO Initiate configureScheduleWeek with getIntent(...) from DigitalScheduleMainActivity
         configuredScheduleWeek = getIntent().getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
     }
 
@@ -310,7 +310,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
              case 0:
              v = inflater.inflate(R.layout.configure_monday, container, false);
              Intent configureScheduleIntent = new Intent(getActivity(), ConfigureMondayActivity.class);
-             configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+             configureScheduleIntent.putExtra(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
              configureScheduleIntent.putExtra
              startActivity(configureScheduleIntent);
              //scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);

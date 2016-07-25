@@ -3,19 +3,12 @@ package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.example.HAStundenplanApp.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Thilo S. on 15.07.2016.
@@ -206,7 +199,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         //ConfigureWeekdays.calculateWeekdayLessonTimes(tvMondayLessonTimes, configuration.getBreaks(), lessonTime, configuration.getLessonDurationInMinutes());
 
         Intent configuredScheduleWeekIntent = getIntent();
-        configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(MainActivity.CONFIGURED_SCHEDULE_WEEK);
+        configuredScheduleWeek = configuredScheduleWeekIntent.getExtras().getParcelable(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK);
 
         /**if (configuredScheduleWeek != null && configuredScheduleWeek.getMondayRooms() != null &&
                 configuredScheduleWeek.getMondayTeachers() != null && configuredScheduleWeek.getMondayRooms() != null &&
@@ -228,7 +221,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
             configuredScheduleWeek.setMondayTeachers(mondayTeachers);
             configuredScheduleWeek.setMondayRooms(mondayRooms);
             configuredScheduleWeek.setMondayPeriods(mondayPeriods);
-            configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+            configureScheduleIntent.putExtra(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
             setResult(RESULT_OK, configureScheduleIntent);
             finish();
         } else {
@@ -259,7 +252,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
         configuredScheduleWeek.setMondayRooms(mondayRooms);
         configuredScheduleWeek.setMondayPeriods(mondayPeriods);
         configureScheduleIntent = new Intent(this, ConfigureTuesdayActivity.class);
-        configureScheduleIntent.putExtra(MainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+        configureScheduleIntent.putExtra(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
         setResult(RESULT_OK, configureScheduleIntent);
     }
 
