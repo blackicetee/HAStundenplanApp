@@ -240,7 +240,8 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnMondayIDs);
+        //Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnMondayIDs);
+        Intent intent = new Intent();
         int rc = intent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, -1);
         if (rc == -1) {
             throw new IllegalStateException("The REQUEST_CODE is -1 = Error Code");
@@ -252,7 +253,7 @@ public class ConfigureMondayActivity extends Activity implements View.OnClickLis
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods, lessonNameButtons, teacherButtons, roomButtons, periodButtons);
+        //ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, mondayLessonNames, mondayTeachers, mondayRooms, mondayPeriods, lessonNameButtons, teacherButtons, roomButtons, periodButtons);
         configuredScheduleWeek.setMondayLessonNames(mondayLessonNames);
         configuredScheduleWeek.setMondayTeachers(mondayTeachers);
         configuredScheduleWeek.setMondayRooms(mondayRooms);

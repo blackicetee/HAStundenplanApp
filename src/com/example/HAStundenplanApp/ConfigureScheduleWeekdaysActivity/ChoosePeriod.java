@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class ChoosePeriod extends Activity {
     public static final String PERIOD = "Period";
-    private List<String> period = new ArrayList<>(Arrays.asList("wöchentlich", "zwei wöchentlich", "monatlich", "Frei"));
+    private List<String> period = new ArrayList<>(Arrays.asList("wöchentlich", "zwei wöchentlich", "monatlich"));
     
     @Override
     public void onCreate(Bundle savedInstanceState) {

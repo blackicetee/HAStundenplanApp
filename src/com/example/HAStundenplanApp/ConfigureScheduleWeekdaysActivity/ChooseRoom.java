@@ -26,7 +26,7 @@ public class ChooseRoom extends Activity {
         DummyConfiguration dc = new DummyConfiguration();
         Configuration configuration = dc.getConfiguration();
         rooms = configuration.getRooms();
-        rooms.add("Frei");
+        rooms.add("Raum");
 
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.roomsContainer);

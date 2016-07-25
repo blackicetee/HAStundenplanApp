@@ -31,6 +31,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
     static final int NUM_ITEMS = 5;
     private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
 
+
     MyAdapter mAdapter;
 
     ViewPager mPager;
@@ -60,6 +61,29 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         });
 
         //TODO Initiate configureScheduleWeek with getIntent(...) from MainActivity
+        configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setThursdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setFridayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+
+        configuredScheduleWeek.setMondayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setTuesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setWednesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setThursdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setFridayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+
+        configuredScheduleWeek.setMondayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setTuesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setWednesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setThursdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setFridayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+
+        configuredScheduleWeek.setMondayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setTuesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
     }
 
     @Override
@@ -100,7 +124,47 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
 
         Button btnWeekdayLessonZeroLessonName;
         Button btnWeekdayLessonOneLessonName;
+        Button btnWeekdayLessonTwoLessonName;
+        Button btnWeekdayLessonThreeLessonName;
+        Button btnWeekdayLessonFourLessonName;
+        Button btnWeekdayLessonFiveLessonName;
+        Button btnWeekdayLessonSixLessonName;
+        Button btnWeekdayLessonSevenLessonName;
+        Button btnWeekdayLessonEightLessonName;
+        Button btnWeekdayLessonNineLessonName;
 
+        Button btnWeekdayLessonZeroTeacher;
+        Button btnWeekdayLessonOneTeacher;
+        Button btnWeekdayLessonTwoTeacher;
+        Button btnWeekdayLessonThreeTeacher;
+        Button btnWeekdayLessonFourTeacher;
+        Button btnWeekdayLessonFiveTeacher;
+        Button btnWeekdayLessonSixTeacher;
+        Button btnWeekdayLessonSevenTeacher;
+        Button btnWeekdayLessonEightTeacher;
+        Button btnWeekdayLessonNineTeacher;
+
+        Button btnWeekdayLessonZeroRoom;
+        Button btnWeekdayLessonOneRoom;
+        Button btnWeekdayLessonTwoRoom;
+        Button btnWeekdayLessonThreeRoom;
+        Button btnWeekdayLessonFourRoom;
+        Button btnWeekdayLessonFiveRoom;
+        Button btnWeekdayLessonSixRoom;
+        Button btnWeekdayLessonSevenRoom;
+        Button btnWeekdayLessonEightRoom;
+        Button btnWeekdayLessonNineRoom;
+
+        Button btnWeekdayLessonZeroPeriod;
+        Button btnWeekdayLessonOnePeriod;
+        Button btnWeekdayLessonTwoPeriod;
+        Button btnWeekdayLessonThreePeriod;
+        Button btnWeekdayLessonFourPeriod;
+        Button btnWeekdayLessonFivePeriod;
+        Button btnWeekdayLessonSixPeriod;
+        Button btnWeekdayLessonSevenPeriod;
+        Button btnWeekdayLessonEightPeriod;
+        Button btnWeekdayLessonNinePeriod;
 
         /**
          * Create a new instance of CountingFragment, providing "num"
@@ -157,82 +221,81 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             Calendar lessonTime = Calendar.getInstance();
             lessonTime.setTime(dConfiguration.getStartEarliestLesson());
             ConfigureWeekdays.calculateWeekdayLessonTimes(v, dConfiguration.getBreaks(), lessonTime, dConfiguration.getLessonDurationInMinutes());
-            if (mNum == 0) {
-                if (scheduleWeekPasser.getScheduleWeek().getMondayLessonNames() != null) {
-                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getMondayLessonNames(),
-                            scheduleWeekPasser.getScheduleWeek().getMondayTeachers(), scheduleWeekPasser.getScheduleWeek().getMondayRooms(),
-                            scheduleWeekPasser.getScheduleWeek().getMondayPeriods());
-                }
-            } else if (mNum == 1) {
-                if (scheduleWeekPasser.getScheduleWeek().getTuesdayLessonNames() != null) {
-                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getTuesdayLessonNames(),
-                            scheduleWeekPasser.getScheduleWeek().getTuesdayTeachers(), scheduleWeekPasser.getScheduleWeek().getTuesdayRooms(),
-                            scheduleWeekPasser.getScheduleWeek().getTuesdayPeriods());
-                }
-
-            } else if (mNum == 2) {
-                if (scheduleWeekPasser.getScheduleWeek().getWednesdayLessonNames() != null) {
-                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getWednesdayLessonNames(),
-                            scheduleWeekPasser.getScheduleWeek().getWednesdayTeachers(), scheduleWeekPasser.getScheduleWeek().getWednesdayRooms(),
-                            scheduleWeekPasser.getScheduleWeek().getWednesdayPeriods());
-                }
-            } else if (mNum == 3) {
-                if (scheduleWeekPasser.getScheduleWeek().getThursdayLessonNames() != null) {
-                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getThursdayLessonNames(),
-                            scheduleWeekPasser.getScheduleWeek().getThursdayTeachers(), scheduleWeekPasser.getScheduleWeek().getThursdayRooms(),
-                            scheduleWeekPasser.getScheduleWeek().getThursdayPeriods());
-                }
-            } else if (mNum == 4) {
-                if (scheduleWeekPasser.getScheduleWeek().getFridayLessonNames() != null) {
-                    ConfigureWeekdays.initializeScheduleWeekday(v, scheduleWeekPasser.getScheduleWeek().getFridayLessonNames(),
-                            scheduleWeekPasser.getScheduleWeek().getFridayTeachers(), scheduleWeekPasser.getScheduleWeek().getFridayRooms(),
-                            scheduleWeekPasser.getScheduleWeek().getFridayPeriods());
-                }
+            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            if (mNum == 0 && configuredScheduleWeek.getMondayLessonNames() != null && configuredScheduleWeek.getMondayTeachers() != null
+                    && configuredScheduleWeek.getMondayRooms() != null && configuredScheduleWeek.getMondayPeriods() != null) {
+                ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getMondayLessonNames(),
+                        configuredScheduleWeek.getMondayTeachers(), configuredScheduleWeek.getMondayRooms(),
+                        configuredScheduleWeek.getMondayPeriods());
+            }
+            if (mNum == 1 && configuredScheduleWeek.getTuesdayLessonNames() != null && configuredScheduleWeek.getTuesdayTeachers() != null
+                    && configuredScheduleWeek.getTuesdayRooms() != null && configuredScheduleWeek.getTuesdayPeriods() != null) {
+                ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getTuesdayLessonNames(),
+                        configuredScheduleWeek.getTuesdayTeachers(), configuredScheduleWeek.getTuesdayRooms(),
+                        configuredScheduleWeek.getTuesdayPeriods());
+            }
+            if (mNum == 2 && configuredScheduleWeek.getWednesdayLessonNames() != null && configuredScheduleWeek.getWednesdayTeachers() != null
+                    && configuredScheduleWeek.getWednesdayRooms() != null && configuredScheduleWeek.getWednesdayPeriods() != null) {
+                ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getWednesdayLessonNames(),
+                        configuredScheduleWeek.getWednesdayTeachers(), configuredScheduleWeek.getWednesdayRooms(),
+                        configuredScheduleWeek.getWednesdayPeriods());
+            }
+            if (mNum == 3 && configuredScheduleWeek.getThursdayLessonNames() != null && configuredScheduleWeek.getThursdayTeachers() != null
+                    && configuredScheduleWeek.getThursdayRooms() != null && configuredScheduleWeek.getThursdayPeriods() != null) {
+                ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getThursdayLessonNames(),
+                        configuredScheduleWeek.getThursdayTeachers(), configuredScheduleWeek.getThursdayRooms(),
+                        configuredScheduleWeek.getThursdayPeriods());
+            }
+            if (mNum == 4 && configuredScheduleWeek.getFridayLessonNames() != null && configuredScheduleWeek.getFridayTeachers() != null
+                    && configuredScheduleWeek.getFridayRooms() != null && configuredScheduleWeek.getFridayPeriods() != null) {
+                ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getFridayLessonNames(),
+                        configuredScheduleWeek.getFridayTeachers(), configuredScheduleWeek.getFridayRooms(),
+                        configuredScheduleWeek.getFridayPeriods());
             }
 
             btnWeekdayLessonZeroLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonZeroLessonName);
             btnWeekdayLessonOneLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonOneLessonName);
-            Button btnWeekdayLessonTwoLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonTwoLessonName);
-            Button btnWeekdayLessonThreeLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonThreeLessonName);
-            Button btnWeekdayLessonFourLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFourLessonName);
-            Button btnWeekdayLessonFiveLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFiveLessonName);
-            Button btnWeekdayLessonSixLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSixLessonName);
-            Button btnWeekdayLessonSevenLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSevenLessonName);
-            Button btnWeekdayLessonEightLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonEightLessonName);
-            Button btnWeekdayLessonNineLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonNineLessonName);
+            btnWeekdayLessonTwoLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonTwoLessonName);
+            btnWeekdayLessonThreeLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonThreeLessonName);
+            btnWeekdayLessonFourLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFourLessonName);
+            btnWeekdayLessonFiveLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonFiveLessonName);
+            btnWeekdayLessonSixLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSixLessonName);
+            btnWeekdayLessonSevenLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonSevenLessonName);
+            btnWeekdayLessonEightLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonEightLessonName);
+            btnWeekdayLessonNineLessonName = (Button) v.findViewById(R.id.btnWeekdayLessonNineLessonName);
 
-            Button btnWeekdayLessonZeroTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonZeroTeacher);
-            Button btnWeekdayLessonOneTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonOneTeacher);
-            Button btnWeekdayLessonTwoTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonTwoTeacher);
-            Button btnWeekdayLessonThreeTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonThreeTeacher);
-            Button btnWeekdayLessonFourTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFourTeacher);
-            Button btnWeekdayLessonFiveTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFiveTeacher);
-            Button btnWeekdayLessonSixTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSixTeacher);
-            Button btnWeekdayLessonSevenTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSevenTeacher);
-            Button btnWeekdayLessonEightTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonEightTeacher);
-            Button btnWeekdayLessonNineTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonNineTeacher);
+            btnWeekdayLessonZeroTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonZeroTeacher);
+            btnWeekdayLessonOneTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonOneTeacher);
+            btnWeekdayLessonTwoTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonTwoTeacher);
+            btnWeekdayLessonThreeTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonThreeTeacher);
+            btnWeekdayLessonFourTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFourTeacher);
+            btnWeekdayLessonFiveTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonFiveTeacher);
+            btnWeekdayLessonSixTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSixTeacher);
+            btnWeekdayLessonSevenTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonSevenTeacher);
+            btnWeekdayLessonEightTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonEightTeacher);
+            btnWeekdayLessonNineTeacher = (Button) v.findViewById(R.id.btnWeekdayLessonNineTeacher);
 
-            Button btnWeekdayLessonZeroRoom = (Button) v.findViewById(R.id.btnWeekdayLessonZeroRoom);
-            Button btnWeekdayLessonOneRoom = (Button) v.findViewById(R.id.btnWeekdayLessonOneRoom);
-            Button btnWeekdayLessonTwoRoom = (Button) v.findViewById(R.id.btnWeekdayLessonTwoRoom);
-            Button btnWeekdayLessonThreeRoom = (Button) v.findViewById(R.id.btnWeekdayLessonThreeRoom);
-            Button btnWeekdayLessonFourRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFourRoom);
-            Button btnWeekdayLessonFiveRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFiveRoom);
-            Button btnWeekdayLessonSixRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSixRoom);
-            Button btnWeekdayLessonSevenRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSevenRoom);
-            Button btnWeekdayLessonEightRoom = (Button) v.findViewById(R.id.btnWeekdayLessonEightRoom);
-            Button btnWeekdayLessonNineRoom = (Button) v.findViewById(R.id.btnWeekdayLessonNineRoom);
+            btnWeekdayLessonZeroRoom = (Button) v.findViewById(R.id.btnWeekdayLessonZeroRoom);
+            btnWeekdayLessonOneRoom = (Button) v.findViewById(R.id.btnWeekdayLessonOneRoom);
+            btnWeekdayLessonTwoRoom = (Button) v.findViewById(R.id.btnWeekdayLessonTwoRoom);
+            btnWeekdayLessonThreeRoom = (Button) v.findViewById(R.id.btnWeekdayLessonThreeRoom);
+            btnWeekdayLessonFourRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFourRoom);
+            btnWeekdayLessonFiveRoom = (Button) v.findViewById(R.id.btnWeekdayLessonFiveRoom);
+            btnWeekdayLessonSixRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSixRoom);
+            btnWeekdayLessonSevenRoom = (Button) v.findViewById(R.id.btnWeekdayLessonSevenRoom);
+            btnWeekdayLessonEightRoom = (Button) v.findViewById(R.id.btnWeekdayLessonEightRoom);
+            btnWeekdayLessonNineRoom = (Button) v.findViewById(R.id.btnWeekdayLessonNineRoom);
 
-            Button btnWeekdayLessonZeroPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonZeroPeriod);
-            Button btnWeekdayLessonOnePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonOnePeriod);
-            Button btnWeekdayLessonTwoPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonTwoPeriod);
-            Button btnWeekdayLessonThreePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonThreePeriod);
-            Button btnWeekdayLessonFourPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFourPeriod);
-            Button btnWeekdayLessonFivePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFivePeriod);
-            Button btnWeekdayLessonSixPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSixPeriod);
-            Button btnWeekdayLessonSevenPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSevenPeriod);
-            Button btnWeekdayLessonEightPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonEightPeriod);
-            Button btnWeekdayLessonNinePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonNinePeriod);
+            btnWeekdayLessonZeroPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonZeroPeriod);
+            btnWeekdayLessonOnePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonOnePeriod);
+            btnWeekdayLessonTwoPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonTwoPeriod);
+            btnWeekdayLessonThreePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonThreePeriod);
+            btnWeekdayLessonFourPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFourPeriod);
+            btnWeekdayLessonFivePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonFivePeriod);
+            btnWeekdayLessonSixPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSixPeriod);
+            btnWeekdayLessonSevenPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonSevenPeriod);
+            btnWeekdayLessonEightPeriod = (Button) v.findViewById(R.id.btnWeekdayLessonEightPeriod);
+            btnWeekdayLessonNinePeriod = (Button) v.findViewById(R.id.btnWeekdayLessonNinePeriod);
 
             btnWeekdayLessonZeroLessonName.setOnClickListener(this);
             btnWeekdayLessonOneLessonName.setOnClickListener(this);
@@ -447,25 +510,413 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             return strArray;
         }
 
+        private void setMondayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (10 + requestPosition)) {
+                String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                changeButtonText.setText(weekdayLessonName);
+                configuredScheduleWeek.setMondayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayLessonNames(), requestPosition, weekdayLessonName));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setTuesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (10 + requestPosition)) {
+                String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                changeButtonText.setText(weekdayLessonName);
+                configuredScheduleWeek.setTuesdayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getTuesdayLessonNames(), requestPosition, weekdayLessonName));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setWednesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (10 + requestPosition)) {
+                String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                changeButtonText.setText(weekdayLessonName);
+                configuredScheduleWeek.setWednesdayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getWednesdayLessonNames(), requestPosition, weekdayLessonName));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setThursdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (10 + requestPosition)) {
+                String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                changeButtonText.setText(weekdayLessonName);
+                configuredScheduleWeek.setThursdayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getThursdayLessonNames(), requestPosition, weekdayLessonName));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setFridayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (10 + requestPosition)) {
+                String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
+                changeButtonText.setText(weekdayLessonName);
+                configuredScheduleWeek.setFridayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getFridayLessonNames(), requestPosition, weekdayLessonName));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setMondayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (20 + requestPosition)) {
+                String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
+                changeButtonText.setText(weekdayTeacher);
+                configuredScheduleWeek.setMondayTeachers(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayTeachers(), requestPosition, weekdayTeacher));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setTuesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (20 + requestPosition)) {
+                String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
+                changeButtonText.setText(weekdayTeacher);
+                configuredScheduleWeek.setTuesdayTeachers(changeValueAtPositionInStringArray(configuredScheduleWeek.getTuesdayTeachers(), requestPosition, weekdayTeacher));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setWednesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (20 + requestPosition)) {
+                String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
+                changeButtonText.setText(weekdayTeacher);
+                configuredScheduleWeek.setWednesdayTeachers(changeValueAtPositionInStringArray(configuredScheduleWeek.getWednesdayTeachers(), requestPosition, weekdayTeacher));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setThursdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (20 + requestPosition)) {
+                String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
+                changeButtonText.setText(weekdayTeacher);
+                configuredScheduleWeek.setThursdayTeachers(changeValueAtPositionInStringArray(configuredScheduleWeek.getThursdayTeachers(), requestPosition, weekdayTeacher));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setFridayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (20 + requestPosition)) {
+                String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
+                changeButtonText.setText(weekdayTeacher);
+                configuredScheduleWeek.setFridayTeachers(changeValueAtPositionInStringArray(configuredScheduleWeek.getFridayTeachers(), requestPosition, weekdayTeacher));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setMondayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (30 + requestPosition)) {
+                String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
+                changeButtonText.setText(weekdayRoom);
+                configuredScheduleWeek.setMondayRooms(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayRooms(), requestPosition, weekdayRoom));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setTuesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (30 + requestPosition)) {
+                String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
+                changeButtonText.setText(weekdayRoom);
+                configuredScheduleWeek.setTuesdayRooms(changeValueAtPositionInStringArray(configuredScheduleWeek.getTuesdayRooms(), requestPosition, weekdayRoom));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setWednesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (30 + requestPosition)) {
+                String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
+                changeButtonText.setText(weekdayRoom);
+                configuredScheduleWeek.setWednesdayRooms(changeValueAtPositionInStringArray(configuredScheduleWeek.getWednesdayRooms(), requestPosition, weekdayRoom));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setThursdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (30 + requestPosition)) {
+                String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
+                changeButtonText.setText(weekdayRoom);
+                configuredScheduleWeek.setThursdayRooms(changeValueAtPositionInStringArray(configuredScheduleWeek.getThursdayRooms(), requestPosition, weekdayRoom));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setFridayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (30 + requestPosition)) {
+                String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
+                changeButtonText.setText(weekdayRoom);
+                configuredScheduleWeek.setFridayRooms(changeValueAtPositionInStringArray(configuredScheduleWeek.getFridayRooms(), requestPosition, weekdayRoom));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+        private void setMondayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (40 + requestPosition)) {
+                String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                changeButtonText.setText(weekdayPeriod);
+                configuredScheduleWeek.setMondayPeriods(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayPeriods(), requestPosition, weekdayPeriod));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setTuesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (40 + requestPosition)) {
+                String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                changeButtonText.setText(weekdayPeriod);
+                configuredScheduleWeek.setTuesdayPeriods(changeValueAtPositionInStringArray(configuredScheduleWeek.getTuesdayPeriods(), requestPosition, weekdayPeriod));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setWednesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (40 + requestPosition)) {
+                String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                changeButtonText.setText(weekdayPeriod);
+                configuredScheduleWeek.setWednesdayPeriods(changeValueAtPositionInStringArray(configuredScheduleWeek.getWednesdayPeriods(), requestPosition, weekdayPeriod));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setThursdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (40 + requestPosition)) {
+                String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                changeButtonText.setText(weekdayPeriod);
+                configuredScheduleWeek.setThursdayPeriods(changeValueAtPositionInStringArray(configuredScheduleWeek.getThursdayPeriods(), requestPosition, weekdayPeriod));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
+        private void setFridayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+            if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (40 + requestPosition)) {
+                String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
+                changeButtonText.setText(weekdayPeriod);
+                configuredScheduleWeek.setFridayPeriods(changeValueAtPositionInStringArray(configuredScheduleWeek.getFridayPeriods(), requestPosition, weekdayPeriod));
+                scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
+            }
+        }
+
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
             ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
-            if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == 10) {
-                if (configuredScheduleWeek.getMondayLessonNames() != null)  {
-                    String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
-                    btnWeekdayLessonZeroLessonName.setText(weekdayLessonName);
-                    configuredScheduleWeek.setMondayLessonNames(changeValueAtPositionInStringArray(configuredScheduleWeek.getMondayLessonNames(), 0, weekdayLessonName));
-                    scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
-                }
-                else {
-                    String[] mondayLessonNames = new String[]{"", "", "", "", "", "", "", "", "", ""};
-                    String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
-                    btnWeekdayLessonZeroLessonName.setText(weekdayLessonName);
-                    configuredScheduleWeek.setMondayLessonNames(changeValueAtPositionInStringArray(mondayLessonNames, 0, weekdayLessonName));
-                    scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
-                }
-            }
+            //____________________________LessonNames____________________________
+            setMondayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
+            setMondayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
+            setMondayLessonNames(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoLessonName);
+            setMondayLessonNames(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeLessonName);
+            setMondayLessonNames(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourLessonName);
+            setMondayLessonNames(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveLessonName);
+            setMondayLessonNames(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixLessonName);
+            setMondayLessonNames(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenLessonName);
+            setMondayLessonNames(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightLessonName);
+            setMondayLessonNames(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineLessonName);
+
+            setTuesdayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightLessonName);
+            setTuesdayLessonNames(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineLessonName);
+
+            setWednesdayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightLessonName);
+            setWednesdayLessonNames(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineLessonName);
+
+            setThursdayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightLessonName);
+            setThursdayLessonNames(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineLessonName);
+
+            setFridayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
+            setFridayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
+            setFridayLessonNames(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoLessonName);
+            setFridayLessonNames(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeLessonName);
+            setFridayLessonNames(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourLessonName);
+            setFridayLessonNames(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveLessonName);
+            setFridayLessonNames(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixLessonName);
+            setFridayLessonNames(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenLessonName);
+            setFridayLessonNames(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightLessonName);
+            setFridayLessonNames(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineLessonName);
+
+            //____________________________Teachers____________________________
+            setMondayTeachers(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroTeacher);
+            setMondayTeachers(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneTeacher);
+            setMondayTeachers(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoTeacher);
+            setMondayTeachers(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeTeacher);
+            setMondayTeachers(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourTeacher);
+            setMondayTeachers(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveTeacher);
+            setMondayTeachers(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixTeacher);
+            setMondayTeachers(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenTeacher);
+            setMondayTeachers(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightTeacher);
+            setMondayTeachers(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineTeacher);
+
+            setTuesdayTeachers(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightTeacher);
+            setTuesdayTeachers(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineTeacher);
+
+            setWednesdayTeachers(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightTeacher);
+            setWednesdayTeachers(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineTeacher);
+
+            setThursdayTeachers(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroTeacher);
+            setThursdayTeachers(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneTeacher);
+            setThursdayTeachers(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoTeacher);
+            setThursdayTeachers(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeTeacher);
+            setThursdayTeachers(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourTeacher);
+            setThursdayTeachers(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveTeacher);
+            setThursdayTeachers(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixTeacher);
+            setThursdayTeachers(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenTeacher);
+            setThursdayTeachers(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightTeacher);
+            setThursdayTeachers(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineTeacher);
+
+            setFridayTeachers(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroTeacher);
+            setFridayTeachers(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneTeacher);
+            setFridayTeachers(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoTeacher);
+            setFridayTeachers(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeTeacher);
+            setFridayTeachers(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourTeacher);
+            setFridayTeachers(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveTeacher);
+            setFridayTeachers(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixTeacher);
+            setFridayTeachers(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenTeacher);
+            setFridayTeachers(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightTeacher);
+            setFridayTeachers(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineTeacher);
+
+            //____________________________Rooms____________________________
+            setMondayRooms(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroRoom);
+            setMondayRooms(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneRoom);
+            setMondayRooms(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoRoom);
+            setMondayRooms(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeRoom);
+            setMondayRooms(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourRoom);
+            setMondayRooms(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveRoom);
+            setMondayRooms(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixRoom);
+            setMondayRooms(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenRoom);
+            setMondayRooms(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightRoom);
+            setMondayRooms(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineRoom);
+
+            setTuesdayRooms(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroRoom);
+            setTuesdayRooms(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneRoom);
+            setTuesdayRooms(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoRoom);
+            setTuesdayRooms(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeRoom);
+            setTuesdayRooms(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourRoom);
+            setTuesdayRooms(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveRoom);
+            setTuesdayRooms(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixRoom);
+            setTuesdayRooms(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenRoom);
+            setTuesdayRooms(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightRoom);
+            setTuesdayRooms(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineRoom);
+
+            setWednesdayRooms(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroRoom);
+            setWednesdayRooms(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneRoom);
+            setWednesdayRooms(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoRoom);
+            setWednesdayRooms(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeRoom);
+            setWednesdayRooms(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourRoom);
+            setWednesdayRooms(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveRoom);
+            setWednesdayRooms(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixRoom);
+            setWednesdayRooms(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenRoom);
+            setWednesdayRooms(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightRoom);
+            setWednesdayRooms(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineRoom);
+
+            setThursdayRooms(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroRoom);
+            setThursdayRooms(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneRoom);
+            setThursdayRooms(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoRoom);
+            setThursdayRooms(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeRoom);
+            setThursdayRooms(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourRoom);
+            setThursdayRooms(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveRoom);
+            setThursdayRooms(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixRoom);
+            setThursdayRooms(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenRoom);
+            setThursdayRooms(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightRoom);
+            setThursdayRooms(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineRoom);
+
+            setFridayRooms(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroRoom);
+            setFridayRooms(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneRoom);
+            setFridayRooms(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoRoom);
+            setFridayRooms(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreeRoom);
+            setFridayRooms(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourRoom);
+            setFridayRooms(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFiveRoom);
+            setFridayRooms(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixRoom);
+            setFridayRooms(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenRoom);
+            setFridayRooms(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightRoom);
+            setFridayRooms(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNineRoom);
+
+            //____________________________Periods____________________________
+            setMondayPeriods(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroPeriod);
+            setMondayPeriods(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOnePeriod);
+            setMondayPeriods(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoPeriod);
+            setMondayPeriods(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreePeriod);
+            setMondayPeriods(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourPeriod);
+            setMondayPeriods(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFivePeriod);
+            setMondayPeriods(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixPeriod);
+            setMondayPeriods(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenPeriod);
+            setMondayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
+            setMondayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
+
+            setTuesdayPeriods(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOnePeriod);
+            setTuesdayPeriods(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreePeriod);
+            setTuesdayPeriods(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFivePeriod);
+            setTuesdayPeriods(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
+            setTuesdayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
+
+            setWednesdayPeriods(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOnePeriod);
+            setWednesdayPeriods(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreePeriod);
+            setWednesdayPeriods(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFivePeriod);
+            setWednesdayPeriods(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
+            setWednesdayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
+
+            setThursdayPeriods(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroPeriod);
+            setThursdayPeriods(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOnePeriod);
+            setThursdayPeriods(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoPeriod);
+            setThursdayPeriods(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreePeriod);
+            setThursdayPeriods(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourPeriod);
+            setThursdayPeriods(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFivePeriod);
+            setThursdayPeriods(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixPeriod);
+            setThursdayPeriods(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenPeriod);
+            setThursdayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
+            setThursdayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
+
+            setFridayPeriods(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroPeriod);
+            setFridayPeriods(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOnePeriod);
+            setFridayPeriods(resultCode, requestCode, 2, data, configuredScheduleWeek, btnWeekdayLessonTwoPeriod);
+            setFridayPeriods(resultCode, requestCode, 3, data, configuredScheduleWeek, btnWeekdayLessonThreePeriod);
+            setFridayPeriods(resultCode, requestCode, 4, data, configuredScheduleWeek, btnWeekdayLessonFourPeriod);
+            setFridayPeriods(resultCode, requestCode, 5, data, configuredScheduleWeek, btnWeekdayLessonFivePeriod);
+            setFridayPeriods(resultCode, requestCode, 6, data, configuredScheduleWeek, btnWeekdayLessonSixPeriod);
+            setFridayPeriods(resultCode, requestCode, 7, data, configuredScheduleWeek, btnWeekdayLessonSevenPeriod);
+            setFridayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
+            setFridayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
+
         }
     }
 }

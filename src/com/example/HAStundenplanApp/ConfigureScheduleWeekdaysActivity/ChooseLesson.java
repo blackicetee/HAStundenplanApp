@@ -30,7 +30,7 @@ public class ChooseLesson extends Activity {
         DummyConfiguration dc = new DummyConfiguration();
         Configuration configuration = dc.getConfiguration();
         lessonNames = configuration.getLessonNames();
-        lessonNames.add("Frei");
+        lessonNames.add("Fach");
 
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.lessonNamesContainer);

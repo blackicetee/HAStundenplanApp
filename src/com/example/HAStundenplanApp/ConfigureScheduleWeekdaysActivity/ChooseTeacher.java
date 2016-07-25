@@ -27,7 +27,7 @@ public class ChooseTeacher extends Activity {
         DummyConfiguration dc = new DummyConfiguration();
         Configuration configuration = dc.getConfiguration();
         teachers = configuration.getTeacherNames();
-        teachers.add("Frei");
+        teachers.add("Lehrer");
 
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.teachersContainer);

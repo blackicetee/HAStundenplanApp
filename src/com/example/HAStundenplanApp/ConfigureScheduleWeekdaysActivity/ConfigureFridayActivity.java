@@ -226,7 +226,8 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnFridayIDs);
+        //Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnFridayIDs);
+        Intent intent = new Intent();
         int rc = intent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, -1);
         if (rc == 50) {
             for (int i = 0; i < fridayLessonNames.length; i++) {
@@ -250,7 +251,6 @@ public class ConfigureFridayActivity extends Activity implements View.OnClickLis
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, fridayLessonNames, fridayTeachers, fridayRooms, fridayPeriods,
-                lessonNameButtons, teacherButtons, roomButtons, periodButtons);
+        //ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, fridayLessonNames, fridayTeachers, fridayRooms, fridayPeriods,lessonNameButtons, teacherButtons, roomButtons, periodButtons);
     }
 }

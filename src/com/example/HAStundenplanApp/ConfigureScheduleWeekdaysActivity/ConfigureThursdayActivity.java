@@ -226,7 +226,8 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnThursdayIDs);
+       // Intent intent = ConfigureWeekdays.onWeekdayButtonsClick(v, this, btnThursdayIDs);
+        Intent intent = new Intent();
         int rc = intent.getIntExtra(ConfigureWeekdays.REQUEST_CODE, -1);
         if (rc == 50) {
             for (int i = 0; i < thursdayLessonNames.length; i++) {
@@ -255,8 +256,7 @@ public class ConfigureThursdayActivity extends Activity implements View.OnClickL
         } else if (resultCode == Activity.RESULT_CANCELED && requestCode == 50) {
             Toast.makeText(this, CANCEL_MSG_CONFIGURE_FRIDAY, Toast.LENGTH_LONG).show();
         } else {
-            ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, thursdayLessonNames, thursdayTeachers, thursdayRooms, thursdayPeriods,
-                    lessonNameButtons, teacherButtons, roomButtons, periodButtons);
+           // ConfigureWeekdays.onWeekdayButtonsResult(requestCode, resultCode, data, this, thursdayLessonNames, thursdayTeachers, thursdayRooms, thursdayPeriods, lessonNameButtons, teacherButtons, roomButtons, periodButtons);
         }
     }
 

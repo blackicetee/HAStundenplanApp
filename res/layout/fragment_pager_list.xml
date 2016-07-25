@@ -340,15 +340,6 @@
                         android:background="@drawable/button" android:text="@string/Woche"
                         android:id="@+id/btnWeekdayLessonNinePeriod"/>
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
-                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
-                          android:layout_gravity="center_horizontal" android:weightSum="1">
-                <Button android:layout_width="match_parent"
-                        android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
-                        android:background="@drawable/button" android:text="@string/Speichern"
-                        android:id="@+id/btnWeekdaySave"
-                        android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
