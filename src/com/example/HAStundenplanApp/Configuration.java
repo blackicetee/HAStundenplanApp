@@ -52,4 +52,8 @@ public interface Configuration {
     void setStartEarliestLesson(Date startEarliestLesson);
 
     int calculateLengthOfSemester(Date startDate, Date endDate, IllegalArgumentException e);
+
+    List<Pair<Integer, Date>> getIndexMatrixOfDaysWithoutWeekdays(Date startDate, Date endDate);
+
+    int searchIndexOfDayInIndexMatrix(Date searchedDate, List<Pair<Integer, Date>> indexMatrix);
 }

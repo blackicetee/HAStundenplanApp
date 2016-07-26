@@ -2,9 +2,7 @@ package com.example.HAStundenplanApp;
 
 import android.util.Pair;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Thilo S. on 15.07.2016.
@@ -178,7 +176,7 @@ public class ImplConfiguration implements Configuration {
 
     public int calculateLengthOfSemester(Date startDate, Date endDate, IllegalArgumentException e) {
         if (startDate != null && endDate != null) {
-            long different =  endDate.getTime() - startDate.getTime();
+            long different = endDate.getTime() - startDate.getTime();
 
             long secondsInMilli = 1000;
             long minutesInMilli = secondsInMilli * 60;
@@ -189,6 +187,36 @@ public class ImplConfiguration implements Configuration {
         } else {
             throw e;
         }
+    }
+
+    public List<Pair<Integer, Date>> getIndexMatrixOfDaysWithoutWeekdays(Date startDate, Date endDate) {
+        int days = calculateLengthOfSemester(startDate, endDate, new IllegalArgumentException("StartDate or EndDate are not initialised!"));
+        List<Pair<Integer, Date>> resultList = new ArrayList<>();
+        int index = 0;
+        for (int i = 0; i <= days; i++) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(startDate);
+            c.add(Calendar.DATE, i);
+            if (c.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && c.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+                resultList.add(new Pair<>(index, c.getTime()));
+                index += 1;
+            }
+        }
+        return resultList;
+    }
+
+    public int searchIndexOfDayInIndexMatrix(Date searchedDate, List<Pair<Integer, Date>> indexMatrix) {
+        int result = -1;
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = Calendar.getInstance();
+        for (int i = 0; i < indexMatrix.size(); i++) {
+            c1.setTime(indexMatrix.get(i).second);
+            c2.setTime(searchedDate);
+            if (c1.get(Calendar.DAY_OF_MONTH) == c2.get(Calendar.DAY_OF_MONTH) && c1.get(Calendar.MONTH) == c2.get(Calendar.MONTH) && c1.get(Calendar.YEAR) == c2.get(Calendar.YEAR)) {
+                result = i;
+            }
+        }
+        return result;
     }
 
     private static int safeLongToInt(long l) {

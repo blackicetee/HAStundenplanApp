@@ -33,6 +33,7 @@ public class DummyConfiguration {
         List<Date> dayOff = new ArrayList<>();
         dayOff.add(getDate(9,4,2016));
         dayOff.add(getDate(10,5,2016));
+        dayOff.add(getDate(27,7,2016));
         dayOff.add(getDate(7,2,2017));
         dayOff.add(getDate(8,3,2017));
 

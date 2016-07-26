@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.*;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.util.Pair;
 import android.view.*;
 import android.widget.*;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
@@ -14,9 +15,7 @@ import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPa
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.OnScheduleWeekPass;
 import com.example.HAStundenplanApp.com.example.android.customchoicelist.Cheeses;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class DigitalScheduleMainActivity extends FragmentActivity implements OnScheduleWeekPass, OnConfigurationPass {
 
@@ -29,7 +28,9 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
     private static Configuration dc = new DummyConfiguration().getConfiguration();
 
-    static final int NUM_ITEMS = dc.calculateLengthOfSummerSemester();
+    private static List<Pair<Integer, Date>> indexMatrixOfDaysWithoutWeekends = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
+
+    static final int NUM_ITEMS = indexMatrixOfDaysWithoutWeekends.size();
 
     MyAdapter mAdapter;
 
@@ -39,7 +40,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //R.layout.digital_schedule_main = R.layout.activity_collection_demo
         setContentView(R.layout.digital_schedule_main);
 
         mAdapter = new MyAdapter(getSupportFragmentManager());
@@ -48,10 +48,9 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         mPager.setAdapter(mAdapter);
 
         Calendar today = Calendar.getInstance();
-        int daysFromStartSemesterUntilNow = dc.calculateLengthOfSemester(dc.getStartSummerSemester(), today.getTime(), new IllegalArgumentException("StartSummerSemester or Date of Today not set yet!"));
-        Log.d("LOG_TAG", "Days from startSemester until now: " + Integer.toString(daysFromStartSemesterUntilNow));
+        int indexOfToday = dc.searchIndexOfDayInIndexMatrix(today.getTime(), indexMatrixOfDaysWithoutWeekends);
 
-        mPager.setCurrentItem(daysFromStartSemesterUntilNow);
+        mPager.setCurrentItem(indexOfToday);
 
         // Watch for button clicks.
         Button button = (Button) findViewById(R.id.goto_first);
@@ -63,7 +62,8 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         button = (Button) findViewById(R.id.goto_today);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mPager.setCurrentItem(daysFromStartSemesterUntilNow);
+                mPager.setCurrentItem(indexOfToday);
+                Log.d("LOG_TAG", "IndexOfToday: " + indexOfToday);
             }
         });
         button = (Button) findViewById(R.id.goto_last);
@@ -156,21 +156,27 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+
             View v = inflater.inflate(R.layout.digital_schedule_fragment_object, container, false);
             Configuration dc = configurationPasser.getConfiguration();
+            List<Pair<Integer, Date>> im = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
             Calendar c = Calendar.getInstance();
-            c.setTime(dc.getStartSummerSemester());
-            //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-            //if (dayOfWeek == Calendar.FRIDAY) {
-            //    c.add(Calendar.DAY_OF_MONTH, mNum + 3);
-            //} else if (dayOfWeek == Calendar.SATURDAY) {
-            //    c.add(Calendar.DAY_OF_MONTH, mNum + 2);
-            //} else {
-            //    c.add(Calendar.DAY_OF_MONTH, mNum + 1);
-            //}
-            //DAY_OF_WEEK = 3
-            c.add(Calendar.DAY_OF_MONTH, mNum);
-            String date = getWeekday(c.get(Calendar.DAY_OF_WEEK)) + " der " + c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR);
+            c.setTime(im.get(mNum).second);
+            Boolean free = false;
+            for (int i = 0; i < dc.getDayOff().size(); i++) {
+                Calendar c2 = Calendar.getInstance();
+                c2.setTime(dc.getDayOff().get(i));
+                if (c.get(Calendar.DAY_OF_MONTH) == c2.get(Calendar.DAY_OF_MONTH) && c.get(Calendar.MONTH) == c2.get(Calendar.MONTH) && c.get(Calendar.YEAR) == c2.get(Calendar.YEAR)) {
+                    free = true;
+                }
+            }
+            String date;
+            if (free) {
+                date = "Kein Unterricht am " + getWeekday(c.get(Calendar.DAY_OF_WEEK)) + " den " + c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR);
+            } else {
+                date = getWeekday(c.get(Calendar.DAY_OF_WEEK)) + " der " + c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR);
+            }
             View tv = v.findViewById(R.id.tvWeekdayDate);
             ((TextView) tv).setText(date);
 
@@ -195,8 +201,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getFridayLessonNames(), configuredScheduleWeek.getFridayTeachers(),
                         configuredScheduleWeek.getFridayRooms());
             }
-            //LinearLayout linearLayoutZero = (LinearLayout) v.findViewById(R.id.linearLayoutDigitalScheduleLessonZero);
-            //linearLayoutZero.setVisibility(View.GONE);
             return v;
         }
 
