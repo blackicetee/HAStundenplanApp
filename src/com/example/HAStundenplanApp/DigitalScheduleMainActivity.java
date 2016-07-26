@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.OnScheduleWeekPass;
 import com.example.HAStundenplanApp.com.example.android.customchoicelist.Cheeses;
@@ -17,7 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class DigitalScheduleMainActivity extends FragmentActivity implements OnScheduleWeekPass {
+public class DigitalScheduleMainActivity extends FragmentActivity implements OnScheduleWeekPass, OnConfigurationPass {
 
     private static final int MENU_CREATE_PROFILE_ID = 0;
     private static final int MENU_CONFIGURE_SCHEDULE_WEEK_ID = 1;
@@ -26,13 +27,13 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
     private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
+    private static Configuration dc = new DummyConfiguration().getConfiguration();
 
-    static final int NUM_ITEMS = 10;
+    static final int NUM_ITEMS = dc.calculateLengthOfSummerSemester();
 
     MyAdapter mAdapter;
 
     ViewPager mPager;
-
 
 
     @Override
@@ -43,22 +44,35 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
         mAdapter = new MyAdapter(getSupportFragmentManager());
 
-        mPager = (ViewPager)findViewById(R.id.main_pager);
+        mPager = (ViewPager) findViewById(R.id.main_pager);
         mPager.setAdapter(mAdapter);
 
+        Calendar today = Calendar.getInstance();
+        int daysFromStartSemesterUntilNow = dc.calculateLengthOfSemester(dc.getStartSummerSemester(), today.getTime(), new IllegalArgumentException("StartSummerSemester or Date of Today not set yet!"));
+        Log.d("LOG_TAG", "Days from startSemester until now: " + Integer.toString(daysFromStartSemesterUntilNow));
+
+        mPager.setCurrentItem(daysFromStartSemesterUntilNow);
+
         // Watch for button clicks.
-        Button button = (Button)findViewById(R.id.goto_first);
+        Button button = (Button) findViewById(R.id.goto_first);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mPager.setCurrentItem(0);
             }
         });
-        button = (Button)findViewById(R.id.goto_last);
+        button = (Button) findViewById(R.id.goto_today);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mPager.setCurrentItem(NUM_ITEMS-1);
+                mPager.setCurrentItem(daysFromStartSemesterUntilNow);
             }
         });
+        button = (Button) findViewById(R.id.goto_last);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mPager.setCurrentItem(NUM_ITEMS - 1);
+            }
+        });
+        Log.d("LOG_TAG", "Length of the summer semester: " + Integer.toString(dc.calculateLengthOfSummerSemester()));
         fillConfiguredScheduleWeekWithDummyData();
     }
 
@@ -70,6 +84,16 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     @Override
     public void setScheduleWeek(ScheduleWeek scheduleWeek) {
         configuredScheduleWeek = scheduleWeek;
+    }
+
+    @Override
+    public Configuration getConfiguration() {
+        return dc;
+    }
+
+    @Override
+    public void setConfiguration(Configuration configuration) {
+        dc = configuration;
     }
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
@@ -91,6 +115,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     public static class ScheduleFragment extends Fragment {
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
+        OnConfigurationPass configurationPasser;
 
         /**
          * Create a new instance of CountingFragment, providing "num"
@@ -112,6 +137,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             super.onAttach(context);
             Activity activity = getActivity();
             scheduleWeekPasser = (OnScheduleWeekPass) activity;
+            configurationPasser = (OnConfigurationPass) activity;
         }
 
         /**
@@ -131,11 +157,44 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.digital_schedule_fragment_object, container, false);
+            Configuration dc = configurationPasser.getConfiguration();
             Calendar c = Calendar.getInstance();
-            String date = c.get(Calendar.DAY_OF_MONTH) + "." + c.get(Calendar.MONTH) + 1 + "." + c.get(Calendar.YEAR);
+            c.setTime(dc.getStartSummerSemester());
+            //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+            //if (dayOfWeek == Calendar.FRIDAY) {
+            //    c.add(Calendar.DAY_OF_MONTH, mNum + 3);
+            //} else if (dayOfWeek == Calendar.SATURDAY) {
+            //    c.add(Calendar.DAY_OF_MONTH, mNum + 2);
+            //} else {
+            //    c.add(Calendar.DAY_OF_MONTH, mNum + 1);
+            //}
+            //DAY_OF_WEEK = 3
+            c.add(Calendar.DAY_OF_MONTH, mNum);
+            String date = getWeekday(c.get(Calendar.DAY_OF_WEEK)) + " der " + c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR);
+            View tv = v.findViewById(R.id.tvWeekdayDate);
+            ((TextView) tv).setText(date);
 
-            View tv = v.findViewById(R.id.tvDigitalScheduleDate);
-            ((TextView)tv).setText(date);
+            Calendar lessonTime = Calendar.getInstance();
+            lessonTime.setTime(dc.getStartEarliestLesson());
+            ConfigureWeekdays.calculateWeekdayLessonTimes(v, dc.getBreaks(), lessonTime, dc.getLessonDurationInMinutes());
+
+            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+                ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getMondayLessonNames(), configuredScheduleWeek.getMondayTeachers(),
+                        configuredScheduleWeek.getMondayRooms());
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+                ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getTuesdayLessonNames(), configuredScheduleWeek.getTuesdayTeachers(),
+                        configuredScheduleWeek.getTuesdayRooms());
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
+                ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getWednesdayLessonNames(), configuredScheduleWeek.getWednesdayTeachers(),
+                        configuredScheduleWeek.getWednesdayRooms());
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
+                ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getThursdayLessonNames(), configuredScheduleWeek.getThursdayTeachers(),
+                        configuredScheduleWeek.getThursdayRooms());
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
+                ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getFridayLessonNames(), configuredScheduleWeek.getFridayTeachers(),
+                        configuredScheduleWeek.getFridayRooms());
+            }
             //LinearLayout linearLayoutZero = (LinearLayout) v.findViewById(R.id.linearLayoutDigitalScheduleLessonZero);
             //linearLayoutZero.setVisibility(View.GONE);
             return v;
@@ -147,8 +206,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
         }
     }
-
-
 
 
     @Override
@@ -220,5 +277,16 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
         configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
         configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+    }
+
+    private static String getWeekday(int numberOfWeekday) {
+        if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
+        else if (numberOfWeekday == 2) return Weekday.Montag.toString();
+        else if (numberOfWeekday == 3) return Weekday.Dienstag.toString();
+        else if (numberOfWeekday == 4) return Weekday.Mittwoch.toString();
+        else if (numberOfWeekday == 5) return Weekday.Donnerstag.toString();
+        else if (numberOfWeekday == 6) return Weekday.Freitag.toString();
+        else if (numberOfWeekday == 7) return Weekday.Samstag.toString();
+        else throw new IllegalArgumentException();
     }
 }

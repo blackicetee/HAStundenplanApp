@@ -51,12 +51,13 @@
     <string name="Raum">Raum</string>
     <string name="Woche">wöchentlich</string>
     <string name="Speichern">Speichern</string>
-    <string name="first">First</string>
+    <string name="first">Start</string>
     <string name="hello_world">Hello World!</string>
-    <string name="last">Last</string>
+    <string name="last">Ende</string>
     <string name="Weekday">Wochentag</string>
     <string name="Hausaufgabe">Hausaufgabe</string>
     <string name="DigitalScheduleDate">Das Datum:</string>
+    <string name="today">Heute</string>
 
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>

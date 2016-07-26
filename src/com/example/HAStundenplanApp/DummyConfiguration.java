@@ -31,15 +31,17 @@ public class DummyConfiguration {
                 new Pair<>(8, 30)));
 
         List<Date> dayOff = new ArrayList<>();
+        dayOff.add(getDate(9,4,2016));
+        dayOff.add(getDate(10,5,2016));
         dayOff.add(getDate(7,2,2017));
         dayOff.add(getDate(8,3,2017));
-        dayOff.add(getDate(9,4,2017));
-        dayOff.add(getDate(10,5,2017));
 
-        Date startSummerSemester = getDate(1,4,2017);
-        Date endSummerSemester = getDate(31,8,2017);
-        Date startWinterSemester = getDate(1,10,2017);
-        Date endWinterSemester = getDate(28,2,2017);
+        int summerOrWinterSemester = 1;
+
+        Date startSummerSemester = getDate(1,4,2016);
+        Date endSummerSemester = getDate(30,9,2016);
+        Date startWinterSemester = getDate(1,10,2016);
+        Date endWinterSemester = getDate(31,3,2017);
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 6);
@@ -47,13 +49,13 @@ public class DummyConfiguration {
         Date startEarliestLesson = cal.getTime();
 
 
-        return new ImplConfiguration(lessonNames, teacherNames, rooms, lessonDurationInMinutes, breaks, dayOff, startSummerSemester,
-                endSummerSemester, startWinterSemester, endWinterSemester, startEarliestLesson);
+        return new ImplConfiguration(lessonNames, teacherNames, rooms, lessonDurationInMinutes, breaks, dayOff, summerOrWinterSemester,
+                startSummerSemester, endSummerSemester, startWinterSemester, endWinterSemester, startEarliestLesson);
     }
 
     private Date getDate(int day, int month, int year) {
         Calendar cal = Calendar.getInstance();
-        cal.set(year, month, day);
+        cal.set(year, (month - 1), day);
         return cal.getTime();
     }
 }
