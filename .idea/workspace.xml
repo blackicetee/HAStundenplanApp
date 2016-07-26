@@ -41,39 +41,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7d5b10d-316c-4d74-bcfd-341d5cd735b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/homework.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/HomeworkActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonNameActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonNameActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonTerminationDateActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonTerminationDateActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LocationActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LocationActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/TeacherNameActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/TeacherNameActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport$ArrayListFragment.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport$ArrayListFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$1.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$2.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$3.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$MyAdapter.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$MyAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$ScheduleFragment.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$ScheduleFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$menu.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ScheduleActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ScheduleActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SettingsActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SettingsActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/digital_schedule_main.xml" afterPath="$PROJECT_DIR$/res/layout/digital_schedule_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml" afterPath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/java/net/sharksystem/sharknet/javafx/i18n/I18N.java" afterPath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/java/net/sharksystem/sharknet/javafx/i18n/I18N.java" />
     </list>
@@ -1328,16 +1295,16 @@
       <workItem from="1469367424453" duration="4534000" />
       <workItem from="1469437242317" duration="16509000" />
       <workItem from="1469464370574" duration="1293000" />
-      <workItem from="1469514217485" duration="28523000" />
+      <workItem from="1469514217485" duration="28678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315855000" />
+    <option name="totallyTimeSpent" value="316010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
