@@ -58,6 +58,8 @@
     <string name="Hausaufgabe">Hausaufgabe</string>
     <string name="DigitalScheduleDate">Das Datum:</string>
     <string name="today">Heute</string>
+    <string name="previous">&lt; -Woche</string>
+    <string name="next">Woche -></string>
 
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>

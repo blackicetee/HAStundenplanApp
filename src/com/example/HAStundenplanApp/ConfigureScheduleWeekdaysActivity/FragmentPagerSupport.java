@@ -304,30 +304,6 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             btnWeekdayLessonEightPeriod.setOnClickListener(this);
             btnWeekdayLessonNinePeriod.setOnClickListener(this);
             return v;
-            /**
-             View v = null;
-             switch (mNum) {
-             case 0:
-             v = inflater.inflate(R.layout.configure_monday, container, false);
-             Intent configureScheduleIntent = new Intent(getActivity(), ConfigureMondayActivity.class);
-             configureScheduleIntent.putExtra(DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
-             configureScheduleIntent.putExtra
-             startActivity(configureScheduleIntent);
-             //scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
-             break;
-             case 1:
-             v = inflater.inflate(R.layout.configure_tuesday, container, false);
-             break;
-             case 2:
-             v = inflater.inflate(R.layout.configure_wednesday, container, false);
-             break;
-             case 3:
-             v = inflater.inflate(R.layout.configure_thursday, container, false);
-             break;
-             case 4:
-             v = inflater.inflate(R.layout.configure_friday, container, false);
-             break;
-             }*/
         }
 
         @Override

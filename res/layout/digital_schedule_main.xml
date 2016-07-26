@@ -19,9 +19,17 @@
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="@string/first">
         </Button>
+        <Button android:id="@+id/goto_previous_week"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/previous">
+        </Button>
         <Button android:id="@+id/goto_today"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="@string/today">
+        </Button>
+        <Button android:id="@+id/goto_next_week"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/next">
         </Button>
         <Button android:id="@+id/goto_last"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"

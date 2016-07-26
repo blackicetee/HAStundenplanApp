@@ -10,9 +10,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.*;
 import android.widget.*;
-import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
-import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
-import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.OnScheduleWeekPass;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.*;
 import com.example.HAStundenplanApp.com.example.android.customchoicelist.Cheeses;
 
 import java.util.*;
@@ -46,7 +44,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
         mPager = (ViewPager) findViewById(R.id.main_pager);
         mPager.setAdapter(mAdapter);
-
         Calendar today = Calendar.getInstance();
         int indexOfToday = dc.searchIndexOfDayInIndexMatrix(today.getTime(), indexMatrixOfDaysWithoutWeekends);
 
@@ -59,11 +56,23 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 mPager.setCurrentItem(0);
             }
         });
+        button = (Button) findViewById(R.id.goto_previous_week);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mPager.setCurrentItem(mPager.getCurrentItem() - 5);
+            }
+        });
         button = (Button) findViewById(R.id.goto_today);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mPager.setCurrentItem(indexOfToday);
                 Log.d("LOG_TAG", "IndexOfToday: " + indexOfToday);
+            }
+        });
+        button = (Button) findViewById(R.id.goto_next_week);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mPager.setCurrentItem(mPager.getCurrentItem() + 5);
             }
         });
         button = (Button) findViewById(R.id.goto_last);
@@ -110,12 +119,31 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         public Fragment getItem(int position) {
             return ScheduleFragment.newInstance(position);
         }
+
+        //By default, getItemPosition() returns POSITION_UNCHANGED, which means, "This object is fine where it is, don't destroy or remove it."
+        //Returning POSITION_NONE fixes the problem by instead saying, "This object is no longer an item I'm displaying, remove it."
+        //So it has the effect of removing and recreating every single item in your adapter.
+        @Override
+        public int getItemPosition(Object item) {
+            return POSITION_NONE;
+        }
     }
 
-    public static class ScheduleFragment extends Fragment {
+    public static class ScheduleFragment extends Fragment implements View.OnClickListener {
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
         OnConfigurationPass configurationPasser;
+
+        ImageButton btnWeekdayLessonZeroHomework;
+        ImageButton btnWeekdayLessonOneHomework;
+        ImageButton btnWeekdayLessonTwoHomework;
+        ImageButton btnWeekdayLessonThreeHomework;
+        ImageButton btnWeekdayLessonFourHomework;
+        ImageButton btnWeekdayLessonFiveHomework;
+        ImageButton btnWeekdayLessonSixHomework;
+        ImageButton btnWeekdayLessonSevenHomework;
+        ImageButton btnWeekdayLessonEightHomework;
+        ImageButton btnWeekdayLessonNineHomework;
 
         /**
          * Create a new instance of CountingFragment, providing "num"
@@ -201,6 +229,29 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getFridayLessonNames(), configuredScheduleWeek.getFridayTeachers(),
                         configuredScheduleWeek.getFridayRooms());
             }
+
+            btnWeekdayLessonZeroHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonZeroHomework);
+            btnWeekdayLessonOneHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonOneHomework);
+            btnWeekdayLessonTwoHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonTwoHomework);
+            btnWeekdayLessonThreeHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonThreeHomework);
+            btnWeekdayLessonFourHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonFourHomework);
+            btnWeekdayLessonFiveHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonFiveHomework);
+            btnWeekdayLessonSixHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonSixHomework);
+            btnWeekdayLessonSevenHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonSevenHomework);
+            btnWeekdayLessonEightHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonEightHomework);
+            btnWeekdayLessonNineHomework = (ImageButton) v.findViewById(R.id.btnWeekdayLessonNineHomework);
+
+            btnWeekdayLessonZeroHomework.setOnClickListener(this);
+            btnWeekdayLessonOneHomework.setOnClickListener(this);
+            btnWeekdayLessonTwoHomework.setOnClickListener(this);
+            btnWeekdayLessonThreeHomework.setOnClickListener(this);
+            btnWeekdayLessonFourHomework.setOnClickListener(this);
+            btnWeekdayLessonFiveHomework.setOnClickListener(this);
+            btnWeekdayLessonSixHomework.setOnClickListener(this);
+            btnWeekdayLessonSevenHomework.setOnClickListener(this);
+            btnWeekdayLessonEightHomework.setOnClickListener(this);
+            btnWeekdayLessonNineHomework.setOnClickListener(this);
+
             return v;
         }
 
@@ -209,88 +260,126 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             super.onActivityCreated(savedInstanceState);
 
         }
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_activity, menu);
-        menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
-        menu.add(0, MENU_CONFIGURE_SCHEDULE_WEEK_ID, 0, "Wochen Stundenplan anpassen");
-        menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
-        menu.add(0, MENU_QUIT_ID, 0, "Beenden");
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_CREATE_PROFILE_ID:
-                Intent createProfileIntent = new Intent(this, ProfileDataActivity.class);
-                startActivityForResult(createProfileIntent, MENU_CREATE_PROFILE_ID);
-                break;
-            case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
-                Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
-                configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
-                startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
-                break;
-            case MENU_SETTINGS_ID:
-                Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                startActivityForResult(settingsIntent, MENU_SETTINGS_ID);
-                break;
-            case MENU_QUIT_ID:
-                //exit
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
-                if (resultCode == RESULT_OK) {
-                    configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
-                }
-                break;
+        @Override
+        public void onClick(View v) {
+            Intent homeworkIntent = new Intent(getContext(), HomeworkActivity.class);
+            switch (v.getId()) {
+                case R.id.btnWeekdayLessonZeroHomework:
+                    startActivityForResult(homeworkIntent, 0);
+                    break;
+                case R.id.btnWeekdayLessonOneHomework:
+                    startActivityForResult(homeworkIntent, 1);
+                    break;
+                case R.id.btnWeekdayLessonTwoHomework:
+                    startActivityForResult(homeworkIntent, 2);
+                    break;
+                case R.id.btnWeekdayLessonThreeHomework:
+                    startActivityForResult(homeworkIntent, 3);
+                    break;
+                case R.id.btnWeekdayLessonFourHomework:
+                    startActivityForResult(homeworkIntent, 4);
+                    break;
+                case R.id.btnWeekdayLessonFiveHomework:
+                    startActivityForResult(homeworkIntent, 5);
+                    break;
+                case R.id.btnWeekdayLessonSixHomework:
+                    startActivityForResult(homeworkIntent, 6);
+                    break;
+                case R.id.btnWeekdayLessonSevenHomework:
+                    startActivityForResult(homeworkIntent, 7);
+                    break;
+                case R.id.btnWeekdayLessonEightHomework:
+                    startActivityForResult(homeworkIntent, 8);
+                    break;
+                case R.id.btnWeekdayLessonNineHomework:
+                    startActivityForResult(homeworkIntent, 9);
+                    break;
+            }
         }
     }
 
-    private void fillConfiguredScheduleWeekWithDummyData() {
-        configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-        configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-        configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-        configuredScheduleWeek.setThursdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-        configuredScheduleWeek.setFridayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
 
-        configuredScheduleWeek.setMondayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-        configuredScheduleWeek.setTuesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-        configuredScheduleWeek.setWednesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-        configuredScheduleWeek.setThursdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-        configuredScheduleWeek.setFridayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            getMenuInflater().inflate(R.menu.main_activity, menu);
+            menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
+            menu.add(0, MENU_CONFIGURE_SCHEDULE_WEEK_ID, 0, "Wochen Stundenplan anpassen");
+            menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
+            menu.add(0, MENU_QUIT_ID, 0, "Beenden");
+            return super.onCreateOptionsMenu(menu);
+        }
 
-        configuredScheduleWeek.setMondayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-        configuredScheduleWeek.setTuesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-        configuredScheduleWeek.setWednesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-        configuredScheduleWeek.setThursdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-        configuredScheduleWeek.setFridayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            switch (item.getItemId()) {
+                case MENU_CREATE_PROFILE_ID:
+                    Intent createProfileIntent = new Intent(this, ProfileDataActivity.class);
+                    startActivityForResult(createProfileIntent, MENU_CREATE_PROFILE_ID);
+                    break;
+                case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
+                    Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
+                    configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+                    startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
+                    break;
+                case MENU_SETTINGS_ID:
+                    Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                    startActivityForResult(settingsIntent, MENU_SETTINGS_ID);
+                    break;
+                case MENU_QUIT_ID:
+                    //exit
+                    finish();
+                    break;
+            }
+            return super.onOptionsItemSelected(item);
+        }
 
-        configuredScheduleWeek.setMondayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-        configuredScheduleWeek.setTuesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-        configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-        configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-        configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            switch (requestCode) {
+                case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
+                    if (resultCode == RESULT_OK) {
+                        configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                    break;
+            }
+        }
+
+        private void fillConfiguredScheduleWeekWithDummyData() {
+            configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+            configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+            configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+            configuredScheduleWeek.setThursdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+            configuredScheduleWeek.setFridayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+
+            configuredScheduleWeek.setMondayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+            configuredScheduleWeek.setTuesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+            configuredScheduleWeek.setWednesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+            configuredScheduleWeek.setThursdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+            configuredScheduleWeek.setFridayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+
+            configuredScheduleWeek.setMondayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+            configuredScheduleWeek.setTuesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+            configuredScheduleWeek.setWednesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+            configuredScheduleWeek.setThursdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+            configuredScheduleWeek.setFridayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+
+            configuredScheduleWeek.setMondayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+            configuredScheduleWeek.setTuesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+            configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+            configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+            configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        }
+
+        private static String getWeekday(int numberOfWeekday) {
+            if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
+            else if (numberOfWeekday == 2) return Weekday.Montag.toString();
+            else if (numberOfWeekday == 3) return Weekday.Dienstag.toString();
+            else if (numberOfWeekday == 4) return Weekday.Mittwoch.toString();
+            else if (numberOfWeekday == 5) return Weekday.Donnerstag.toString();
+            else if (numberOfWeekday == 6) return Weekday.Freitag.toString();
+            else if (numberOfWeekday == 7) return Weekday.Samstag.toString();
+            else throw new IllegalArgumentException();
+        }
     }
-
-    private static String getWeekday(int numberOfWeekday) {
-        if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
-        else if (numberOfWeekday == 2) return Weekday.Montag.toString();
-        else if (numberOfWeekday == 3) return Weekday.Dienstag.toString();
-        else if (numberOfWeekday == 4) return Weekday.Mittwoch.toString();
-        else if (numberOfWeekday == 5) return Weekday.Donnerstag.toString();
-        else if (numberOfWeekday == 6) return Weekday.Freitag.toString();
-        else if (numberOfWeekday == 7) return Weekday.Samstag.toString();
-        else throw new IllegalArgumentException();
-    }
-}
