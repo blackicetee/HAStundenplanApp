@@ -1,7 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              android:background="@color/white" android:weightSum="1">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/HADate"
+              android:textColor="@color/black" android:id="@+id/tvHomework" android:layout_gravity="center_horizontal"
+              android:textSize="@dimen/textSizeHA"/>
+    <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/scrollView2" android:layout_gravity="center_horizontal"
+                android:fillViewport="false" android:layout_weight="0.33">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:weightSum="1">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                          android:layout_gravity="center_horizontal" android:weightSum="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/layoutTimeWidth"
+                              android:background="@drawable/button" android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="04:45" android:id="@+id/tvHomeworkStartTime"
+                              android:textColor="@color/black"
+                              android:layout_marginStart="@dimen/layoutTimeLeftMargin"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="05:45" android:id="@+id/tvHomeworkEndTime"
+                              android:textColor="@color/black"
+                              android:layout_marginStart="@dimen/layoutTimeLeftMargin"
+                              android:layout_marginTop="@dimen/layoutTimeTopMargin"/>
+                </LinearLayout>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView"
+                        android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/button" android:text="@string/Fach"
+                        android:id="@+id/btnWeekdayLessonZeroLessonName"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView"
+                        android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/button" android:text="@string/Lehrer"
+                        android:id="@+id/btnWeekdayLessonZeroTeacher"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView"
+                        android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/button" android:text="@string/Raum"
+                        android:id="@+id/btnWeekdayLessonZeroRoom"/>
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView"
+                        android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/button" android:text="@string/Status"
+                        android:id="@+id/btnWeekdayLessonZeroPeriod"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:layout_gravity="center_horizontal" android:weightSum="1"
+                          android:layout_marginTop="@dimen/topMargin">
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView"
+                        android:layout_height="@dimen/defaultLayoutHeightDailyView" android:textColor="@color/buttonTextColor"
+                        android:background="@drawable/button" android:text="@string/uploadTask"
+                        android:id="@+id/uploadTasks"/>
+                <ScrollView android:layout_width="match_parent" android:layout_height="@dimen/svHeight" android:id="@+id/svTasks"
+                            android:fillViewport="false">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/svHeight">
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+                                      android:layout_marginTop="@dimen/layoutTimeTopMargin">
+                            <Button android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:textColor="@color/buttonTextColor"
+                                    android:background="@drawable/button" android:text="@string/Hausaufgabe"
+                                    android:id="@+id/button2" android:layout_marginRight="@dimen/layoutTimeLeftMargin"/>
+                            <LinearLayout android:orientation="vertical" android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                          android:background="@drawable/button" android:layout_height="match_parent"
+                            >
+                                <Button android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                        android:layout_height="wrap_content" android:textColor="@color/buttonTextColor"
+                                        android:background="@drawable/button" android:text="@string/positive"
+                                        android:id="@+id/button9"/>
+                                <Button android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                        android:layout_height="wrap_content" android:textColor="@color/buttonTextColor"
+                                        android:background="@drawable/button" android:text="@string/negative"
+                                        android:id="@+id/button8"/>
+                            </LinearLayout>
+                            <Button android:layout_width="match_parent" android:layout_height="match_parent"
+                                    android:textColor="@color/buttonTextColor" android:background="@drawable/button"
+                                    android:text="@string/voting" android:id="@+id/button6"
+                                    android:layout_marginLeft="@dimen/layoutTimeLeftMargin"/>
+                        </LinearLayout>
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+                                      android:layout_marginTop="@dimen/layoutTimeTopMargin">
+                            <Button android:layout_width="match_parent" android:layout_height="match_parent"
+                                    android:textColor="@color/buttonTextColor" android:background="@drawable/button"
+                                    android:text="@string/Hausaufgabe" android:id="@+id/button3"
+                                    android:layout_marginRight="@dimen/layoutTimeLeftMargin"/>
+                            <LinearLayout android:orientation="vertical"
+                                          android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                          android:background="@drawable/button" android:layout_height="match_parent">
+                                <Button android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                        android:layout_height="wrap_content" android:textColor="@color/buttonTextColor"
+                                        android:background="@drawable/button" android:text="@string/positive"
+                                        android:id="@+id/button4"/>
+                                <Button android:layout_width="@dimen/defaultLayoutHeightDailyView"
+                                        android:layout_height="wrap_content" android:textColor="@color/buttonTextColor"
+                                        android:background="@drawable/button" android:text="@string/negative"
+                                        android:id="@+id/button5"/>
+                            </LinearLayout>
+                            <Button android:layout_width="match_parent" android:layout_height="match_parent"
+                                    android:textColor="@color/buttonTextColor" android:background="@drawable/button"
+                                    android:text="@string/voting" android:id="@+id/button7"
+                                    android:layout_marginLeft="@dimen/layoutTimeLeftMargin"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal" android:weightSum="1"
+                          android:layout_marginTop="@dimen/topMargin">
+                <Button android:layout_width="@dimen/defaultButtonWidthDailyView" android:layout_height="@dimen/defaultLayoutHeightDailyView"
+                        android:textColor="@color/buttonTextColor" android:background="@drawable/button"
+                        android:text="@string/uploadSolution" android:id="@+id/button"/>
+                <ScrollView android:layout_width="match_parent" android:layout_height="@dimen/svHeight" android:id="@+id/scrollView4"
+                            android:fillViewport="false"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+                          android:weightSum="1">
+                <Button android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:textColor="@color/buttonTextColor" android:background="@drawable/button"
+                        android:text="@string/openChat" android:id="@+id/button11"/>
+            </LinearLayout>
 
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

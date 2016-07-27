@@ -60,6 +60,14 @@
     <string name="today">Heute</string>
     <string name="previous">&lt; -Woche</string>
     <string name="next">Woche -></string>
+    <string name="uploadTask">Fotografiere Aufgabe</string>
+    <string name="uploadSolution">Fotografiere Lösung</string>
+    <string name="Status">Status</string>
+    <string name="HADate">0.Stunde am Montag den 23.07.2016</string>
+    <string name="positive">+</string>
+    <string name="negative">-</string>
+    <string name="voting">7</string>
+    <string name="openChat">Chat öffnen</string>
 
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>

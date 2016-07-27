@@ -6,12 +6,14 @@ import android.util.Pair;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Thilo S. on 26.07.2016.
  */
 public class ImplHomework implements Homework {
+    private Date date = null;
     private String lessonName = null;
     private String teacher = null;
     private String room = null;
@@ -19,6 +21,24 @@ public class ImplHomework implements Homework {
     private List<Pair<File, List<Integer>>> tasks = new ArrayList<>();
     private List<Pair<File, List<Integer>>> taskSolutions = new ArrayList<>();
     private int status = 0;
+
+    public ImplHomework(Date date, String lessonName, String teacher, String room, int lesson) {
+        this.date = date;
+        this.lessonName = lessonName;
+        this.teacher = teacher;
+        this.room = room;
+        this.setLesson(lesson);
+    }
+
+    @Override
+    public Date getDate() {
+        return date;
+    }
+
+    @Override
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     @Override
     public String getLessonName() {

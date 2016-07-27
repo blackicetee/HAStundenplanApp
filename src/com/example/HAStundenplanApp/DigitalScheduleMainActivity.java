@@ -24,6 +24,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
     private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
+    public static final String HOMEWORK = "homework";
     private static Configuration dc = new DummyConfiguration().getConfiguration();
 
     private static List<Pair<Integer, Date>> indexMatrixOfDaysWithoutWeekends = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
@@ -133,6 +134,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
         OnConfigurationPass configurationPasser;
+        List<Pair<Integer, Date>> im = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
 
         ImageButton btnWeekdayLessonZeroHomework;
         ImageButton btnWeekdayLessonOneHomework;
@@ -187,8 +189,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
 
             View v = inflater.inflate(R.layout.digital_schedule_fragment_object, container, false);
-            Configuration dc = configurationPasser.getConfiguration();
-            List<Pair<Integer, Date>> im = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
             Calendar c = Calendar.getInstance();
             c.setTime(im.get(mNum).second);
             Boolean free = false;
@@ -261,38 +261,119 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
         }
 
+        private String[] getWeekdayAttributes(Date fragmentDate, int resultNumber) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(fragmentDate);
+            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+                if (resultNumber == 0) {
+                    return configuredScheduleWeek.getMondayLessonNames();
+                } else if (resultNumber == 1) {
+                    return configuredScheduleWeek.getMondayTeachers();
+                } else if (resultNumber == 2) {
+                    return configuredScheduleWeek.getMondayRooms();
+                } else {
+                    throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
+                }
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+                if (resultNumber == 0) {
+                    return configuredScheduleWeek.getTuesdayLessonNames();
+                } else if (resultNumber == 1) {
+                    return configuredScheduleWeek.getTuesdayTeachers();
+                } else if (resultNumber == 2) {
+                    return configuredScheduleWeek.getTuesdayRooms();
+                } else {
+                    throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
+                }
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+                if (resultNumber == 0) {
+                    return configuredScheduleWeek.getWednesdayLessonNames();
+                } else if (resultNumber == 1) {
+                    return configuredScheduleWeek.getWednesdayTeachers();
+                } else if (resultNumber == 2) {
+                    return configuredScheduleWeek.getWednesdayRooms();
+                } else {
+                    throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
+                }
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+                if (resultNumber == 0) {
+                    return configuredScheduleWeek.getThursdayLessonNames();
+                } else if (resultNumber == 1) {
+                    return configuredScheduleWeek.getThursdayTeachers();
+                } else if (resultNumber == 2) {
+                    return configuredScheduleWeek.getThursdayRooms();
+                } else {
+                    throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
+                }
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+                if (resultNumber == 0) {
+                    return configuredScheduleWeek.getFridayLessonNames();
+                } else if (resultNumber == 1) {
+                    return configuredScheduleWeek.getFridayTeachers();
+                } else if (resultNumber == 2) {
+                    return configuredScheduleWeek.getFridayRooms();
+                } else {
+                    throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
+                }
+            } else {
+                throw new IllegalStateException("The calender points not on a weekday, but on weekend! Should only point on weekdays.");
+            }
+        }
+
         @Override
         public void onClick(View v) {
             Intent homeworkIntent = new Intent(getContext(), HomeworkActivity.class);
+            Date fragmentDate = im.get(mNum).second;
+            Homework ha;
             switch (v.getId()) {
                 case R.id.btnWeekdayLessonZeroHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[0], getWeekdayAttributes(fragmentDate, 1)[0], getWeekdayAttributes(fragmentDate, 2)[0], 0);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 0);
                     break;
                 case R.id.btnWeekdayLessonOneHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[1], getWeekdayAttributes(fragmentDate, 1)[1], getWeekdayAttributes(fragmentDate, 2)[1], 1);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 1);
                     break;
                 case R.id.btnWeekdayLessonTwoHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[2], getWeekdayAttributes(fragmentDate, 1)[2], getWeekdayAttributes(fragmentDate, 2)[2], 2);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 2);
                     break;
                 case R.id.btnWeekdayLessonThreeHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[3], getWeekdayAttributes(fragmentDate, 1)[3], getWeekdayAttributes(fragmentDate, 2)[3], 3);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 3);
                     break;
                 case R.id.btnWeekdayLessonFourHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[4], getWeekdayAttributes(fragmentDate, 1)[4], getWeekdayAttributes(fragmentDate, 2)[4], 4);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 4);
                     break;
                 case R.id.btnWeekdayLessonFiveHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[5], getWeekdayAttributes(fragmentDate, 1)[5], getWeekdayAttributes(fragmentDate, 2)[5], 5);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 5);
                     break;
                 case R.id.btnWeekdayLessonSixHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[6], getWeekdayAttributes(fragmentDate, 1)[6], getWeekdayAttributes(fragmentDate, 2)[6], 6);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 6);
                     break;
                 case R.id.btnWeekdayLessonSevenHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[7], getWeekdayAttributes(fragmentDate, 1)[7], getWeekdayAttributes(fragmentDate, 2)[7], 7);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 7);
                     break;
                 case R.id.btnWeekdayLessonEightHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[8], getWeekdayAttributes(fragmentDate, 1)[8], getWeekdayAttributes(fragmentDate, 2)[8], 8);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 8);
                     break;
                 case R.id.btnWeekdayLessonNineHomework:
+                    ha = new ImplHomework(fragmentDate, getWeekdayAttributes(fragmentDate, 0)[9], getWeekdayAttributes(fragmentDate, 1)[9], getWeekdayAttributes(fragmentDate, 2)[9], 9);
+                    homeworkIntent.putExtra(HOMEWORK, ha);
                     startActivityForResult(homeworkIntent, 9);
                     break;
             }

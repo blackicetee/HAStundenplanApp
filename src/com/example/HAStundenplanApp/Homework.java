@@ -4,12 +4,16 @@ import android.os.Parcelable;
 import android.util.Pair;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Thilo S. on 26.07.2016.
  */
 public interface Homework extends Parcelable {
+
+    Date getDate();
+    void setDate(Date date);
 
     String getLessonName();
     void setLessonName(String lessonName);
