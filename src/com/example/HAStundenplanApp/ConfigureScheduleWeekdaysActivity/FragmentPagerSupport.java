@@ -86,7 +86,6 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
     public static class ArrayListFragment extends Fragment implements View.OnClickListener {
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
-        SchoolMetadata dSchoolMetadata = new DummySchoolMetadata().getSchoolMetadata();
 
         Button btnWeekdayLessonZeroLessonName;
         Button btnWeekdayLessonOneLessonName;
@@ -184,9 +183,6 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             View tv = v.findViewById(R.id.tvScheduleWeekday);
             ((TextView) tv).setText(getScheduleWeekday(mNum));
 
-            Calendar lessonTime = Calendar.getInstance();
-            lessonTime.setTime(dSchoolMetadata.getStartEarliestLesson());
-            ConfigureWeekdays.calculateWeekdayLessonTimes(v, dSchoolMetadata.getBreaks(), lessonTime, dSchoolMetadata.getLessonDurationInMinutes());
             ImplScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
             if (mNum == 0 && configuredScheduleWeek.getMondayLessonNames() != null && configuredScheduleWeek.getMondayTeachers() != null
                     && configuredScheduleWeek.getMondayRooms() != null && configuredScheduleWeek.getMondayPeriods() != null) {

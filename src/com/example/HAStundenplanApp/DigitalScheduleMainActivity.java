@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
 import net.sharksystem.sharknet.api.ImplSharkNet;
+import net.sharksystem.sharknet.api.SchoolMetadata;
+import net.sharksystem.sharknet.api.DummySchoolMetadata;
 import net.sharksystem.sharknet.api.Profile;
 import net.sharksystem.sharknet.api.ScheduleWeek;
 import net.sharksystem.sharknet.api.SharkNet;
@@ -28,7 +30,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class DigitalScheduleMainActivity extends FragmentActivity implements OnConfigurationPass, OnSharkNetPass {
+public class DigitalScheduleMainActivity extends FragmentActivity implements OnSharkNetPass {
 
     private static final int MENU_CREATE_PROFILE_ID = 0;
     private static final int MENU_CONFIGURE_SCHEDULE_WEEK_ID = 1;
@@ -40,7 +42,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
     private SharkNet sharkNet = new ImplSharkNet();
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
     public static final String HOMEWORK = "homework";
-    private static SchoolMetadata schoolMetadata = new DummySchoolMetadata().getSchoolMetadata();
+    private static SchoolMetadata schoolMetadata = null;
 
     private static HashMap<Integer, Date> indexMatrixOfDaysWithoutWeekends = schoolMetadata.getIndexMatrixOfDaysWithoutWeekdays(schoolMetadata.getStartSummerSemester(), schoolMetadata.getEndSummerSemester());
 
@@ -55,6 +57,10 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.digital_schedule_main);
+
+        //Creating SchoolMetadata
+        sharkNet.setSchoolMetadata(new DummySchoolMetadata().getSchoolMetadata());
+        schoolMetadata = sharkNet.getSchoolMetadata();
 
         //Creating local variables, they can be replaced later by UI-Controls or something
         String myNickname = "MyNickname";
@@ -120,16 +126,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
     }
 
     @Override
-    public SchoolMetadata getConfiguration() {
-        return schoolMetadata;
-    }
-
-    @Override
-    public void setConfiguration(SchoolMetadata schoolMetadata) {
-        schoolMetadata = schoolMetadata;
-    }
-
-    @Override
     public SharkNet getSharkNet() {
         return sharkNet;
     }
@@ -165,7 +161,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
 
     public static class ScheduleFragment extends Fragment implements View.OnClickListener {
         int mNum;
-        OnConfigurationPass configurationPasser;
         OnSharkNetPass sharkNetPasser;
         HashMap<Integer, Date> im = schoolMetadata.getIndexMatrixOfDaysWithoutWeekdays(schoolMetadata.getStartSummerSemester(), schoolMetadata.getEndSummerSemester());
 
@@ -199,7 +194,6 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
         public void onAttach(Context context) {
             super.onAttach(context);
             Activity activity = getActivity();
-            configurationPasser = (OnConfigurationPass) activity;
             sharkNetPasser = (OnSharkNetPass) activity;
         }
 
@@ -435,6 +429,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnC
                     Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
                     ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
                     configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
+                    configureScheduleWeekIntent.putExtra("lessonNames", sharkNet.getSchoolMetadata().getLessonNames());
                     startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
                     break;
                 case MENU_SETTINGS_ID:
