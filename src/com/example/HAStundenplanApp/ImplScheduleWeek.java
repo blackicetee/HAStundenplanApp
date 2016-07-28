@@ -2,11 +2,12 @@ package com.example.HAStundenplanApp;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import net.sharksystem.sharknet.api.ScheduleWeek;
 
 /**
  * Created by Thilo S. on 19.07.2016.
  */
-public class ImplScheduleWeek implements ScheduleWeek {
+public class ImplScheduleWeek implements ScheduleWeek, Parcelable {
 
     private String[] mondayLessonNames = null;
     private String[] mondayTeachers = null;
@@ -35,6 +36,70 @@ public class ImplScheduleWeek implements ScheduleWeek {
 
     public ImplScheduleWeek() {
 
+    }
+
+    //This constructor is used when the ScheduleWeekObj needs to be passed through an activity
+    public ImplScheduleWeek(ScheduleWeek configuredScheduleWeek) {
+        if (configuredScheduleWeek.getMondayLessonNames() != null) {
+            mondayLessonNames = configuredScheduleWeek.getMondayLessonNames();
+        }
+        if (configuredScheduleWeek.getMondayTeachers() != null) {
+            mondayTeachers = configuredScheduleWeek.getMondayTeachers();
+        }
+        if (configuredScheduleWeek.getMondayRooms() != null) {
+            mondayRooms = configuredScheduleWeek.getMondayRooms();
+        }
+        if (configuredScheduleWeek.getMondayPeriods() != null) {
+            mondayPeriods = configuredScheduleWeek.getMondayPeriods();
+        }
+        if (configuredScheduleWeek.getTuesdayLessonNames() != null) {
+            tuesdayLessonNames = configuredScheduleWeek.getTuesdayLessonNames();
+        }
+        if (configuredScheduleWeek.getTuesdayTeachers() != null) {
+            tuesdayTeachers = configuredScheduleWeek.getTuesdayTeachers();
+        }
+        if (configuredScheduleWeek.getTuesdayRooms() != null) {
+            tuesdayRooms = configuredScheduleWeek.getTuesdayRooms();
+        }
+        if (configuredScheduleWeek.getTuesdayPeriods() != null) {
+            tuesdayPeriods = configuredScheduleWeek.getTuesdayPeriods();
+        }
+        if (configuredScheduleWeek.getWednesdayLessonNames() != null) {
+            wednesdayLessonNames = configuredScheduleWeek.getWednesdayLessonNames();
+        }
+        if (configuredScheduleWeek.getWednesdayTeachers() != null) {
+            wednesdayTeachers = configuredScheduleWeek.getWednesdayTeachers();
+        }
+        if (configuredScheduleWeek.getWednesdayRooms() != null) {
+            wednesdayRooms = configuredScheduleWeek.getWednesdayRooms();
+        }
+        if (configuredScheduleWeek.getWednesdayPeriods() != null) {
+            wednesdayPeriods = configuredScheduleWeek.getWednesdayPeriods();
+        }
+        if (configuredScheduleWeek.getThursdayLessonNames() != null) {
+            thursdayLessonNames = configuredScheduleWeek.getThursdayLessonNames();
+        }
+        if (configuredScheduleWeek.getThursdayTeachers() != null) {
+            thursdayTeachers = configuredScheduleWeek.getThursdayTeachers();
+        }
+        if (configuredScheduleWeek.getThursdayRooms() != null) {
+            thursdayRooms = configuredScheduleWeek.getThursdayRooms();
+        }
+        if (configuredScheduleWeek.getThursdayPeriods() != null) {
+            thursdayPeriods = configuredScheduleWeek.getThursdayPeriods();
+        }
+        if (configuredScheduleWeek.getFridayLessonNames() != null) {
+            fridayLessonNames = configuredScheduleWeek.getFridayLessonNames();
+        }
+        if (configuredScheduleWeek.getFridayTeachers() != null) {
+            fridayTeachers = configuredScheduleWeek.getFridayTeachers();
+        }
+        if (configuredScheduleWeek.getFridayRooms() != null) {
+            fridayRooms = configuredScheduleWeek.getFridayRooms();
+        }
+        if (configuredScheduleWeek.getFridayPeriods() != null) {
+            fridayPeriods = configuredScheduleWeek.getFridayPeriods();
+        }
     }
 
     @Override

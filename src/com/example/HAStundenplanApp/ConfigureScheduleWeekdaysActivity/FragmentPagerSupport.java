@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ import static com.example.HAStundenplanApp.DigitalScheduleMainActivity.CONFIGURE
  */
 public class FragmentPagerSupport extends FragmentActivity implements OnScheduleWeekPass {
     static final int NUM_ITEMS = 5;
-    private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
+    private ImplScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
 
 
     MyAdapter mAdapter;
@@ -45,22 +46,24 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
 
         //TODO Initiate configureScheduleWeek with getIntent(...) from DigitalScheduleMainActivity
         configuredScheduleWeek = getIntent().getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+        Log.d(DigitalScheduleMainActivity.LOG_TAG, configuredScheduleWeek.getMondayLessonNames()[0]);
     }
 
 
     @Override
     public void onBackPressed() {
-        setResult(RESULT_OK, new Intent().putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek));
+        setResult(RESULT_CANCELED);
         super.onBackPressed();
+        finish();
     }
 
     @Override
-    public ScheduleWeek getScheduleWeek() {
+    public ImplScheduleWeek getScheduleWeek() {
         return configuredScheduleWeek;
     }
 
     @Override
-    public void setScheduleWeek(ScheduleWeek scheduleWeek) {
+    public void setScheduleWeek(ImplScheduleWeek scheduleWeek) {
         configuredScheduleWeek = scheduleWeek;
     }
 
@@ -83,7 +86,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
     public static class ArrayListFragment extends Fragment implements View.OnClickListener {
         int mNum;
         OnScheduleWeekPass scheduleWeekPasser;
-        Configuration dConfiguration = new DummyConfiguration().getConfiguration();
+        SchoolMetadata dSchoolMetadata = new DummySchoolMetadata().getSchoolMetadata();
 
         Button btnWeekdayLessonZeroLessonName;
         Button btnWeekdayLessonOneLessonName;
@@ -182,9 +185,9 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             ((TextView) tv).setText(getScheduleWeekday(mNum));
 
             Calendar lessonTime = Calendar.getInstance();
-            lessonTime.setTime(dConfiguration.getStartEarliestLesson());
-            ConfigureWeekdays.calculateWeekdayLessonTimes(v, dConfiguration.getBreaks(), lessonTime, dConfiguration.getLessonDurationInMinutes());
-            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            lessonTime.setTime(dSchoolMetadata.getStartEarliestLesson());
+            ConfigureWeekdays.calculateWeekdayLessonTimes(v, dSchoolMetadata.getBreaks(), lessonTime, dSchoolMetadata.getLessonDurationInMinutes());
+            ImplScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
             if (mNum == 0 && configuredScheduleWeek.getMondayLessonNames() != null && configuredScheduleWeek.getMondayTeachers() != null
                     && configuredScheduleWeek.getMondayRooms() != null && configuredScheduleWeek.getMondayPeriods() != null) {
                 ConfigureWeekdays.initializeScheduleWeekday(v, configuredScheduleWeek.getMondayLessonNames(),
@@ -449,7 +452,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             return strArray;
         }
 
-        private void setMondayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setMondayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (10 + requestPosition)) {
                 String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                 changeButtonText.setText(weekdayLessonName);
@@ -458,7 +461,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setTuesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setTuesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (10 + requestPosition)) {
                 String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                 changeButtonText.setText(weekdayLessonName);
@@ -467,7 +470,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setWednesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setWednesdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (10 + requestPosition)) {
                 String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                 changeButtonText.setText(weekdayLessonName);
@@ -476,7 +479,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setThursdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setThursdayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (10 + requestPosition)) {
                 String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                 changeButtonText.setText(weekdayLessonName);
@@ -485,7 +488,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setFridayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setFridayLessonNames(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (10 + requestPosition)) {
                 String weekdayLessonName = data.getStringExtra(ChooseLesson.LESSON_NAME);
                 changeButtonText.setText(weekdayLessonName);
@@ -494,7 +497,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setMondayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setMondayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (20 + requestPosition)) {
                 String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                 changeButtonText.setText(weekdayTeacher);
@@ -503,7 +506,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setTuesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setTuesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (20 + requestPosition)) {
                 String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                 changeButtonText.setText(weekdayTeacher);
@@ -512,7 +515,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setWednesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setWednesdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (20 + requestPosition)) {
                 String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                 changeButtonText.setText(weekdayTeacher);
@@ -521,7 +524,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setThursdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setThursdayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (20 + requestPosition)) {
                 String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                 changeButtonText.setText(weekdayTeacher);
@@ -530,7 +533,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setFridayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setFridayTeachers(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (20 + requestPosition)) {
                 String weekdayTeacher = data.getStringExtra(ChooseTeacher.TEACHER_NAME);
                 changeButtonText.setText(weekdayTeacher);
@@ -539,7 +542,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setMondayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setMondayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (30 + requestPosition)) {
                 String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
                 changeButtonText.setText(weekdayRoom);
@@ -548,7 +551,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setTuesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setTuesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (30 + requestPosition)) {
                 String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
                 changeButtonText.setText(weekdayRoom);
@@ -557,7 +560,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setWednesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setWednesdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (30 + requestPosition)) {
                 String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
                 changeButtonText.setText(weekdayRoom);
@@ -566,7 +569,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setThursdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setThursdayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (30 + requestPosition)) {
                 String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
                 changeButtonText.setText(weekdayRoom);
@@ -575,7 +578,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setFridayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setFridayRooms(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (30 + requestPosition)) {
                 String weekdayRoom = data.getStringExtra(ChooseRoom.ROOM);
                 changeButtonText.setText(weekdayRoom);
@@ -583,7 +586,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
                 scheduleWeekPasser.setScheduleWeek(configuredScheduleWeek);
             }
         }
-        private void setMondayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setMondayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 0 && requestCode == (40 + requestPosition)) {
                 String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
                 changeButtonText.setText(weekdayPeriod);
@@ -592,7 +595,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setTuesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setTuesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 1 && requestCode == (40 + requestPosition)) {
                 String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
                 changeButtonText.setText(weekdayPeriod);
@@ -601,7 +604,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setWednesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setWednesdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 2 && requestCode == (40 + requestPosition)) {
                 String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
                 changeButtonText.setText(weekdayPeriod);
@@ -610,7 +613,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setThursdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setThursdayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 3 && requestCode == (40 + requestPosition)) {
                 String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
                 changeButtonText.setText(weekdayPeriod);
@@ -619,7 +622,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             }
         }
 
-        private void setFridayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ScheduleWeek configuredScheduleWeek, Button changeButtonText) {
+        private void setFridayPeriods(int resultCode, int requestCode, int requestPosition, Intent data, ImplScheduleWeek configuredScheduleWeek, Button changeButtonText) {
             if (resultCode == Activity.RESULT_OK && mNum == 4 && requestCode == (40 + requestPosition)) {
                 String weekdayPeriod = data.getStringExtra(ChoosePeriod.PERIOD);
                 changeButtonText.setText(weekdayPeriod);
@@ -631,7 +634,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            ImplScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
             //____________________________LessonNames____________________________
             setMondayLessonNames(resultCode, requestCode, 0, data, configuredScheduleWeek, btnWeekdayLessonZeroLessonName);
             setMondayLessonNames(resultCode, requestCode, 1, data, configuredScheduleWeek, btnWeekdayLessonOneLessonName);
@@ -856,6 +859,9 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             setFridayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
             setFridayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
 
+            ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(configuredScheduleWeek);
+            getActivity().setResult(RESULT_OK, new Intent().putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek));
+            getActivity().finish();
         }
     }
 }

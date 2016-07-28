@@ -25,23 +25,13 @@
         <activity android:name=".AddLessonActivities.AppointmentAmountActivity"
                   android:label="Wie oft hast du diese Unterrichtsstunde pro Woche?"/>
         <activity android:name=".ConfigureScheduleViewActivity" android:label="Stundenplan anpassen"/>
-        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureMondayActivity"
-                  android:label="Stundenplan für Montag anpassen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseLesson"
                   android:label="Titel das Fachs auswählen"/>
-        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureTuesdayActivity"
-                  android:label="Stundenplan für Dienstag anpassen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseTeacher"
                   android:label="Name des Lehrers auswählen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChooseRoom" android:label="Raum auswählen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.ChoosePeriod"
                   android:label="Wiederholung einer Unterrichtsstunde auswählen"/>
-        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureWednesdayActivity"
-                  android:label="Stundenplan für Mittwoch anpassen"/>
-        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureThursdayActivity"
-                  android:label="Stundenplan für Donnerstag anpassen"/>
-        <activity android:name=".ConfigureScheduleWeekdaysActivity.ConfigureFridayActivity"
-                  android:label="Stundenplan für Freitag anpassen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.FragmentPagerSupport" android:label="Stundenplan anpassen"/>
         <activity android:name=".HomeworkActivity" android:label="Hausaufgabe"/>
     </application>

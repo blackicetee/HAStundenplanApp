@@ -1,12 +1,13 @@
 package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 
-import android.util.Pair;
+import org.javatuples.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.HAStundenplanApp.R;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class ConfigureWeekdays {
 
     public static final String REQUEST_CODE = "requestCode";
 
-    public static void calculateWeekdayLessonTimes(View v, List<Pair<Integer, Integer>> breaks, Calendar lessonTime, int lessonDuration) {
+    public static void calculateWeekdayLessonTimes(View v, HashMap<Integer, Integer> breaks, Calendar lessonTime, int lessonDuration) {
         if (breaks.size() == 9) {
             TextView tvWeekdayLessonZeroStart = (TextView) v.findViewById(R.id.tvWeekdayLessonZeroStart);
             TextView tvWeekdayLessonZeroEnd = (TextView) v.findViewById(R.id.tvWeekdayLessonZeroEnd);
@@ -42,53 +43,53 @@ public class ConfigureWeekdays {
             tvWeekdayLessonZeroStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonZeroEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(0).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(0));
 
             tvWeekdayLessonOneStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonOneEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(1).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(1));
 
             tvWeekdayLessonTwoStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonTwoEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(2).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(2));
 
             tvWeekdayLessonThreeStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonThreeEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(3).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(3));
 
             tvWeekdayLessonFourStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonFourEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(4).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(4));
 
             tvWeekdayLessonFiveStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonFiveEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(5).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(5));
 
             tvWeekdayLessonSixStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonSixEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(6).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(6));
 
             tvWeekdayLessonSevenStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonSevenEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(7).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(7));
 
             tvWeekdayLessonEightStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonEightEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
-            lessonTime.add(Calendar.MINUTE, breaks.get(8).second);
+            lessonTime.add(Calendar.MINUTE, breaks.get(8));
 
             tvWeekdayLessonNineStart.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
             lessonTime.add(Calendar.MINUTE, lessonDuration);
             tvWeekdayLessonNineEnd.setText(convertIntegerTimeToTimeString(lessonTime.get(Calendar.HOUR_OF_DAY) * 100 + lessonTime.get(Calendar.MINUTE)));
         } else {
-            throw new IllegalArgumentException("You need to specify 9 breaks in the Configuration to run this implementation!");
+            throw new IllegalArgumentException("You need to specify 9 breaks in the SchoolMetadata to run this implementation!");
         }
     }
 

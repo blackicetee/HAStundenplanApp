@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import com.example.HAStundenplanApp.Configuration;
-import com.example.HAStundenplanApp.DummyConfiguration;
+import com.example.HAStundenplanApp.SchoolMetadata;
+import com.example.HAStundenplanApp.DummySchoolMetadata;
 import com.example.HAStundenplanApp.R;
 
 import java.util.List;
@@ -23,9 +23,9 @@ public class ChooseRoom extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_room);
         
-        DummyConfiguration dc = new DummyConfiguration();
-        Configuration configuration = dc.getConfiguration();
-        rooms = configuration.getRooms();
+        DummySchoolMetadata dc = new DummySchoolMetadata();
+        SchoolMetadata schoolMetadata = dc.getSchoolMetadata();
+        rooms = schoolMetadata.getRooms();
         rooms.add("Raum");
 
 

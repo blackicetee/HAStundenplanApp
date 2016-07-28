@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HAStundenplanApp.iml" filepath="$PROJECT_DIR$/HAStundenplanApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SharkNetJavaFX/SharkNetJavaFX.iml" filepath="$PROJECT_DIR$/SharkNetJavaFX/SharkNetJavaFX.iml" />
     </modules>
   </component>
 </project>

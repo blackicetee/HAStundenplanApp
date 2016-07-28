@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import com.example.HAStundenplanApp.Configuration;
-import com.example.HAStundenplanApp.DummyConfiguration;
+import com.example.HAStundenplanApp.SchoolMetadata;
+import com.example.HAStundenplanApp.DummySchoolMetadata;
 import com.example.HAStundenplanApp.R;
 
 import java.util.List;
@@ -24,9 +24,9 @@ public class ChooseTeacher extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_teacher);
 
-        DummyConfiguration dc = new DummyConfiguration();
-        Configuration configuration = dc.getConfiguration();
-        teachers = configuration.getTeacherNames();
+        DummySchoolMetadata dc = new DummySchoolMetadata();
+        SchoolMetadata schoolMetadata = dc.getSchoolMetadata();
+        teachers = schoolMetadata.getTeacherNames();
         teachers.add("Lehrer");
 
 

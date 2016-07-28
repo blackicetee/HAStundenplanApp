@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-import com.example.HAStundenplanApp.Configuration;
-import com.example.HAStundenplanApp.DummyConfiguration;
+import com.example.HAStundenplanApp.SchoolMetadata;
+import com.example.HAStundenplanApp.DummySchoolMetadata;
 import com.example.HAStundenplanApp.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,9 +25,9 @@ public class ChooseLesson extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_lesson);
 
-        DummyConfiguration dc = new DummyConfiguration();
-        Configuration configuration = dc.getConfiguration();
-        lessonNames = configuration.getLessonNames();
+        DummySchoolMetadata dc = new DummySchoolMetadata();
+        SchoolMetadata schoolMetadata = dc.getSchoolMetadata();
+        lessonNames = schoolMetadata.getLessonNames();
         lessonNames.add("Fach");
 
 

@@ -4,30 +4,45 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.*;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.util.Pair;
+import org.javatuples.Pair;
 import android.view.*;
-import android.widget.*;
-import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.*;
-import com.example.HAStundenplanApp.com.example.android.customchoicelist.Cheeses;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
+import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
+import net.sharksystem.sharknet.api.ImplSharkNet;
+import net.sharksystem.sharknet.api.Profile;
+import net.sharksystem.sharknet.api.ScheduleWeek;
+import net.sharksystem.sharknet.api.SharkNet;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
-public class DigitalScheduleMainActivity extends FragmentActivity implements OnScheduleWeekPass, OnConfigurationPass {
+public class DigitalScheduleMainActivity extends FragmentActivity implements OnConfigurationPass, OnSharkNetPass {
 
     private static final int MENU_CREATE_PROFILE_ID = 0;
     private static final int MENU_CONFIGURE_SCHEDULE_WEEK_ID = 1;
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
-    private ScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
+    public static final String LOG_TAG = "ScheduleLog";
+
+    private SharkNet sharkNet = new ImplSharkNet();
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
     public static final String HOMEWORK = "homework";
-    private static Configuration dc = new DummyConfiguration().getConfiguration();
+    private static SchoolMetadata schoolMetadata = new DummySchoolMetadata().getSchoolMetadata();
 
-    private static List<Pair<Integer, Date>> indexMatrixOfDaysWithoutWeekends = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
+    private static HashMap<Integer, Date> indexMatrixOfDaysWithoutWeekends = schoolMetadata.getIndexMatrixOfDaysWithoutWeekdays(schoolMetadata.getStartSummerSemester(), schoolMetadata.getEndSummerSemester());
 
     static final int NUM_ITEMS = indexMatrixOfDaysWithoutWeekends.size();
 
@@ -41,12 +56,31 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.digital_schedule_main);
 
+        //Creating local variables, they can be replaced later by UI-Controls or something
+        String myNickname = "MyNickname";
+        String myDeviceID = "MyDeviceID";
+        String myPassword = "";
+
+        //Creating personal profile
+        Profile myProfile = sharkNet.newProfile(myNickname, myDeviceID);
+        ScheduleWeek configuredScheduleWeek = myProfile.getScheduleWeek();
+        if (configuredScheduleWeek == null) {
+            configuredScheduleWeek = new ImplScheduleWeek();
+            configuredScheduleWeek = fillConfiguredScheduleWeekWithDummyData(configuredScheduleWeek);
+            myProfile.setScheduleWeek(configuredScheduleWeek);
+            sharkNet.setProfile(myProfile, myPassword);
+        } else throw new IllegalStateException("This configuration ScheduleWeek should be null!");
+        Profile testMyProfile = sharkNet.getMyProfile();
+        Log.d(LOG_TAG, testMyProfile.getContact().getNickname());
+        Log.d(LOG_TAG, testMyProfile.getContact().getUID());
+        Log.d(LOG_TAG, testMyProfile.getScheduleWeek().getMondayLessonNames()[0]);
+
         mAdapter = new MyAdapter(getSupportFragmentManager());
 
         mPager = (ViewPager) findViewById(R.id.main_pager);
         mPager.setAdapter(mAdapter);
         Calendar today = Calendar.getInstance();
-        int indexOfToday = dc.searchIndexOfDayInIndexMatrix(today.getTime(), indexMatrixOfDaysWithoutWeekends);
+        int indexOfToday = schoolMetadata.searchIndexOfDayInIndexMatrix(today.getTime(), indexMatrixOfDaysWithoutWeekends);
 
         mPager.setCurrentItem(indexOfToday);
 
@@ -82,28 +116,27 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 mPager.setCurrentItem(NUM_ITEMS - 1);
             }
         });
-        Log.d("LOG_TAG", "Length of the summer semester: " + Integer.toString(dc.calculateLengthOfSummerSemester()));
-        fillConfiguredScheduleWeekWithDummyData();
+        Log.d("LOG_TAG", "Length of the summer semester: " + Integer.toString(schoolMetadata.calculateLengthOfSummerSemester()));
     }
 
     @Override
-    public ScheduleWeek getScheduleWeek() {
-        return configuredScheduleWeek;
+    public SchoolMetadata getConfiguration() {
+        return schoolMetadata;
     }
 
     @Override
-    public void setScheduleWeek(ScheduleWeek scheduleWeek) {
-        configuredScheduleWeek = scheduleWeek;
+    public void setConfiguration(SchoolMetadata schoolMetadata) {
+        schoolMetadata = schoolMetadata;
     }
 
     @Override
-    public Configuration getConfiguration() {
-        return dc;
+    public SharkNet getSharkNet() {
+        return sharkNet;
     }
 
     @Override
-    public void setConfiguration(Configuration configuration) {
-        dc = configuration;
+    public void setSharkNet(SharkNet sharkNet) {
+        sharkNet = sharkNet;
     }
 
     public static class MyAdapter extends FragmentStatePagerAdapter {
@@ -132,9 +165,9 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
     public static class ScheduleFragment extends Fragment implements View.OnClickListener {
         int mNum;
-        OnScheduleWeekPass scheduleWeekPasser;
         OnConfigurationPass configurationPasser;
-        List<Pair<Integer, Date>> im = dc.getIndexMatrixOfDaysWithoutWeekdays(dc.getStartSummerSemester(), dc.getEndSummerSemester());
+        OnSharkNetPass sharkNetPasser;
+        HashMap<Integer, Date> im = schoolMetadata.getIndexMatrixOfDaysWithoutWeekdays(schoolMetadata.getStartSummerSemester(), schoolMetadata.getEndSummerSemester());
 
         ImageButton btnWeekdayLessonZeroHomework;
         ImageButton btnWeekdayLessonOneHomework;
@@ -166,12 +199,12 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         public void onAttach(Context context) {
             super.onAttach(context);
             Activity activity = getActivity();
-            scheduleWeekPasser = (OnScheduleWeekPass) activity;
             configurationPasser = (OnConfigurationPass) activity;
+            sharkNetPasser = (OnSharkNetPass) activity;
         }
 
         /**
-         * When creating, retrieve this instance's number from its arguments.
+         * When creating, retrieve this instance number from its arguments.
          */
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -190,11 +223,11 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
             View v = inflater.inflate(R.layout.digital_schedule_fragment_object, container, false);
             Calendar c = Calendar.getInstance();
-            c.setTime(im.get(mNum).second);
+            c.setTime(im.get(mNum));
             Boolean free = false;
-            for (int i = 0; i < dc.getDayOff().size(); i++) {
+            for (int i = 0; i < schoolMetadata.getDayOff().size(); i++) {
                 Calendar c2 = Calendar.getInstance();
-                c2.setTime(dc.getDayOff().get(i));
+                c2.setTime(schoolMetadata.getDayOff().get(i));
                 if (c.get(Calendar.DAY_OF_MONTH) == c2.get(Calendar.DAY_OF_MONTH) && c.get(Calendar.MONTH) == c2.get(Calendar.MONTH) && c.get(Calendar.YEAR) == c2.get(Calendar.YEAR)) {
                     free = true;
                 }
@@ -209,10 +242,10 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             ((TextView) tv).setText(date);
 
             Calendar lessonTime = Calendar.getInstance();
-            lessonTime.setTime(dc.getStartEarliestLesson());
-            ConfigureWeekdays.calculateWeekdayLessonTimes(v, dc.getBreaks(), lessonTime, dc.getLessonDurationInMinutes());
+            lessonTime.setTime(schoolMetadata.getStartEarliestLesson());
+            ConfigureWeekdays.calculateWeekdayLessonTimes(v, schoolMetadata.getBreaks(), lessonTime, schoolMetadata.getLessonDurationInMinutes());
 
-            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            ScheduleWeek configuredScheduleWeek = sharkNetPasser.getSharkNet().getMyProfile().getScheduleWeek();
             if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
                 ConfigureWeekdays.initializeDigitalSchedule(v, configuredScheduleWeek.getMondayLessonNames(), configuredScheduleWeek.getMondayTeachers(),
                         configuredScheduleWeek.getMondayRooms());
@@ -264,7 +297,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         private String[] getWeekdayAttributes(Date fragmentDate, int resultNumber) {
             Calendar c = Calendar.getInstance();
             c.setTime(fragmentDate);
-            ScheduleWeek configuredScheduleWeek = scheduleWeekPasser.getScheduleWeek();
+            ScheduleWeek configuredScheduleWeek = sharkNetPasser.getSharkNet().getMyProfile().getScheduleWeek();
             if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
                 if (resultNumber == 0) {
                     return configuredScheduleWeek.getMondayLessonNames();
@@ -285,7 +318,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 } else {
                     throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
                 }
-            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
                 if (resultNumber == 0) {
                     return configuredScheduleWeek.getWednesdayLessonNames();
                 } else if (resultNumber == 1) {
@@ -295,7 +328,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 } else {
                     throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
                 }
-            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
                 if (resultNumber == 0) {
                     return configuredScheduleWeek.getThursdayLessonNames();
                 } else if (resultNumber == 1) {
@@ -305,7 +338,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 } else {
                     throw new IllegalArgumentException("resultNumber can only be 0 für LessonNames, 1 for Teachers or 2 for Rooms!");
                 }
-            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+            } else if (c.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
                 if (resultNumber == 0) {
                     return configuredScheduleWeek.getFridayLessonNames();
                 } else if (resultNumber == 1) {
@@ -323,7 +356,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         @Override
         public void onClick(View v) {
             Intent homeworkIntent = new Intent(getContext(), HomeworkActivity.class);
-            Date fragmentDate = im.get(mNum).second;
+            Date fragmentDate = im.get(mNum);
             Homework ha;
             switch (v.getId()) {
                 case R.id.btnWeekdayLessonZeroHomework:
@@ -400,7 +433,8 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                     break;
                 case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
                     Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
-                    configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, configuredScheduleWeek);
+                    ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
+                    configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
                     startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
                     break;
                 case MENU_SETTINGS_ID:
@@ -420,14 +454,22 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             switch (requestCode) {
                 case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
                     if (resultCode == RESULT_OK) {
-                        configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                        ImplScheduleWeek configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                        sharkNet.getMyProfile().setScheduleWeek(configuredScheduleWeek);
                         mAdapter.notifyDataSetChanged();
+
+                        Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
+                        ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
+                        configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
+                        startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
+                    } else if (resultCode == RESULT_CANCELED) {
+                        Toast.makeText(this, "Stundenplan wurde Aktualisiert", Toast.LENGTH_LONG).show();
                     }
                     break;
             }
         }
 
-        private void fillConfiguredScheduleWeekWithDummyData() {
+        private ScheduleWeek fillConfiguredScheduleWeekWithDummyData(ScheduleWeek configuredScheduleWeek) {
             configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
             configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
             configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
@@ -451,6 +493,8 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
             configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
             configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+
+            return configuredScheduleWeek;
         }
 
         private static String getWeekday(int numberOfWeekday) {

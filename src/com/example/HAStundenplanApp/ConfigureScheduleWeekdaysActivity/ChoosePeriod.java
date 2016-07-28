@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import com.example.HAStundenplanApp.Configuration;
-import com.example.HAStundenplanApp.DummyConfiguration;
 import com.example.HAStundenplanApp.R;
 
 import java.util.ArrayList;

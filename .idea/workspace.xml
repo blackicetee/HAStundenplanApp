@@ -13,6 +13,7 @@
       <config>
         <devices>
           <device id="5.1in WVGA" />
+          <device id="Nexus 5X" />
         </devices>
         <target>android-19</target>
       </config>
@@ -33,6 +34,11 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/digital_schedule_main.xml">
+        <config>
+          <theme>@android:style/Theme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
@@ -41,15 +47,120 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7d5b10d-316c-4d74-bcfd-341d5cd735b3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javatuples_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnSharkNetPass.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_activation.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/Configuration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport$ArrayListFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$MyAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity$ScheduleFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DigitalScheduleMainActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/DummyConfiguration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplConfiguration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/OnConfigurationPass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ScheduleWeek.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Blacklist.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Chat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Comment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Contact.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ContainsContent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Content.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Dummy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/DummyDB.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Feed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/GetEvents.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/GetEventsAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplBlacklist.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplChat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplComment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplContact.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplContent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplFeed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplInterest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplMessage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplProfile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplSetting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplSharkNet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/ImplVoting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Interest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Profile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Setting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/SharkNet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/TestFileInput.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/TestListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Timeable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/Voting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/net/sharksystem/sharknet/api/utils/ResetOnCloseInputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeek.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Configuration.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/SchoolMetadata.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummyConfiguration.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummySchoolMetadata.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplConfiguration.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplSchoolMetadata.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/HAStundenplanApp.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonNameActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonNameActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonTerminationDateActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LessonTerminationDateActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LocationActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/LocationActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/TeacherNameActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/AddLessonActivities/TeacherNameActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod$1.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/Homework.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/Homework.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplHomework$1.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplHomework$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplHomework.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplHomework.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplScheduleWeek$1.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplScheduleWeek$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplScheduleWeek.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ImplScheduleWeek.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ProfileDataActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$menu.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ScheduleActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/ScheduleActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SettingsActivity.class" afterPath="$PROJECT_DIR$/out/production/HAStundenplanApp/com/example/HAStundenplanApp/SettingsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/homework.xml" afterPath="$PROJECT_DIR$/res/layout/homework.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/dimens.xml" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HAStundenplanApp.iml" afterPath="$PROJECT_DIR$/HAStundenplanApp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml" afterPath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/java/net/sharksystem/sharknet/javafx/i18n/I18N.java" afterPath="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/java/net/sharksystem/sharknet/javafx/i18n/I18N.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnConfigurationPass.java" afterPath="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnConfigurationPass.java" />
     </list>
     <ignored path="HAStundenplanApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +183,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DigitalScheduleMainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java">
+      <file leaf-file-name="SharkNet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SharkNet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
-              <caret line="374" column="56" selection-start-line="374" selection-start-column="56" selection-end-line="374" selection-end-column="56" />
+            <state relative-caret-position="289">
+              <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SchoolMetadata.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SchoolMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SchoolMetadata.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/SchoolMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="58" column="85" selection-start-line="58" selection-start-column="85" selection-end-line="58" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,98 +215,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homework.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/homework.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
+      <file leaf-file-name="ImplSchoolMetadata.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplSchoolMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="199" column="20" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="20" />
               <folding>
-                <element signature="e#401#417#0" expanded="true" />
-                <element signature="e#568#587#0" expanded="true" />
-                <element signature="e#1157#1194#0" expanded="true" />
-                <element signature="e#1369#1393#0" expanded="true" />
-                <element signature="e#1812#1841#0" expanded="true" />
-                <element signature="e#1897#1925#0" expanded="true" />
-                <element signature="e#2238#2267#0" expanded="true" />
-                <element signature="e#2323#2351#0" expanded="true" />
-                <element signature="e#2431#2467#0" expanded="true" />
-                <element signature="e#2647#2661#0" expanded="true" />
-                <element signature="e#2782#2818#0" expanded="true" />
-                <element signature="e#2998#3014#0" expanded="true" />
-                <element signature="e#3132#3168#0" expanded="true" />
-                <element signature="e#3348#3362#0" expanded="true" />
-                <element signature="e#3477#3513#0" expanded="true" />
-                <element signature="e#3693#3709#0" expanded="true" />
-                <element signature="e#4109#4127#0" expanded="true" />
-                <element signature="e#4174#4210#0" expanded="true" />
-                <element signature="e#4257#4294#0" expanded="true" />
-                <element signature="e#4413#4433#0" expanded="true" />
-                <element signature="e#4576#4593#0" expanded="true" />
-                <element signature="e#4885#4902#0" expanded="true" />
-                <element signature="e#5192#5220#0" expanded="true" />
-                <element signature="e#5497#5518#0" expanded="true" />
-                <element signature="e#5608#5637#0" expanded="true" />
-                <element signature="e#5734#5771#0" expanded="true" />
-                <element signature="e#5980#6017#0" expanded="true" />
-                <element signature="e#6229#6247#0" expanded="true" />
-                <element signature="e#6377#6414#0" expanded="true" />
-                <element signature="e#6626#6644#0" expanded="true" />
-                <element signature="e#7497#7525#0" expanded="true" />
-                <element signature="e#7802#7823#0" expanded="true" />
-                <element signature="e#7913#7942#0" expanded="true" />
-                <element signature="e#8081#8118#0" expanded="true" />
-                <element signature="e#8298#8335#0" expanded="true" />
-                <element signature="e#8547#8565#0" expanded="true" />
-                <element signature="e#8695#8732#0" expanded="true" />
-                <element signature="e#8944#8962#0" expanded="true" />
-                <element signature="e#9921#9939#0" expanded="true" />
-                <element signature="e#9986#10022#0" expanded="true" />
-                <element signature="e#10045#10082#0" expanded="true" />
-                <element signature="e#10225#10249#0" expanded="true" />
-                <element signature="e#10363#10380#0" expanded="true" />
+                <element signature="e#1758#1759#0" expanded="true" />
+                <element signature="e#1792#1793#0" expanded="true" />
+                <element signature="e#1866#1867#0" expanded="true" />
+                <element signature="e#1912#1913#0" expanded="true" />
+                <element signature="e#1971#1972#0" expanded="true" />
+                <element signature="e#2006#2007#0" expanded="true" />
+                <element signature="e#2082#2083#0" expanded="true" />
+                <element signature="e#2130#2131#0" expanded="true" />
+                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#2210#2211#0" expanded="true" />
+                <element signature="e#2272#2273#0" expanded="true" />
+                <element signature="e#2306#2307#0" expanded="true" />
+                <element signature="e#2367#2368#0" expanded="true" />
+                <element signature="e#2413#2414#0" expanded="true" />
+                <element signature="e#2638#2639#0" expanded="true" />
+                <element signature="e#2667#2668#0" expanded="true" />
+                <element signature="e#2744#2745#0" expanded="true" />
+                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2831#2832#0" expanded="true" />
+                <element signature="e#2860#2861#0" expanded="true" />
+                <element signature="e#2922#2923#0" expanded="true" />
+                <element signature="e#2958#2959#0" expanded="true" />
+                <element signature="e#3508#3509#0" expanded="true" />
+                <element signature="e#3550#3551#0" expanded="true" />
+                <element signature="e#3632#3633#0" expanded="true" />
+                <element signature="e#3694#3695#0" expanded="true" />
+                <element signature="e#3750#3751#0" expanded="true" />
+                <element signature="e#3790#3791#0" expanded="true" />
+                <element signature="e#3868#3869#0" expanded="true" />
+                <element signature="e#3926#3927#0" expanded="true" />
+                <element signature="e#4243#4244#0" expanded="true" />
+                <element signature="e#4285#4286#0" expanded="true" />
+                <element signature="e#4367#4368#0" expanded="true" />
+                <element signature="e#4429#4430#0" expanded="true" />
+                <element signature="e#4485#4486#0" expanded="true" />
+                <element signature="e#4525#4526#0" expanded="true" />
+                <element signature="e#4603#4604#0" expanded="true" />
+                <element signature="e#4661#4662#0" expanded="true" />
+                <element signature="e#4978#4979#0" expanded="true" />
+                <element signature="e#5020#5021#0" expanded="true" />
+                <element signature="e#5102#5103#0" expanded="true" />
+                <element signature="e#5164#5165#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_pager_list.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/fragment_pager_list.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="344" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deleteThisFile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/deleteThisFile">
+      <file leaf-file-name="ImplSchoolMetadata.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSchoolMetadata.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -184,11 +278,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Homework.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java">
+      <file leaf-file-name="DummyDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/DummyDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="187">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+              <folding>
+                <element signature="e#16300#16301#0" expanded="true" />
+                <element signature="e#16328#16329#0" expanded="true" />
+                <element signature="e#16393#16394#0" expanded="true" />
+                <element signature="e#16436#16437#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DigitalScheduleMainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="361" column="35" selection-start-line="361" selection-start-column="35" selection-end-line="361" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,124 +305,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImplHomework.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java">
+      <file leaf-file-name="DummySchoolMetadata.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummySchoolMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigureWeekdays.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-261">
+              <caret line="85" column="57" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImplSharkNet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSharkNet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <caret line="153" column="34" selection-start-line="153" selection-start-column="34" selection-end-line="153" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#953#954#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1032#1033#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#4555#4556#0" expanded="true" />
+                <element signature="e#4610#4611#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImplScheduleWeek.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3689">
-              <caret line="302" column="37" selection-start-line="302" selection-start-column="37" selection-end-line="302" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1200#1201#0" expanded="false" />
-                <element signature="e#1240#1241#0" expanded="false" />
-                <element signature="e#1322#1323#0" expanded="false" />
-                <element signature="e#1380#1381#0" expanded="false" />
-                <element signature="e#1437#1438#0" expanded="false" />
-                <element signature="e#1474#1475#0" expanded="false" />
-                <element signature="e#1550#1551#0" expanded="false" />
-                <element signature="e#1602#1603#0" expanded="false" />
-                <element signature="e#1656#1657#0" expanded="false" />
-                <element signature="e#1690#1691#0" expanded="false" />
-                <element signature="e#1760#1761#0" expanded="false" />
-                <element signature="e#1806#1807#0" expanded="false" />
-                <element signature="e#1862#1863#0" expanded="false" />
-                <element signature="e#1898#1899#0" expanded="false" />
-                <element signature="e#1972#1973#0" expanded="false" />
-                <element signature="e#2022#2023#0" expanded="false" />
-                <element signature="e#2083#2084#0" expanded="false" />
-                <element signature="e#2124#2125#0" expanded="false" />
-                <element signature="e#2208#2209#0" expanded="false" />
-                <element signature="e#2268#2269#0" expanded="false" />
-                <element signature="e#2326#2327#0" expanded="false" />
-                <element signature="e#2364#2365#0" expanded="false" />
-                <element signature="e#2442#2443#0" expanded="false" />
-                <element signature="e#2496#2497#0" expanded="false" />
-                <element signature="e#2551#2552#0" expanded="false" />
-                <element signature="e#2586#2587#0" expanded="false" />
-                <element signature="e#2658#2659#0" expanded="false" />
-                <element signature="e#2706#2707#0" expanded="false" />
-                <element signature="e#2763#2764#0" expanded="false" />
-                <element signature="e#2800#2801#0" expanded="false" />
-                <element signature="e#2876#2877#0" expanded="false" />
-                <element signature="e#2928#2929#0" expanded="false" />
-                <element signature="e#2991#2992#0" expanded="false" />
-                <element signature="e#3034#3035#0" expanded="false" />
-                <element signature="e#3246#3247#0" expanded="false" />
-                <element signature="e#3286#3287#0" expanded="false" />
-                <element signature="e#3368#3369#0" expanded="false" />
-                <element signature="e#3426#3427#0" expanded="false" />
-                <element signature="e#3483#3484#0" expanded="false" />
-                <element signature="e#3520#3521#0" expanded="false" />
-                <element signature="e#3596#3597#0" expanded="false" />
-                <element signature="e#3648#3649#0" expanded="false" />
-                <element signature="e#3707#3708#0" expanded="false" />
-                <element signature="e#3746#3747#0" expanded="false" />
-                <element signature="e#3826#3827#0" expanded="false" />
-                <element signature="e#3882#3883#0" expanded="false" />
-                <element signature="e#3944#3945#0" expanded="false" />
-                <element signature="e#3986#3987#0" expanded="false" />
-                <element signature="e#4072#4073#0" expanded="false" />
-                <element signature="e#4134#4135#0" expanded="false" />
-                <element signature="e#4193#4194#0" expanded="false" />
-                <element signature="e#4232#4233#0" expanded="false" />
-                <element signature="e#4312#4313#0" expanded="false" />
-                <element signature="e#4368#4369#0" expanded="false" />
-                <element signature="e#4424#4425#0" expanded="false" />
-                <element signature="e#4460#4461#0" expanded="false" />
-                <element signature="e#4534#4535#0" expanded="false" />
-                <element signature="e#4584#4585#0" expanded="false" />
-                <element signature="e#4642#4643#0" expanded="false" />
-                <element signature="e#4680#4681#0" expanded="false" />
-                <element signature="e#4758#4759#0" expanded="false" />
-                <element signature="e#4812#4813#0" expanded="false" />
-                <element signature="e#4872#4873#0" expanded="false" />
-                <element signature="e#4912#4913#0" expanded="false" />
-                <element signature="e#4994#4995#0" expanded="false" />
-                <element signature="e#5052#5053#0" expanded="false" />
-                <element signature="e#5109#5110#0" expanded="false" />
-                <element signature="e#5146#5147#0" expanded="false" />
-                <element signature="e#5222#5223#0" expanded="false" />
-                <element signature="e#5274#5275#0" expanded="false" />
-                <element signature="e#5328#5329#0" expanded="false" />
-                <element signature="e#5362#5363#0" expanded="false" />
-                <element signature="e#5432#5433#0" expanded="false" />
-                <element signature="e#5478#5479#0" expanded="false" />
-                <element signature="e#5534#5535#0" expanded="false" />
-                <element signature="e#5570#5571#0" expanded="false" />
-                <element signature="e#5644#5645#0" expanded="false" />
-                <element signature="e#5694#5695#0" expanded="false" />
-                <element signature="e#5745#5746#0" expanded="false" />
-                <element signature="e#5769#5770#0" expanded="false" />
-                <element signature="e#7161#7162#0" expanded="false" />
-                <element signature="e#7216#7217#0" expanded="false" />
-                <element signature="e#7272#7273#0" expanded="false" />
-                <element signature="e#7329#7330#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeworkActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/HomeworkActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -328,9 +352,10 @@
         <option value="Fragment" />
         <option value="Activity" />
         <option value="layoutResourceFile_vertical" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -345,26 +370,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/drawable/button.xml" />
-        <option value="$PROJECT_DIR$/res/layout/choose_teacher.xml" />
-        <option value="$PROJECT_DIR$/res/layout/choose_room.xml" />
-        <option value="$PROJECT_DIR$/res/layout/choose_period.xml" />
-        <option value="$PROJECT_DIR$/res/layout/configure_monday.xml" />
-        <option value="$PROJECT_DIR$/res/layout/configure_tuesday.xml" />
-        <option value="$PROJECT_DIR$/res/layout/configure_wednesday.xml" />
-        <option value="$PROJECT_DIR$/res/layout/configure_thursday.xml" />
-        <option value="$PROJECT_DIR$/res/layout/configure_friday.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummyConfiguratedSchedule.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/CreateCustomDynamicButtons.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeek.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeekViewPage/FragmentPagerAdapter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/com/example/android/customchoicelist/Cheeses.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Weekday.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeekViewPage/FragmentPagerSupport.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java" />
-        <option value="$PROJECT_DIR$/res/layout/fragment_pager_list.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ScheduleWeekCallbacks.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.java" />
@@ -373,7 +378,6 @@
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/fragment_pager.xml" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/MainActivity.java" />
         <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml" />
@@ -381,21 +385,42 @@
         <option value="$PROJECT_DIR$/res/layout/fragment_digital_schedule_object.xml" />
         <option value="$PROJECT_DIR$/res/layout/digital_schedule_fragment_object.xml" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnCalendarPass.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnConfigurationPass.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Configuration.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplConfiguration.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummyConfiguration.java" />
         <option value="$PROJECT_DIR$/res/layout/digital_schedule_main.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Status.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/deleteThisFile" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java" />
         <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java" />
-        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/res/layout/homework.xml" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/Profile.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplProfile.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnSharkNetPass.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeek.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ScheduleWeek.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/deleteThisFile" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/utils/Resources.java" />
+        <option value="D:/dev/JARs/sharkfw.2.13.1.jar!/net/sharkfw/security/key/SharkKeyGenerator.class" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplContact.java" />
+        <option value="$PROJECT_DIR$/SharkNetJavaFX/SharkNetJavaFX.iml" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/DummyKeyPairHelper.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSchoolMetadata.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SchoolMetadata.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SharkNet.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSharkNet.java" />
+        <option value="$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/DummyDB.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/SchoolMetadata.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplSchoolMetadata.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummySchoolMetadata.java" />
       </list>
     </option>
   </component>
@@ -443,9 +468,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,11 +489,95 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SharkNetJavaFX" />
+              <option name="myItemId" value="javatuples-1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javatuples-1.2.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jfxrt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jfxrt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javafx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jfxrt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javafx" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -479,14 +588,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharkNetJavaFX" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sharknet-api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,106 +595,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharkNetJavaFX" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sharknet-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharkNetJavaFX" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sharknet-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharkNetJavaFX" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sharknet-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
@@ -612,10 +613,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
@@ -641,10 +638,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -667,22 +660,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AddLessonActivities" />
+              <option name="myItemId" value="SharkNetJavaFX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -690,10 +671,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
@@ -703,41 +680,11 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
@@ -758,15 +705,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemId" value="SharkNetJavaFX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="SharkNetJavaFX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -776,19 +719,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemId" value="SharkNetJavaFX" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharkNetJavaFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HAStundenplanApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharkNetJavaFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -797,35 +788,45 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="285" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0/cmd/git.exe" />
+    <property name="last_opened_file_path" value="D:/dev/JARs/javatuples-1.2/dist/javatuples-1.2.jar!/" />
     <property name="findjar.last.used.dir" value="D:/dev/JARs" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="editor.config.accepted" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jason\Documents\GitHub\HAStundenplanApp\res\drawable" />
-      <recent name="C:\Users\Jason\Documents\GitHub\HAStundenplanApp\res\layout\configure_schedule_weekdays" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.sharksystem.sharknet.api" />
       <recent name="com.example.HAStundenplanApp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jason\Documents\GitHub\SharkNetJavaFX\sharknet-api\src\main\java\net\sharksystem\sharknet\api" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.HAStundenplanApp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jason\Documents\GitHub\HAStundenplanApp\res\drawable" />
+      <recent name="C:\Users\Jason\Documents\GitHub\HAStundenplanApp\res\layout\configure_schedule_weekdays" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.HAStundenplanApp">
     <configuration default="false" name="ImplWeekdays" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.example.HAStundenplanApp.*" />
+          <option name="PATTERN" value="net.sharksystem.sharknet.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -845,7 +846,7 @@
     <configuration default="false" name="ImplAppointment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.example.HAStundenplanApp.*" />
+          <option name="PATTERN" value="net.sharksystem.sharknet.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -860,6 +861,25 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="HAStundenplanApp" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConfigureScheduleViewActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
+      <module name="HAStundenplanApp" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.HAStundenplanApp.ConfigureScheduleViewActivity" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1346,16 +1366,18 @@
       <option name="ACTIVITY_CLASS" value="com.example.HAStundenplanApp.DigitalScheduleMainActivity" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Android Application.HAStundenplanApp" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.Hausaufgabenheft" />
       <item index="2" class="java.lang.String" itemvalue="Application.ImplWeekdays" />
       <item index="3" class="java.lang.String" itemvalue="Application.ImplAppointment" />
+      <item index="4" class="java.lang.String" itemvalue="Android Application.ConfigureScheduleViewActivity" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ImplAppointment" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ImplWeekdays" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Android Application.ConfigureScheduleViewActivity" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ImplAppointment" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ImplWeekdays" />
       </list>
     </recent_temporary>
   </component>
@@ -1409,51 +1431,54 @@
       <workItem from="1469437242317" duration="16509000" />
       <workItem from="1469464370574" duration="1293000" />
       <workItem from="1469514217485" duration="28678000" />
-      <workItem from="1469602688894" duration="6590000" />
+      <workItem from="1469602688894" duration="9540000" />
+      <workItem from="1469687712256" duration="14565000" />
+      <workItem from="1469702780429" duration="631000" />
+      <workItem from="1469703461073" duration="16870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322600000" />
+    <option name="totallyTimeSpent" value="357616000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.548125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38642296" sideWeight="0.360625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.079634465" sideWeight="0.451875" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38642296" sideWeight="0.639375" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34203655" sideWeight="0.460625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.460625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22" sideWeight="0.8406709" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.220625" sideWeight="0.8406709" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.4975" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22" sideWeight="0.15932915" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24432433" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.4975" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1469,7 +1494,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1478,435 +1503,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/AddLessonActivity.java">
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/test/java/net/sharksystem/sharknet/api/ImplInterestTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="116" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeekViewPage/FragmentPagerAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/res/layout/configure_monday.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3230">
-          <caret line="119" column="15" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/configurescheduleview.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ScheduleWeekCallbacks.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseLesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChoosePeriod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseTeacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ChooseRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="252" column="163" selection-start-line="252" selection-start-column="163" selection-end-line="252" selection-end-column="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="252" column="159" selection-start-line="252" selection-start-column="159" selection-end-line="252" selection-end-column="159" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="223" column="37" selection-start-line="223" selection-start-column="37" selection-end-line="223" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/dev/Android/sources/android-23/android/os/Parcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="1291" column="0" selection-start-line="1291" selection-start-column="0" selection-end-line="1291" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-javafx/src/main/assembly/assembly.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="233" column="45" selection-start-line="233" selection-start-column="45" selection-end-line="233" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/main_activity.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/com/example/android/customchoicelist/Cheeses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="137" column="6" selection-start-line="137" selection-start-column="6" selection-end-line="137" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/homework_img.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/green_homework_img.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/green_homework_icon.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnCalendarPass.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1693">
-          <caret line="308" column="58" selection-start-line="308" selection-start-column="58" selection-end-line="308" selection-end-column="58" />
+        <state relative-caret-position="255">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
+            <element signature="e#622#623#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummyConfiguratedSchedule.java" />
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnConfigurationPass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/dev/Android/sources/android-23/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Appointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplAppointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummyConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_pager.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/digital_schedule_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding>
-            <element signature="e#1206#1224#0" expanded="true" />
-            <element signature="e#1407#1422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/digital_schedule_fragment_object.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="38" column="81" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
-          <folding>
-            <element signature="e#3217#3253#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="315" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="326" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/OnSharkNetPass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1786#1787#0" expanded="false" />
-            <element signature="e#1820#1821#0" expanded="false" />
-            <element signature="e#1894#1895#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1999#2000#0" expanded="false" />
-            <element signature="e#2034#2035#0" expanded="false" />
-            <element signature="e#2110#2111#0" expanded="false" />
-            <element signature="e#2158#2159#0" expanded="false" />
-            <element signature="e#2210#2211#0" expanded="false" />
-            <element signature="e#2238#2239#0" expanded="false" />
-            <element signature="e#2300#2301#0" expanded="false" />
-            <element signature="e#2334#2335#0" expanded="false" />
-            <element signature="e#2395#2396#0" expanded="false" />
-            <element signature="e#2441#2442#0" expanded="false" />
-            <element signature="e#2669#2670#0" expanded="false" />
-            <element signature="e#2698#2699#0" expanded="false" />
-            <element signature="e#2778#2779#0" expanded="false" />
-            <element signature="e#2814#2815#0" expanded="false" />
-            <element signature="e#2865#2866#0" expanded="false" />
-            <element signature="e#2894#2895#0" expanded="false" />
-            <element signature="e#2956#2957#0" expanded="false" />
-            <element signature="e#2992#2993#0" expanded="false" />
-            <element signature="e#3542#3543#0" expanded="false" />
-            <element signature="e#3584#3585#0" expanded="false" />
-            <element signature="e#3666#3667#0" expanded="false" />
-            <element signature="e#3728#3729#0" expanded="false" />
-            <element signature="e#3784#3785#0" expanded="false" />
-            <element signature="e#3824#3825#0" expanded="false" />
-            <element signature="e#3902#3903#0" expanded="false" />
-            <element signature="e#3960#3961#0" expanded="false" />
-            <element signature="e#4277#4278#0" expanded="false" />
-            <element signature="e#4319#4320#0" expanded="false" />
-            <element signature="e#4401#4402#0" expanded="false" />
-            <element signature="e#4463#4464#0" expanded="false" />
-            <element signature="e#4519#4520#0" expanded="false" />
-            <element signature="e#4559#4560#0" expanded="false" />
-            <element signature="e#4637#4638#0" expanded="false" />
-            <element signature="e#4695#4696#0" expanded="false" />
-            <element signature="e#5012#5013#0" expanded="false" />
-            <element signature="e#5054#5055#0" expanded="false" />
-            <element signature="e#5136#5137#0" expanded="false" />
-            <element signature="e#5198#5199#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ScheduleWeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Weekday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Status.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Reminder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3689">
-          <caret line="302" column="37" selection-start-line="302" selection-start-column="37" selection-end-line="302" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1200#1201#0" expanded="false" />
-            <element signature="e#1240#1241#0" expanded="false" />
-            <element signature="e#1322#1323#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1437#1438#0" expanded="false" />
-            <element signature="e#1474#1475#0" expanded="false" />
-            <element signature="e#1550#1551#0" expanded="false" />
-            <element signature="e#1602#1603#0" expanded="false" />
-            <element signature="e#1656#1657#0" expanded="false" />
-            <element signature="e#1690#1691#0" expanded="false" />
-            <element signature="e#1760#1761#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1862#1863#0" expanded="false" />
-            <element signature="e#1898#1899#0" expanded="false" />
-            <element signature="e#1972#1973#0" expanded="false" />
-            <element signature="e#2022#2023#0" expanded="false" />
-            <element signature="e#2083#2084#0" expanded="false" />
-            <element signature="e#2124#2125#0" expanded="false" />
-            <element signature="e#2208#2209#0" expanded="false" />
-            <element signature="e#2268#2269#0" expanded="false" />
-            <element signature="e#2326#2327#0" expanded="false" />
-            <element signature="e#2364#2365#0" expanded="false" />
-            <element signature="e#2442#2443#0" expanded="false" />
-            <element signature="e#2496#2497#0" expanded="false" />
-            <element signature="e#2551#2552#0" expanded="false" />
-            <element signature="e#2586#2587#0" expanded="false" />
-            <element signature="e#2658#2659#0" expanded="false" />
-            <element signature="e#2706#2707#0" expanded="false" />
-            <element signature="e#2763#2764#0" expanded="false" />
-            <element signature="e#2800#2801#0" expanded="false" />
-            <element signature="e#2876#2877#0" expanded="false" />
-            <element signature="e#2928#2929#0" expanded="false" />
-            <element signature="e#2991#2992#0" expanded="false" />
-            <element signature="e#3034#3035#0" expanded="false" />
-            <element signature="e#3246#3247#0" expanded="false" />
-            <element signature="e#3286#3287#0" expanded="false" />
-            <element signature="e#3368#3369#0" expanded="false" />
-            <element signature="e#3426#3427#0" expanded="false" />
-            <element signature="e#3483#3484#0" expanded="false" />
-            <element signature="e#3520#3521#0" expanded="false" />
-            <element signature="e#3596#3597#0" expanded="false" />
-            <element signature="e#3648#3649#0" expanded="false" />
-            <element signature="e#3707#3708#0" expanded="false" />
-            <element signature="e#3746#3747#0" expanded="false" />
-            <element signature="e#3826#3827#0" expanded="false" />
-            <element signature="e#3882#3883#0" expanded="false" />
-            <element signature="e#3944#3945#0" expanded="false" />
-            <element signature="e#3986#3987#0" expanded="false" />
-            <element signature="e#4072#4073#0" expanded="false" />
-            <element signature="e#4134#4135#0" expanded="false" />
-            <element signature="e#4193#4194#0" expanded="false" />
-            <element signature="e#4232#4233#0" expanded="false" />
-            <element signature="e#4312#4313#0" expanded="false" />
-            <element signature="e#4368#4369#0" expanded="false" />
-            <element signature="e#4424#4425#0" expanded="false" />
-            <element signature="e#4460#4461#0" expanded="false" />
-            <element signature="e#4534#4535#0" expanded="false" />
-            <element signature="e#4584#4585#0" expanded="false" />
-            <element signature="e#4642#4643#0" expanded="false" />
-            <element signature="e#4680#4681#0" expanded="false" />
-            <element signature="e#4758#4759#0" expanded="false" />
-            <element signature="e#4812#4813#0" expanded="false" />
-            <element signature="e#4872#4873#0" expanded="false" />
-            <element signature="e#4912#4913#0" expanded="false" />
-            <element signature="e#4994#4995#0" expanded="false" />
-            <element signature="e#5052#5053#0" expanded="false" />
-            <element signature="e#5109#5110#0" expanded="false" />
-            <element signature="e#5146#5147#0" expanded="false" />
-            <element signature="e#5222#5223#0" expanded="false" />
-            <element signature="e#5274#5275#0" expanded="false" />
-            <element signature="e#5328#5329#0" expanded="false" />
-            <element signature="e#5362#5363#0" expanded="false" />
-            <element signature="e#5432#5433#0" expanded="false" />
-            <element signature="e#5478#5479#0" expanded="false" />
-            <element signature="e#5534#5535#0" expanded="false" />
-            <element signature="e#5570#5571#0" expanded="false" />
-            <element signature="e#5644#5645#0" expanded="false" />
-            <element signature="e#5694#5695#0" expanded="false" />
-            <element signature="e#5745#5746#0" expanded="false" />
-            <element signature="e#5769#5770#0" expanded="false" />
-            <element signature="e#7161#7162#0" expanded="false" />
-            <element signature="e#7216#7217#0" expanded="false" />
-            <element signature="e#7272#7273#0" expanded="false" />
-            <element signature="e#7329#7330#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/HomeworkActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1919,21 +1539,420 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/fragment_pager_list.xml">
-      <provider editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ScheduleWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplVoting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/Dummy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/resources/net/sharksystem/sharknet/api/Alice.jpg">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/resources/net/sharksystem/sharknet/api/group.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/resources/net/sharksystem/sharknet/api/person.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/resources/net/sharksystem/sharknet/api/Bob.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureTuesdayActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="344" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+        <state relative-caret-position="163">
+          <caret line="235" column="35" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureThursdayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="235" column="35" selection-start-line="235" selection-start-column="35" selection-end-line="235" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWednesdayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureFridayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureMondayActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3758">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/Interest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/dev/JARs/sharkfw.2.13.1.jar!/net/sharkfw/security/key/SharkKeyGenerator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/digital_schedule_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/OnScheduleWeekPass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplInterest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/dev/JARs/sharkfw.2.13.1.jar!/net/sharkfw/knowledgeBase/inmemory/InMemoSharkKB.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="64" column="69" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/utils/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4535#4536#0" expanded="false" />
+            <element signature="e#4606#4607#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/jre/lib/ext/jfxrt.jar!/javafx/util/Pair.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SharkNetJavaFX/SharkNetJavaFX.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ant.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HAStundenplanApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/StudentContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplScheduleWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/HomeworkActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/Homework.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/FragmentPagerSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="188" column="44" selection-start-line="188" selection-start-column="44" selection-end-line="188" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/DummyKeyPairHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSchoolMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SharkNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="84" column="15" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/ImplSharkNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="153" column="34" selection-start-line="153" selection-start-column="34" selection-end-line="153" selection-end-column="34" />
+          <folding>
+            <element signature="e#4555#4556#0" expanded="true" />
+            <element signature="e#4610#4611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/DummyDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="e#16300#16301#0" expanded="true" />
+            <element signature="e#16328#16329#0" expanded="true" />
+            <element signature="e#16393#16394#0" expanded="true" />
+            <element signature="e#16436#16437#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SharkNetJavaFX/sharknet-api/src/main/java/net/sharksystem/sharknet/api/SchoolMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplSchoolMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="199" column="20" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="20" />
+          <folding>
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#1792#1793#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1971#1972#0" expanded="true" />
+            <element signature="e#2006#2007#0" expanded="true" />
+            <element signature="e#2082#2083#0" expanded="true" />
+            <element signature="e#2130#2131#0" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2210#2211#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2306#2307#0" expanded="true" />
+            <element signature="e#2367#2368#0" expanded="true" />
+            <element signature="e#2413#2414#0" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2667#2668#0" expanded="true" />
+            <element signature="e#2744#2745#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#2860#2861#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="true" />
+            <element signature="e#2958#2959#0" expanded="true" />
+            <element signature="e#3508#3509#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3632#3633#0" expanded="true" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3750#3751#0" expanded="true" />
+            <element signature="e#3790#3791#0" expanded="true" />
+            <element signature="e#3868#3869#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#4243#4244#0" expanded="true" />
+            <element signature="e#4285#4286#0" expanded="true" />
+            <element signature="e#4367#4368#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4485#4486#0" expanded="true" />
+            <element signature="e#4525#4526#0" expanded="true" />
+            <element signature="e#4603#4604#0" expanded="true" />
+            <element signature="e#4661#4662#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5102#5103#0" expanded="true" />
+            <element signature="e#5164#5165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/SchoolMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="58" column="85" selection-start-line="58" selection-start-column="85" selection-end-line="58" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ConfigureScheduleWeekdaysActivity/ConfigureWeekdays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="85" column="57" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1942,95 +1961,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DigitalScheduleMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="374" column="56" selection-start-line="374" selection-start-column="56" selection-end-line="374" selection-end-column="56" />
+        <state relative-caret-position="188">
+          <caret line="361" column="35" selection-start-line="361" selection-start-column="35" selection-end-line="361" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/ImplHomework.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/HAStundenplanApp/DummySchoolMetadata.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="300">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1032#1033#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/homework.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
-          <folding>
-            <element signature="e#401#417#0" expanded="true" />
-            <element signature="e#568#587#0" expanded="true" />
-            <element signature="e#1157#1194#0" expanded="true" />
-            <element signature="e#1369#1393#0" expanded="true" />
-            <element signature="e#1812#1841#0" expanded="true" />
-            <element signature="e#1897#1925#0" expanded="true" />
-            <element signature="e#2238#2267#0" expanded="true" />
-            <element signature="e#2323#2351#0" expanded="true" />
-            <element signature="e#2431#2467#0" expanded="true" />
-            <element signature="e#2647#2661#0" expanded="true" />
-            <element signature="e#2782#2818#0" expanded="true" />
-            <element signature="e#2998#3014#0" expanded="true" />
-            <element signature="e#3132#3168#0" expanded="true" />
-            <element signature="e#3348#3362#0" expanded="true" />
-            <element signature="e#3477#3513#0" expanded="true" />
-            <element signature="e#3693#3709#0" expanded="true" />
-            <element signature="e#4109#4127#0" expanded="true" />
-            <element signature="e#4174#4210#0" expanded="true" />
-            <element signature="e#4257#4294#0" expanded="true" />
-            <element signature="e#4413#4433#0" expanded="true" />
-            <element signature="e#4576#4593#0" expanded="true" />
-            <element signature="e#4885#4902#0" expanded="true" />
-            <element signature="e#5192#5220#0" expanded="true" />
-            <element signature="e#5497#5518#0" expanded="true" />
-            <element signature="e#5608#5637#0" expanded="true" />
-            <element signature="e#5734#5771#0" expanded="true" />
-            <element signature="e#5980#6017#0" expanded="true" />
-            <element signature="e#6229#6247#0" expanded="true" />
-            <element signature="e#6377#6414#0" expanded="true" />
-            <element signature="e#6626#6644#0" expanded="true" />
-            <element signature="e#7497#7525#0" expanded="true" />
-            <element signature="e#7802#7823#0" expanded="true" />
-            <element signature="e#7913#7942#0" expanded="true" />
-            <element signature="e#8081#8118#0" expanded="true" />
-            <element signature="e#8298#8335#0" expanded="true" />
-            <element signature="e#8547#8565#0" expanded="true" />
-            <element signature="e#8695#8732#0" expanded="true" />
-            <element signature="e#8944#8962#0" expanded="true" />
-            <element signature="e#9921#9939#0" expanded="true" />
-            <element signature="e#9986#10022#0" expanded="true" />
-            <element signature="e#10045#10082#0" expanded="true" />
-            <element signature="e#10225#10249#0" expanded="true" />
-            <element signature="e#10363#10380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2093,7 +2037,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -2113,7 +2056,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>android-support-v4</last-edited>
+          <last-edited>javatuples-1.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

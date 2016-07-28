@@ -1,11 +1,11 @@
 package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 
-import com.example.HAStundenplanApp.ScheduleWeek;
+import com.example.HAStundenplanApp.ImplScheduleWeek;
 
 /**
  * Created by Thilo S. on 22.07.2016.
  */
 public interface OnScheduleWeekPass {
-    ScheduleWeek getScheduleWeek();
-    void setScheduleWeek(ScheduleWeek scheduleWeek);
+    ImplScheduleWeek getScheduleWeek();
+    void setScheduleWeek(ImplScheduleWeek scheduleWeek);
 }
