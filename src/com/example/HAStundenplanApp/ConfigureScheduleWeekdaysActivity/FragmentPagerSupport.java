@@ -21,6 +21,7 @@ import com.example.HAStundenplanApp.*;
 import java.util.Calendar;
 
 import static com.example.HAStundenplanApp.DigitalScheduleMainActivity.CONFIGURED_SCHEDULE_WEEK;
+import static com.example.HAStundenplanApp.DigitalScheduleMainActivity.METADATA_BUNDLE;
 
 /**
  * Created by Thilo S. on 22.07.2016.
@@ -28,6 +29,7 @@ import static com.example.HAStundenplanApp.DigitalScheduleMainActivity.CONFIGURE
 public class FragmentPagerSupport extends FragmentActivity implements OnScheduleWeekPass {
     static final int NUM_ITEMS = 5;
     private ImplScheduleWeek configuredScheduleWeek = new ImplScheduleWeek();
+    private Bundle b = new Bundle();
 
 
     MyAdapter mAdapter;
@@ -45,7 +47,9 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         mPager.setAdapter(mAdapter);
 
         //TODO Initiate configureScheduleWeek with getIntent(...) from DigitalScheduleMainActivity
-        configuredScheduleWeek = getIntent().getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+        Intent receivedIntent = getIntent();
+        configuredScheduleWeek = receivedIntent.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+        b = receivedIntent.getBundleExtra(METADATA_BUNDLE);
         Log.d(DigitalScheduleMainActivity.LOG_TAG, configuredScheduleWeek.getMondayLessonNames()[0]);
     }
 
@@ -65,6 +69,16 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
     @Override
     public void setScheduleWeek(ImplScheduleWeek scheduleWeek) {
         configuredScheduleWeek = scheduleWeek;
+    }
+
+    @Override
+    public Bundle getMetadataBundle() {
+        return b;
+    }
+
+    @Override
+    public void setMetadataBundle(Bundle b) {
+        this.b = b;
     }
 
     public static class MyAdapter extends FragmentPagerAdapter {
@@ -314,8 +328,11 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
         @Override
         public void onClick(View v) {
             Intent weekdayLessonNameIntent = new Intent(getContext(), ChooseLesson.class);
+            weekdayLessonNameIntent.putExtra(METADATA_BUNDLE, scheduleWeekPasser.getMetadataBundle());
             Intent weekdayTeacherIntent = new Intent(getContext(), ChooseTeacher.class);
+            weekdayTeacherIntent.putExtra(METADATA_BUNDLE, scheduleWeekPasser.getMetadataBundle());
             Intent weekdayRoomIntent = new Intent(getContext(), ChooseRoom.class);
+            weekdayRoomIntent.putExtra(METADATA_BUNDLE, scheduleWeekPasser.getMetadataBundle());
             Intent weekdayPeriodIntent = new Intent(getContext(), ChoosePeriod.class);
             switch (v.getId()) {
                 case R.id.btnWeekdayLessonZeroLessonName:
@@ -855,7 +872,7 @@ public class FragmentPagerSupport extends FragmentActivity implements OnSchedule
             setFridayPeriods(resultCode, requestCode, 8, data, configuredScheduleWeek, btnWeekdayLessonEightPeriod);
             setFridayPeriods(resultCode, requestCode, 9, data, configuredScheduleWeek, btnWeekdayLessonNinePeriod);
 
-            ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(configuredScheduleWeek);
+            ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(scheduleWeekPasser.getScheduleWeek());
             getActivity().setResult(RESULT_OK, new Intent().putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek));
             getActivity().finish();
         }

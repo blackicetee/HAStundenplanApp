@@ -1,5 +1,6 @@
 package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 
+import android.os.Bundle;
 import com.example.HAStundenplanApp.ImplScheduleWeek;
 
 /**
@@ -8,4 +9,6 @@ import com.example.HAStundenplanApp.ImplScheduleWeek;
 public interface OnScheduleWeekPass {
     ImplScheduleWeek getScheduleWeek();
     void setScheduleWeek(ImplScheduleWeek scheduleWeek);
+    Bundle getMetadataBundle();
+    void setMetadataBundle(Bundle b);
 }
