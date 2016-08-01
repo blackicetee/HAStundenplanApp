@@ -34,5 +34,6 @@
                   android:label="Wiederholung einer Unterrichtsstunde auswählen"/>
         <activity android:name=".ConfigureScheduleWeekdaysActivity.FragmentPagerSupport" android:label="Stundenplan anpassen"/>
         <activity android:name=".HomeworkActivity" android:label="Hausaufgabe"/>
+        <activity android:name=".LessonsActivity" android:label="Fächer"/>
     </application>
 </manifest>

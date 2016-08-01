@@ -12,16 +12,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.*;
+import net.sharksystem.sharknet.api.*;
 import org.javatuples.Pair;
 import android.view.*;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
-import net.sharksystem.sharknet.api.ImplSharkNet;
-import net.sharksystem.sharknet.api.SchoolMetadata;
-import net.sharksystem.sharknet.api.DummySchoolMetadata;
-import net.sharksystem.sharknet.api.Profile;
-import net.sharksystem.sharknet.api.ScheduleWeek;
-import net.sharksystem.sharknet.api.SharkNet;
 
 import java.util.*;
 
@@ -29,6 +24,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
 
     private static final int MENU_CREATE_PROFILE_ID = 0;
     private static final int MENU_CONFIGURE_SCHEDULE_WEEK_ID = 1;
+    private static final int MENU_LESSONS = 2;
     private static final int MENU_SETTINGS_ID = 5;
     private static final int MENU_QUIT_ID = 6;
 
@@ -37,6 +33,8 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     public static final String ROOMS = "rooms";
 
     public static final String LOG_TAG = "ScheduleLog";
+    public static final String LESSONS = "lessons";
+    public static final String LESSONS_BUNDLE = "lessonsBundle";
 
     private SharkNet sharkNet = new ImplSharkNet();
     public static final String METADATA_BUNDLE = "metadataBundle";
@@ -414,107 +412,147 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     }
 
 
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(R.menu.main_activity, menu);
-            menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
-            menu.add(0, MENU_CONFIGURE_SCHEDULE_WEEK_ID, 0, "Wochen Stundenplan anpassen");
-            menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
-            menu.add(0, MENU_QUIT_ID, 0, "Beenden");
-            return super.onCreateOptionsMenu(menu);
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_activity, menu);
+        menu.add(0, MENU_CREATE_PROFILE_ID, 0, "Meine Daten");
+        menu.add(0, MENU_CONFIGURE_SCHEDULE_WEEK_ID, 0, "Wochen Stundenplan anpassen");
+        menu.add(0, MENU_LESSONS, 0, "Fächer");
+        menu.add(0, MENU_SETTINGS_ID, 0, "Einstellungen");
+        menu.add(0, MENU_QUIT_ID, 0, "Beenden");
+        return super.onCreateOptionsMenu(menu);
+    }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case MENU_CREATE_PROFILE_ID:
-                    Intent createProfileIntent = new Intent(this, ProfileDataActivity.class);
-                    startActivityForResult(createProfileIntent, MENU_CREATE_PROFILE_ID);
-                    break;
-                case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_CREATE_PROFILE_ID:
+                Intent createProfileIntent = new Intent(this, ProfileDataActivity.class);
+                startActivityForResult(createProfileIntent, MENU_CREATE_PROFILE_ID);
+                break;
+            case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
+                Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
+                ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
+                configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
+                configureScheduleWeekIntent.putExtra(METADATA_BUNDLE, createBundleWith3StringArrays());
+                startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
+                break;
+            case MENU_LESSONS:
+                Intent lessonsIntent = new Intent(this, LessonsActivity.class);
+                Bundle b = new Bundle();
+                b.putParcelableArrayList(LESSONS, convertListOfLessonIntoArrayListOfImplLesson(sharkNet.getMyProfile().getLessons()));
+                lessonsIntent.putExtra(LESSONS_BUNDLE, b);
+                startActivityForResult(lessonsIntent, MENU_LESSONS);
+                break;
+            case MENU_SETTINGS_ID:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivityForResult(settingsIntent, MENU_SETTINGS_ID);
+                break;
+            case MENU_QUIT_ID:
+                //exit
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
+                if (resultCode == RESULT_OK) {
+                    ImplScheduleWeek configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
+                    sharkNet.getMyProfile().setScheduleWeek(configuredScheduleWeek);
+                    pagerAdapter.notifyDataSetChanged();
+
                     Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
                     ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
                     configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
                     configureScheduleWeekIntent.putExtra(METADATA_BUNDLE, createBundleWith3StringArrays());
                     startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
-                    break;
-                case MENU_SETTINGS_ID:
-                    Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                    startActivityForResult(settingsIntent, MENU_SETTINGS_ID);
-                    break;
-                case MENU_QUIT_ID:
-                    //exit
-                    finish();
-                    break;
-            }
-            return super.onOptionsItemSelected(item);
-        }
+                } else if (resultCode == RESULT_CANCELED) {
+                    Toast.makeText(this, "Stundenplan wurde Aktualisiert", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case MENU_LESSONS:
+                if (resultCode == RESULT_OK) {
+                    Bundle b = data.getBundleExtra(LESSONS_BUNDLE);
+                    ArrayList<ImplLesson> implLessons = b.getParcelableArrayList(LESSONS);
+                    sharkNet.getMyProfile().setLessons(convertArrayListOfImplLessonIntoListOfLesson(implLessons));
+                    pagerAdapter.notifyDataSetChanged();
 
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            switch (requestCode) {
-                case MENU_CONFIGURE_SCHEDULE_WEEK_ID:
-                    if (resultCode == RESULT_OK) {
-                        ImplScheduleWeek configuredScheduleWeek = data.getParcelableExtra(CONFIGURED_SCHEDULE_WEEK);
-                        sharkNet.getMyProfile().setScheduleWeek(configuredScheduleWeek);
-                        pagerAdapter.notifyDataSetChanged();
-
-                        Intent configureScheduleWeekIntent = new Intent(this, FragmentPagerSupport.class);
-                        ImplScheduleWeek parcelableScheduleWeek = new ImplScheduleWeek(sharkNet.getMyProfile().getScheduleWeek());
-                        configureScheduleWeekIntent.putExtra(CONFIGURED_SCHEDULE_WEEK, parcelableScheduleWeek);
-                        configureScheduleWeekIntent.putExtra(METADATA_BUNDLE, createBundleWith3StringArrays());
-                        startActivityForResult(configureScheduleWeekIntent, MENU_CONFIGURE_SCHEDULE_WEEK_ID);
-                    } else if (resultCode == RESULT_CANCELED) {
-                        Toast.makeText(this, "Stundenplan wurde Aktualisiert", Toast.LENGTH_LONG).show();
-                    }
-                    break;
-            }
-        }
-
-        private ScheduleWeek fillConfiguredScheduleWeekWithDummyData(ScheduleWeek configuredScheduleWeek) {
-            configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-            configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-            configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-            configuredScheduleWeek.setThursdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-            configuredScheduleWeek.setFridayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
-
-            configuredScheduleWeek.setMondayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-            configuredScheduleWeek.setTuesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-            configuredScheduleWeek.setWednesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-            configuredScheduleWeek.setThursdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-            configuredScheduleWeek.setFridayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
-
-            configuredScheduleWeek.setMondayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-            configuredScheduleWeek.setTuesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-            configuredScheduleWeek.setWednesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-            configuredScheduleWeek.setThursdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-            configuredScheduleWeek.setFridayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
-
-            configuredScheduleWeek.setMondayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-            configuredScheduleWeek.setTuesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-            configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-            configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-            configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
-
-            return configuredScheduleWeek;
-        }
-
-        private Bundle createBundleWith3StringArrays() {
-            Bundle b = new Bundle();
-            b.putStringArrayList(LESSON_NAMES, sharkNet.getSchoolMetadata().getLessonNames());
-            b.putStringArrayList(TEACHERS, sharkNet.getSchoolMetadata().getTeacherNames());
-            b.putStringArrayList(ROOMS, sharkNet.getSchoolMetadata().getRooms());
-            return b;
-        }
-
-        private static String getWeekday(int numberOfWeekday) {
-            if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
-            else if (numberOfWeekday == 2) return Weekday.Montag.toString();
-            else if (numberOfWeekday == 3) return Weekday.Dienstag.toString();
-            else if (numberOfWeekday == 4) return Weekday.Mittwoch.toString();
-            else if (numberOfWeekday == 5) return Weekday.Donnerstag.toString();
-            else if (numberOfWeekday == 6) return Weekday.Freitag.toString();
-            else if (numberOfWeekday == 7) return Weekday.Samstag.toString();
-            else throw new IllegalArgumentException();
+                    Intent lessonsIntent = new Intent(this, LessonsActivity.class);
+                    Bundle bParcelableArrayList = new Bundle();
+                    bParcelableArrayList.putParcelableArrayList(LESSONS, convertListOfLessonIntoArrayListOfImplLesson(sharkNet.getMyProfile().getLessons()));
+                    lessonsIntent.putExtra(LESSONS_BUNDLE, b);
+                    startActivityForResult(lessonsIntent, MENU_LESSONS);
+                } else if (resultCode == RESULT_CANCELED) {
+                    Toast.makeText(this, "Stundenplan wurde Aktualisiert", Toast.LENGTH_LONG).show();
+                }
+                break;
         }
     }
+
+    private ScheduleWeek fillConfiguredScheduleWeekWithDummyData(ScheduleWeek configuredScheduleWeek) {
+        configuredScheduleWeek.setMondayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setTuesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setWednesdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setThursdayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+        configuredScheduleWeek.setFridayLessonNames(new String[]{"Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach", "Fach"});
+
+        configuredScheduleWeek.setMondayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setTuesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setWednesdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setThursdayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+        configuredScheduleWeek.setFridayTeachers(new String[]{"Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer", "Lehrer"});
+
+        configuredScheduleWeek.setMondayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setTuesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setWednesdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setThursdayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+        configuredScheduleWeek.setFridayRooms(new String[]{"Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum", "Raum"});
+
+        configuredScheduleWeek.setMondayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setTuesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setWednesdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setThursdayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+        configuredScheduleWeek.setFridayPeriods(new String[]{"wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich", "wöchentlich"});
+
+        return configuredScheduleWeek;
+    }
+
+    private Bundle createBundleWith3StringArrays() {
+        Bundle b = new Bundle();
+        b.putStringArrayList(LESSON_NAMES, sharkNet.getSchoolMetadata().getLessonNames());
+        b.putStringArrayList(TEACHERS, sharkNet.getSchoolMetadata().getTeacherNames());
+        b.putStringArrayList(ROOMS, sharkNet.getSchoolMetadata().getRooms());
+        return b;
+    }
+
+    private ArrayList<ImplLesson> convertListOfLessonIntoArrayListOfImplLesson(List<Lesson> lessons) {
+        ArrayList<ImplLesson> implLessons = new ArrayList<>();
+        for (int i = 0; i < lessons.size(); i++) {
+            implLessons.add(new ImplLesson(lessons.get(i)));
+        }
+        return implLessons;
+    }
+
+    private List<Lesson> convertArrayListOfImplLessonIntoListOfLesson(ArrayList<ImplLesson> implLessons) {
+        List<Lesson> lessons = new ArrayList<>();
+        for (int i = 0; i < implLessons.size(); i++) {
+            lessons.add(implLessons.get(i));
+        }
+        return lessons;
+    }
+
+    private static String getWeekday(int numberOfWeekday) {
+        if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
+        else if (numberOfWeekday == 2) return Weekday.Montag.toString();
+        else if (numberOfWeekday == 3) return Weekday.Dienstag.toString();
+        else if (numberOfWeekday == 4) return Weekday.Mittwoch.toString();
+        else if (numberOfWeekday == 5) return Weekday.Donnerstag.toString();
+        else if (numberOfWeekday == 6) return Weekday.Freitag.toString();
+        else if (numberOfWeekday == 7) return Weekday.Samstag.toString();
+        else throw new IllegalArgumentException();
+    }
+}

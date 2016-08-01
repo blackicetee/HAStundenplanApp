@@ -20,5 +20,14 @@
     <orderEntry type="library" name="sharkfw.2.13.1" level="project" />
     <orderEntry type="library" name="commons-io-2.5" level="project" />
     <orderEntry type="library" name="javatuples-1.2" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/dev/Android/extras/android/support/v7/appcompat/libs/android-support-v7-appcompat.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

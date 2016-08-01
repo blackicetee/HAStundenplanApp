@@ -1,43 +1,34 @@
 package com.example.HAStundenplanApp;
 
-import net.sharksystem.sharknet.api.Chat;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
+import net.sharksystem.sharknet.api.Lesson;
 
 /**
  * Created by Thilo on 13.07.2016.
  */
 
-public class ImplLesson implements Lesson {
-    private String lessonName = null;
-    private String teacher = null;
-    private String location = null;
-    private List<Appointment> appointments = new ArrayList<>();
-    private Date lessonTerminationDate = null;
-    private Chat chat = null;
+public class ImplLesson implements Lesson, Parcelable {
+    private String lessonName = "";
+    private String acronym = "";
+    private int colorCode = 0;
+    private String contact = "";
+    private String contactTelephoneNumber = "";
+    private String contactMailAddress = "";
+    private String room = "";
 
     ImplLesson() {
 
     }
 
-    //This constructor is for unique events/lessons like sports meeting or cake sale.
-    //The Appointment should have a period of 0, in this case.
-    ImplLesson(String location, Appointment appointment, Date lessonTerminationDate, Chat chat) {
-        this.location = location;
-        appointments.add(appointment);
-        this.lessonTerminationDate = lessonTerminationDate;
-        this.chat = chat;
-    }
-
-    ImplLesson(String lessonName, String teacher, String location, List<Appointment> appointments, Date lessonTerminationDate, Chat chat) {
-        this.lessonName = lessonName;
-        this.teacher = teacher;
-        this.location = location;
-        this.appointments = appointments;
-        this.lessonTerminationDate = lessonTerminationDate;
-        this.chat = chat;
+    ImplLesson(Lesson lesson) {
+        this.lessonName = lesson.getLessonName();
+        this.acronym = lesson.getAcronym();
+        this.colorCode = lesson.getColorCode();
+        this.contact = lesson.getContact();
+        this.contactTelephoneNumber = lesson.getContactTelephoneNumber();
+        this.contactMailAddress = lesson.getContactMailAddress();
+        this.room = lesson.getRoom();
     }
 
     @Override
@@ -51,52 +42,103 @@ public class ImplLesson implements Lesson {
     }
 
     @Override
-    public String getTeacher() {
-        return teacher;
+    public String getAcronym() {
+        return acronym;
     }
 
     @Override
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setAcronym(String acronym) {
+        this.acronym = acronym;
     }
 
     @Override
-    public String getLocation() {
-        return location;
+    public int getColorCode() {
+        return colorCode;
     }
 
     @Override
-    public void setLocation(String location) {
-        this.location = location;
+    public void setColorCode(int colorCode) {
+        this.colorCode = colorCode;
+    }
+
+
+    @Override
+    public String getContact() {
+        return contact;
     }
 
     @Override
-    public List<Appointment> getAppointments() {
-        return appointments;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     @Override
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
+    public String getContactTelephoneNumber() {
+        return contactTelephoneNumber;
     }
 
     @Override
-    public Date getLessonTerminationDate() {
-        return lessonTerminationDate;
+    public void setContactTelephoneNumber(String telephoneNumber) {
+        contactTelephoneNumber = telephoneNumber;
     }
 
     @Override
-    public void setLessonTerminationDate(Date lessonTerminationDate) {
-        this.lessonTerminationDate = lessonTerminationDate;
+    public String getContactMailAddress() {
+        return contactMailAddress;
     }
 
     @Override
-    public Chat getChat() {
-        return chat;
+    public void setContactMailAddress(String mailAddress) {
+        contactMailAddress = mailAddress;
     }
 
     @Override
-    public void setChat(Chat chat) {
-        this.chat = chat;
+    public String getRoom() {
+        return room;
+    }
+
+    @Override
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    // write your object's data to the passed-in Parcel
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(lessonName);
+        dest.writeString(acronym);
+        dest.writeInt(colorCode);
+        dest.writeString(contact);
+        dest.writeString(contactTelephoneNumber);
+        dest.writeString(contactMailAddress);
+        dest.writeString(room);
+    }
+
+    // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
+    public static final Parcelable.Creator<ImplLesson> CREATOR = new Parcelable.Creator<ImplLesson>() {
+        public ImplLesson createFromParcel(Parcel in) {
+            return new ImplLesson(in);
+        }
+
+        public ImplLesson[] newArray(int size) {
+            return new ImplLesson[size];
+        }
+    };
+
+    // example constructor that takes a Parcel and gives you an object populated with it's values
+    public ImplLesson(Parcel in) {
+        lessonName = in.readString();
+        acronym = in.readString();
+        colorCode = in.readInt();
+        contact = in.readString();
+        contactTelephoneNumber = in.readString();
+        contactMailAddress = in.readString();
+        room = in.readString();
     }
 }
