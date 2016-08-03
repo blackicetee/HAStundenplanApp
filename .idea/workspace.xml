@@ -47,9 +47,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7d5b10d-316c-4d74-bcfd-341d5cd735b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/example/HAStundenplanApp/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/example/HAStundenplanApp/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/lessons.xml" afterPath="$PROJECT_DIR$/res/layout/lessons.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bachelorarbeit Texte/.~lock.BachelorarbeitScript.odt#" afterPath="" />
     </list>
     <ignored path="HAStundenplanApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1065,7 +1063,7 @@
     <option name="totallyTimeSpent" value="385342000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
