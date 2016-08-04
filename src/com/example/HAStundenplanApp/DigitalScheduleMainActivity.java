@@ -8,12 +8,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.*;
 import net.sharksystem.sharknet.api.*;
-import org.javatuples.Pair;
 import android.view.*;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.ConfigureWeekdays;
 import com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity.FragmentPagerSupport;
@@ -41,7 +39,7 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
     public static final String CONFIGURED_SCHEDULE_WEEK = "configuredScheduleWeek";
     public static final String HOMEWORK = "homework";
 
-    static final int NUM_ITEMS = 10;
+    static final int NUM_ITEMS = 182;
 
     MainPagerAdapter pagerAdapter = null;
 
@@ -440,7 +438,11 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
             case MENU_LESSONS:
                 Intent lessonsIntent = new Intent(this, LessonsActivity.class);
                 Bundle b = new Bundle();
-                b.putParcelableArrayList(LESSONS, convertListOfLessonIntoArrayListOfImplLesson(sharkNet.getMyProfile().getLessons()));
+                ArrayList<ImplLessonParcel> lessonParcels = new ArrayList<>();
+                for (int i = 0; i < sharkNet.getMyProfile().getLessons().size(); i++) {
+                    lessonParcels.add(new ImplLessonParcel(sharkNet.getMyProfile().getLessons().get(i)));
+                }
+                b.putParcelableArrayList(LESSONS, lessonParcels);
                 lessonsIntent.putExtra(LESSONS_BUNDLE, b);
                 startActivityForResult(lessonsIntent, MENU_LESSONS);
                 break;
@@ -475,21 +477,26 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
                 }
                 break;
             case MENU_LESSONS:
+                /**
                 if (resultCode == RESULT_OK) {
                     Bundle b = data.getBundleExtra(LESSONS_BUNDLE);
-                    ArrayList<ImplLesson> implLessons = b.getParcelableArrayList(LESSONS);
-                    sharkNet.getMyProfile().setLessons(convertArrayListOfImplLessonIntoListOfLesson(implLessons));
+                    ArrayList<ImplLessonParcel> implLessonParcels = b.getParcelableArrayList(LESSONS);
+                    List<Lesson> lessons = new ArrayList<>();
+                    for (int i = 0; i < implLessonParcels.size(); i++) {
+                        lessons.add(implLessonParcels.get(i).getLesson());
+                    }
+                    b.putParcelableArrayList(LESSONS, implLessonParcels);
+                    sharkNet.getMyProfile().setLessons(lessons);
                     pagerAdapter.notifyDataSetChanged();
 
                     Intent lessonsIntent = new Intent(this, LessonsActivity.class);
-                    Bundle bParcelableArrayList = new Bundle();
-                    bParcelableArrayList.putParcelableArrayList(LESSONS, convertListOfLessonIntoArrayListOfImplLesson(sharkNet.getMyProfile().getLessons()));
+                    b.putParcelableArrayList(LESSONS, implLessonParcels);
                     lessonsIntent.putExtra(LESSONS_BUNDLE, b);
                     startActivityForResult(lessonsIntent, MENU_LESSONS);
                 } else if (resultCode == RESULT_CANCELED) {
                     Toast.makeText(this, "Stundenplan wurde Aktualisiert", Toast.LENGTH_LONG).show();
                 }
-                break;
+                break; */
         }
     }
 
@@ -528,22 +535,23 @@ public class DigitalScheduleMainActivity extends FragmentActivity implements OnS
         b.putStringArrayList(ROOMS, sharkNet.getSchoolMetadata().getRooms());
         return b;
     }
-
-    private ArrayList<ImplLesson> convertListOfLessonIntoArrayListOfImplLesson(List<Lesson> lessons) {
-        ArrayList<ImplLesson> implLessons = new ArrayList<>();
+/**
+    private ArrayList<ImplLessonParcel> convertListOfLessonIntoArrayListOfImplLesson(List<Lesson> lessons) {
+        ArrayList<ImplLessonParcel> implLessonParcels = new ArrayList<>();
         for (int i = 0; i < lessons.size(); i++) {
-            implLessons.add(new ImplLesson(lessons.get(i)));
+            implLessonParcels.add(new ImplLessonParcel(lessons.get(i)));
         }
-        return implLessons;
+        return implLessonParcels;
     }
 
-    private List<Lesson> convertArrayListOfImplLessonIntoListOfLesson(ArrayList<ImplLesson> implLessons) {
+    private List<Lesson> convertArrayListOfImplLessonIntoListOfLesson(ArrayList<ImplLessonParcel> implLessonParcels) {
         List<Lesson> lessons = new ArrayList<>();
-        for (int i = 0; i < implLessons.size(); i++) {
-            lessons.add(implLessons.get(i));
+        for (int i = 0; i < implLessonParcels.size(); i++) {
+            lessons.add(implLessonParcels.get(i));
         }
         return lessons;
     }
+ */
 
     private static String getWeekday(int numberOfWeekday) {
         if (numberOfWeekday == 1) return Weekday.Sonntag.toString();
