@@ -1,0 +1,20 @@
+
+
+
+public class LessonFactory {
+
+	List<Lesson> lessons = new ArrayList<>();
+
+	public Boolean createLesson(String lessonName) {
+		Boolean condition = true;
+		for(int i = 0; i < lessons.size(); i++) {
+			if(lessons.get(i).getLessonName.equals(lessonName)) {
+				false;
+			}
+		}
+		if(condition) {
+			lessons.add(new ImplLesson(lessonName))
+		}
+		return condition;
+	}
+}

@@ -1,0 +1,23 @@
+
+
+
+public class LessonFactory {
+
+	List<Lesson> lessons = new ArrayList<>();
+
+	public Lesson getLesson(String lessonName) {
+		int index = -1;
+		for(int i = 0; i < lessons.size(); i++) {
+			if(lessons.get(i).getLessonName.equals(lessonName)) {
+				index = i;
+			}
+		}
+		if(index == -1) {
+			lessons.add(new ImplLesson(lessonName));
+			return lessons.get(lessons.size() - 1);
+		} else {
+			return lesson.get(index);
+		}
+		
+	}
+}
