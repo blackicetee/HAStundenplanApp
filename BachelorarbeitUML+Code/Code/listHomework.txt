@@ -1,0 +1,21 @@
+ImplSharkNet {
+	public HomeworkList getHomeworkList(Date d, String lesson) {
+		/**ToDo: Shark - Search in KB for a HomeworkList with a specified Date
+		 * and a specified lessonName and return it 
+		 */
+		return DummyDB.getInstance().existHomeworkList(d, lesson);
+	}
+
+	public void newHomeworkList(Date d, String lesson, List<Homework> l) {
+		/**ToDo: Shark - Lookup if a HomeworkList for a specified Date
+		 * and a specified lessonName already exists if yes
+		 * return the HomeworkListObject of the existing HomeworkList,
+		 * if no make a new HomeworkList
+		 */
+		HomeworkList hl = DummyDB.getInstance().existHomeworkList(d, lesson); 
+		if(hl = null) {
+			hl = new HomeworkList(d, lesson, l);
+		}
+		return hl;
+	}
+}

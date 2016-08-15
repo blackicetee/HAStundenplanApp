@@ -1,0 +1,11 @@
+public List<HomeworkList> getAllHomeworkListsFromOneDay(Date d) {
+	List<String> lessonNames = DummyDB.getInstance().getSchoolMetadata().getLessonNames();
+	List<HomeworkList> tempHL = new ArrayList<>();
+	for (int i = 0; i < lessonNames.size(); i++) {
+		HomeworkList hl = getHomworkList(d, lessonNames.get(i))
+		if (hl != null) {
+			tempHL.add(hl);
+		}
+	}
+	return tempHL;
+}
