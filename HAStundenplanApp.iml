@@ -19,7 +19,6 @@
     <orderEntry type="module" module-name="SharkNetJavaFX" />
     <orderEntry type="library" name="sharkfw.2.13.1" level="project" />
     <orderEntry type="library" name="commons-io-2.5" level="project" />
-    <orderEntry type="library" name="javatuples-1.2" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -29,5 +28,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javatuples-1.2" level="project" />
   </component>
 </module>

@@ -1,6 +1,5 @@
 package com.example.HAStundenplanApp.ConfigureScheduleWeekdaysActivity;
 
-import org.javatuples.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
